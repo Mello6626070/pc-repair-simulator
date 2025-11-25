@@ -7,10 +7,10 @@ extends CharacterBody3D
 
 @export_category("Player Movemenent")
 @export var SPEED: float = 5.0
-@export var JUMP_VELOCITY: float = 4.5
 
 @onready var camera_container: Node3D = $CameraContainer
 @onready var interaction_ray_cast: RayCast3D = $CameraContainer/InteractionRayCast
+@onready var interactable_indicator: Label = $CanvasLayer/InteractableIndicator
 
 var mouse_input: bool = false
 var mouse_rotation: Vector3
@@ -44,13 +44,35 @@ func update_camera(delta) -> void:
 	rotation_input = 0
 	tilt_input = 0
 
+func interact_cast():
+	interactable_indicator.hide()
+	if interaction_ray_cast.is_colliding():
+		var target = interaction_ray_cast.get_collider()
+		var type: String
+		if target:
+			if target.has_method("grab"):
+				interactable_indicator.text = "Press E to grab"
+				type = "grabbable"
+			elif target.has_method("interact"):
+				interactable_indicator.text = "Press E to interact"
+				type = "interactable"
+			
+			interactable_indicator.show()
+		
+		if Input.is_action_just_pressed("interact_or_grab"):
+			interact(target, type)
+
+func interact(target, type: String) -> void:
+	match type:
+		"grabbable": target.grab(self)
+		"interactable": target.interact(self)
+
 func _physics_process(delta: float) -> void:
 	update_camera(delta)
+	interact_cast()
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -60,7 +82,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	if interaction_ray_cast.is_colliding():
-		var target = interaction_ray_cast.get_collider()
-		print(target)
 	move_and_slide()

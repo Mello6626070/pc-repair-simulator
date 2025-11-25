@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4hp8y2b73oll"]
+
+[ext_resource type="Script" uid="uid://cgras1i0xpef4" path="res://Scripts/Objects/item_pickup.gd" id="1_4lcmg"]
+[ext_resource type="Texture2D" uid="uid://qaugljyvugnn" path="res://Assets/Prototyping/PrototypeTextures/texture_01.png" id="1_hdvcw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rsive"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gc6js"]
+albedo_texture = ExtResource("1_hdvcw")
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_5hath"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_gc6js")
+
+[node name="ItemPickup" type="RigidBody3D"]
+collision_layer = 13
+script = ExtResource("1_4lcmg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_rsive")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_5hath")
+
+[connection signal="grab_signal_recieved" from="." to="." method="_on_grab_signal_recieved"]

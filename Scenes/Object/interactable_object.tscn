@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn3kljcf8qwk2"]
+
+[ext_resource type="Script" uid="uid://co57f3ex5wkgp" path="res://Scripts/Objects/interactable_object.gd" id="1_m5ca8"]
+[ext_resource type="Texture2D" uid="uid://ct4o2sphblwgj" path="res://Assets/Prototyping/PrototypeTextures/texture_13.png" id="2_yj53m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mdsa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd5ns"]
+albedo_texture = ExtResource("2_yj53m")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_aa51j"]
+material = SubResource("StandardMaterial3D_dd5ns")
+
+[node name="InteractableObject" type="StaticBody3D"]
+collision_layer = 17
+script = ExtResource("1_m5ca8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7mdsa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_aa51j")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.525554, 0, 0)
+visible = false
+text = "Toggled"
+
+[connection signal="interact_signal_recieved" from="." to="." method="_on_interact_signal_recieved"]
