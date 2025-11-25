@@ -37,6 +37,15 @@ move_right={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Obstacles"
+3d_physics/layer_3="Objects"
+3d_physics/layer_4="Raycast"
+3d_physics/layer_5="Interactables"
+
 [rendering]
 
 renderer/rendering_method="mobile"
+anti_aliasing/quality/msaa_3d=3

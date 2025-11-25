@@ -1,11 +1,16 @@
 extends CharacterBody3D
 
+@export_category("Camera Stuff")
 @export var mouse_sens: float = 0.5
 @export var MAX_TILT: float = deg_to_rad(90)
 @export var MIN_TILT: float = deg_to_rad(-90)
+
+@export_category("Player Movemenent")
 @export var SPEED: float = 5.0
 @export var JUMP_VELOCITY: float = 4.5
+
 @onready var camera_container: Node3D = $CameraContainer
+@onready var interaction_ray_cast: RayCast3D = $CameraContainer/InteractionRayCast
 
 var mouse_input: bool = false
 var mouse_rotation: Vector3
@@ -22,7 +27,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if mouse_input:
 		rotation_input = -event.relative.x * mouse_sens
 		tilt_input = -event.relative.y * mouse_sens
-		print(Vector2(rotation_input, tilt_input))
 
 func update_camera(delta) -> void:
 	mouse_rotation.x += tilt_input*delta
@@ -56,5 +60,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	if interaction_ray_cast.is_colliding():
+		var target = interaction_ray_cast.get_collider()
+		print(target)
 	move_and_slide()

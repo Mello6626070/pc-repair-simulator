@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0qi8tftotxrk"]
+
+[ext_resource type="Texture2D" uid="uid://2ecnf3lr8he3" path="res://Assets/Prototyping/PrototypeTextures/texture_07.png" id="1_hx8xj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_phft1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3kkf"]
+albedo_texture = ExtResource("1_hx8xj")
+
+[sub_resource type="SphereMesh" id="SphereMesh_dg64p"]
+material = SubResource("StandardMaterial3D_x3kkf")
+
+[node name="StaticBody3D" type="StaticBody3D"]
+collision_layer = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_phft1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_dg64p")
+
+[node name="LabelContainer" type="Node3D" parent="."]
+
+[node name="IntersectedLabel" type="Label3D" parent="LabelContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+text = "Ray Intersected"

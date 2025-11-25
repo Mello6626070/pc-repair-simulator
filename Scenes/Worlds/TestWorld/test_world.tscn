@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciqduancatcam"]
+[gd_scene load_steps=12 format=3 uid="uid://ciqduancatcam"]
 
 [ext_resource type="PackedScene" uid="uid://ce7rustx5t43l" path="res://Scenes/Characters/Player/player.tscn" id="1_idlyi"]
-[ext_resource type="Texture2D" uid="uid://dibufwtldunha" path="res://Assets/PrototypeTextures/texture_09.png" id="1_s3dph"]
+[ext_resource type="Texture2D" uid="uid://dibufwtldunha" path="res://Assets/Prototyping/PrototypeTextures/texture_09.png" id="1_s3dph"]
+[ext_resource type="PackedScene" uid="uid://duf67tqsyorl" path="res://Assets/Prototyping/PrototypeModels/KayKit_Prototype_Bits_1.1_FREE/Assets/fbx/Primitive_Wall.fbx" id="1_t4tuq"]
+[ext_resource type="PackedScene" uid="uid://cf7gmknbaqx5e" path="res://Assets/Prototyping/PrototypeModels/KayKit_Prototype_Bits_1.1_FREE/Assets/fbx/table_medium.fbx" id="2_s5vt2"]
+[ext_resource type="PackedScene" uid="uid://c0qi8tftotxrk" path="res://Scenes/Object/Ball.tscn" id="3_s5vt2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s3dph"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,12 +19,13 @@ sky = SubResource("Sky_6fm24")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fm24"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3dph"]
 albedo_texture = ExtResource("1_s3dph")
-uv1_scale = Vector3(100, 100, 100)
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_3dnvh"]
-material = SubResource("StandardMaterial3D_6fm24")
+material = SubResource("StandardMaterial3D_s3dph")
 size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0066"]
@@ -36,13 +40,26 @@ environment = SubResource("Environment_t4tuq")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Building" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8068695, 0.5, 9.528493)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="Primitive_Wall" parent="Building" instance=ExtResource("1_t4tuq")]
+transform = Transform3D(7.177605, 0, 0, 0, 1, 0, 0, 0, 1, -7.7350006, -0.22621274, -0.020999908)
+
+[node name="table_medium" parent="Building" instance=ExtResource("2_s5vt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.193, 0, 1.472)
+
+[node name="StaticBody3D" parent="Building" instance=ExtResource("3_s5vt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.773518, 1.5628741, 6.474286)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.066708, -0.056918144, 5.702144)
 mesh = SubResource("BoxMesh_3dnvh")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_a0066")
 
 [node name="Player" parent="." instance=ExtResource("1_idlyi")]
