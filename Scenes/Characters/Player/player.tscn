@@ -30,9 +30,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -2)
 collision_mask = 20
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="InteractableIndicator" type="Label" parent="CanvasLayer"]
+[node name="InteractableIndicator" type="Label" parent="HUD"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,3 +46,5 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press E to interact"
+
+[node name="InteractablesUI" type="CanvasLayer" parent="."]

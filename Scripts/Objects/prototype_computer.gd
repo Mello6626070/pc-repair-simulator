@@ -1,11 +1,7 @@
 extends Interactable
 
-
-# Called when the node enters the scene tree for the first time.
+@export var ui_scene: PackedScene
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	has_ui = true
+func _on_interact_signal_recieved() -> void:
 	pass
