@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3lrg0je850aq"]
+
+[ext_resource type="Script" uid="uid://dltngekjg0r7n" path="res://Scripts/Objects/prototype_computer.gd" id="1_5g1nr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndgv0"]
+size = Vector3(0.8, 0.6, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5g1nr"]
+size = Vector3(0.8, 0.6, 0.01)
+
+[node name="PrototypeComputer" type="StaticBody3D"]
+script = ExtResource("1_5g1nr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ndgv0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5g1nr")
