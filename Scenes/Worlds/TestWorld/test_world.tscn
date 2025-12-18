@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ciqduancatcam"]
+[gd_scene load_steps=15 format=3 uid="uid://ciqduancatcam"]
 
 [ext_resource type="PackedScene" uid="uid://ce7rustx5t43l" path="res://Scenes/Characters/Player/player.tscn" id="1_idlyi"]
 [ext_resource type="Texture2D" uid="uid://dibufwtldunha" path="res://Assets/Prototyping/PrototypeTextures/texture_09.png" id="1_s3dph"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d4hp8y2b73oll" path="res://Scenes/Object/item_pickup.tscn" id="5_s5vt2"]
 [ext_resource type="PackedScene" uid="uid://cn3kljcf8qwk2" path="res://Scenes/Object/interactable_object.tscn" id="6_agk8l"]
 [ext_resource type="PackedScene" uid="uid://c3lrg0je850aq" path="res://Scenes/Object/prototype_computer.tscn" id="7_p5pf2"]
+[ext_resource type="PackedScene" uid="uid://udq5n3c656wl" path="res://Scenes/Object/computer.tscn" id="8_dl34x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s3dph"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -73,3 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.884344, 1, 16.672817)
 
 [node name="PrototypeComputer" parent="." instance=ExtResource("7_p5pf2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29, 1.769475, 11.036573)
+
+[node name="Computer" parent="." instance=ExtResource("8_dl34x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.255585, 0.49999988, 12.82088)
