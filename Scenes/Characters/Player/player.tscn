@@ -10,6 +10,7 @@
 albedo_color = Color(1, 0.5294118, 0.30588236, 1)
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 3
 script = ExtResource("1_6xdwp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -22,7 +23,7 @@ mesh = SubResource("CapsuleMesh_6xdwp")
 surface_material_override/0 = SubResource("StandardMaterial3D_27cb7")
 
 [node name="CameraContainer" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraContainer"]
 
