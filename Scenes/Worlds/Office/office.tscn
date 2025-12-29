@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5smg8ucqwo5f"]
+[gd_scene load_steps=32 format=3 uid="uid://5smg8ucqwo5f"]
 
 [ext_resource type="PackedScene" uid="uid://ce7rustx5t43l" path="res://Scenes/Characters/Player/player.tscn" id="1_30ga2"]
 [ext_resource type="PackedScene" uid="uid://c0v7kb06g258g" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Tables/Table A.fbx" id="2_vh6io"]
@@ -11,19 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://cbi3bo7pohasu" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Shelves/Shelf E.fbx" id="9_3dh5i"]
 [ext_resource type="PackedScene" uid="uid://ym83qupmqtfx" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Carpets/Carpet B.fbx" id="10_pbwrw"]
 [ext_resource type="PackedScene" uid="uid://onk1esl5wcea" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Shelves/Shelf B.fbx" id="11_3aaeu"]
+[ext_resource type="PackedScene" uid="uid://omjwj2eqc5li" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Lights/Ceiling Light.fbx" id="12_cpduc"]
+[ext_resource type="PackedScene" uid="uid://baj7f621kgwyw" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Electronics/Monitor.fbx" id="13_r8s40"]
+[ext_resource type="Script" uid="uid://bpboos8nftukd" path="res://Scenes/Worlds/Office/work_computer.gd" id="14_7wi02"]
+[ext_resource type="PackedScene" uid="uid://da0sl5c03ugic" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Electronics/Pc.fbx" id="14_ij4l3"]
+[ext_resource type="PackedScene" uid="uid://ca0wxwsll2jkr" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Electronics/Keyboard.fbx" id="15_ij4l3"]
+[ext_resource type="PackedScene" uid="uid://bu2kbdxvhmo81" path="res://Scenes/UI/work_select.tscn" id="15_opvmx"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_30ga2"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_vh6io"]
-sky_material = SubResource("ProceduralSkyMaterial_30ga2")
-
-[sub_resource type="Environment" id="Environment_xq0x4"]
-background_mode = 2
-sky = SubResource("Sky_vh6io")
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="Environment" id="Environment_cpduc"]
+background_mode = 1
+background_color = Color(0.22959, 0.7735164, 0.9602136, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 0.91764706, 1)
+ambient_light_energy = 0.7
 
 [sub_resource type="BoxMesh" id="BoxMesh_xq0x4"]
 size = Vector3(10, 0.1, 10)
@@ -33,7 +33,7 @@ size = Vector3(10, 0.1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_soob8"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.3647059)
+albedo_color = Color(0.76915205, 0.9989199, 0.99999994, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdna1"]
 size = Vector3(0.017089844, 0.33642578, 1)
@@ -50,18 +50,36 @@ size = Vector3(1.5200806, 1.9683228, 0.93066406)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cpduc"]
 size = Vector3(6.110779, 10.710724, 1.8916626)
 
+[sub_resource type="SphereMesh" id="SphereMesh_cpduc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na377"]
+emission_enabled = true
+emission = Color(0.9297146, 0.9297147, 0.9297146, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r8s40"]
+size = Vector2(4.045, 2.725)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij4l3"]
+albedo_color = Color(0.5237197, 0.9999998, 0.9963433, 1)
+emission_enabled = true
+emission = Color(0.67143977, 1, 0.9954794, 1)
+emission_energy_multiplier = 16.0
+emission_operator = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ij4l3"]
+size = Vector3(4.496521, 3.2940674, 1)
+
 [node name="Office" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_xq0x4")
+environment = SubResource("Environment_cpduc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.18468739, -0.5640286, 0.804837, -0.08424082, 0.8068255, 0.58475304, -0.97918046, -0.17579663, 0.10149626, 0, 0, 0)
+transform = Transform3D(0.81324494, -0.40021902, 0.4224421, -0.13667423, 0.57427275, 0.8071746, -0.56564367, -0.7141676, 0.41232488, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.218159, 0)
-visible = false
 mesh = SubResource("BoxMesh_xq0x4")
 skeleton = NodePath("../Floor")
 
@@ -71,6 +89,7 @@ collision_layer = 2
 collision_mask = 3
 
 [node name="FloorMesh" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1.56, 0, 0, 0, 1, 0, 0, 0, 1.765, 0, 0, 0)
 mesh = SubResource("BoxMesh_xq0x4")
 skeleton = NodePath("../..")
 
@@ -160,11 +179,9 @@ shape = SubResource("BoxShape3D_mdna1")
 transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 0.036, 1.594, 4.9010587)
 shape = SubResource("BoxShape3D_mdna1")
 
-[node name="Player" parent="." instance=ExtResource("1_30ga2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2990818, 0.35647297, -0.20904168)
-
 [node name="WorkTable" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.929205, 0.14694285, 2.4306684)
+collision_layer = 2
 
 [node name="Table A" parent="WorkTable" instance=ExtResource("2_vh6io")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.085773945, 0, 0)
@@ -175,9 +192,10 @@ shape = SubResource("BoxShape3D_el43v")
 
 [node name="Desk" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.430516, 0.6477535, 3.4067674)
+collision_layer = 2
 
 [node name="Desk" parent="Desk" instance=ExtResource("8_el43v")]
-transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.3, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.3, 0, 4.371139e-08, 0, -0.5, 0, -0.1327362, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Desk"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86456025, -0.15438986, 0.42515755)
@@ -185,9 +203,10 @@ shape = SubResource("BoxShape3D_3dh5i")
 
 [node name="Shelf" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5009809, 1.0678, -4.290098)
+collision_layer = 2
 
 [node name="Shelf E" parent="Shelf" instance=ExtResource("9_3dh5i")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0, -0.06267977)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003753662, 0.0022888184, -0.03466797)
@@ -195,6 +214,7 @@ shape = SubResource("BoxShape3D_pbwrw")
 
 [node name="Shelf2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0567646, 1.0678, -4.3443394)
+collision_layer = 2
 
 [node name="Shelf E" parent="Shelf2" instance=ExtResource("9_3dh5i")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0, 0)
@@ -208,9 +228,144 @@ transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Cabinet" type="StaticBody3D" parent="."]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, -4.4161453, 1.2727644, -0.73537636)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cabinet"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01675415, 0.14671326, -0.64785767)
 shape = SubResource("BoxShape3D_cpduc")
 
 [node name="Shelf B" parent="Cabinet" instance=ExtResource("11_3aaeu")]
+
+[node name="Player" parent="." instance=ExtResource("1_30ga2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57437325, 1.899898e-07, -0.37274742)
+
+[node name="Ceiling Light" parent="." instance=ExtResource("12_cpduc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.5572097, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
+mesh = SubResource("SphereMesh_cpduc")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = SubResource("StandardMaterial3D_na377")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling Light"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
+light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
+light_energy = 0.4
+shadow_enabled = true
+omni_range = 6.9170747
+omni_attenuation = 0.4
+
+[node name="Ceiling Light2" parent="." instance=ExtResource("12_cpduc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -4.2888813, 3.5572097, -4.189139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling Light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
+mesh = SubResource("SphereMesh_cpduc")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = SubResource("StandardMaterial3D_na377")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling Light2"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
+light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
+light_energy = 0.4
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.4
+
+[node name="Ceiling Light3" parent="." instance=ExtResource("12_cpduc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.2888794, 3.5572097, -4.189139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling Light3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
+mesh = SubResource("SphereMesh_cpduc")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = SubResource("StandardMaterial3D_na377")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling Light3"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
+light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
+light_energy = 0.4
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.4
+
+[node name="Ceiling Light4" parent="." instance=ExtResource("12_cpduc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.2888794, 3.5572097, 4.189138)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling Light4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
+mesh = SubResource("SphereMesh_cpduc")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = SubResource("StandardMaterial3D_na377")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling Light4"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -3.6201715, 0)
+light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
+light_energy = 0.4
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.4
+
+[node name="Ceiling Light5" parent="." instance=ExtResource("12_cpduc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -4.139268, 3.5572097, 4.189138)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling Light5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
+mesh = SubResource("SphereMesh_cpduc")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = SubResource("StandardMaterial3D_na377")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling Light5"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
+light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
+light_energy = 0.4
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.4
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6974182, 1.5529671, 0.007621765)
+size = Vector3(13.27301, 5.834648, 12.342941)
+interior = true
+enable_shadows = true
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.371926e-07, 0, -1, 0, 2, 0, 16.865, 0, -4.371139e-08, 6.88902, 0, 8.596893)
+gi_mode = 0
+mesh = ExtResource("6_mdna1")
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3014908, 1.0994806, -4.411682)
+intensity = 0.6
+size = Vector3(4.942032, 3.785797, 3.0726318)
+box_projection = true
+interior = true
+enable_shadows = true
+ambient_mode = 2
+ambient_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
+
+[node name="Monitor" parent="." instance=ExtResource("13_r8s40")]
+transform = Transform3D(-0.39, 0, -4.5298744e-08, 0, 0.325, 0, 5.888836e-08, 0, -0.3, 2.8735883, 1.3592322, 3.8317828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.0744157, 0.06790924)
+mesh = SubResource("PlaneMesh_r8s40")
+surface_material_override/0 = SubResource("StandardMaterial3D_ij4l3")
+
+[node name="DetectorCollision" type="StaticBody3D" parent="Monitor"]
+collision_layer = 16
+collision_mask = 9
+script = ExtResource("14_7wi02")
+ui_scene = ExtResource("15_opvmx")
+has_ui = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/DetectorCollision"]
+transform = Transform3D(1, 0, 4.973799e-14, 0, 1, 0, -2.842171e-14, 0, 1, -0.035491943, 1.1470337, 0)
+shape = SubResource("BoxShape3D_ij4l3")
+
+[node name="Pc" parent="." instance=ExtResource("14_ij4l3")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.9470329, 1.6448047, 3.8515968)
+
+[node name="Keyboard" parent="." instance=ExtResource("15_ij4l3")]
+transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 2.7685122, 1.0081749, 3.183483)
