@@ -1,9 +1,11 @@
 extends PanelContainer
 
+signal quest_accepted
+
 @onready var quest_list: QuestList = %QuestList
 @onready var client_grid_list: GridContainer = %ClientGridList
 
-@export var list_item: PackedScene
+@export var list_item: PackedScene = preload("res://Scenes/UI/level_item.tscn")
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,25 +14,33 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_easy_button_pressed() -> void:
-	show_easy_quest()
+	show_quest("easy")
 
 
 func _on_moderate_button_pressed() -> void:
-	pass # Replace with function body.
+	show_quest("moderate")
 
 
 func _on_hard_button_pressed() -> void:
-	pass # Replace with function body.
+	show_quest("hard")
 
-func show_easy_quest() -> void:
+func show_quest(diff: String) -> void:
 	clear_list()
-	var list: Array[Quest] = quest_list.easy_quest
+	var list: Array[Quest]
+	match diff:
+		"easy": list = quest_list.easy_quest
+		"moderate": list = quest_list.moderate_quest
+		"hard": list = quest_list.hard_quest
 	for quest in list:
-		pass
+		var item_instance: LevelItem = list_item.instantiate()
+		item_instance.client_accepted.connect(accept_button_pressed)
+		client_grid_list.add_child(item_instance)
+		item_instance.quest = quest
+		item_instance.init_item()
 
 func clear_list() -> void:
 	for child in client_grid_list.get_children():
 		child.queue_free()
 
-func instanciate_list_item(quest: Quest) -> void:
-	pass
+func accept_button_pressed(quest: Quest) -> void:
+	print(quest)

@@ -1,6 +1,6 @@
-extends PanelContainer
+class_name LevelItem extends PanelContainer
 
-signal client_accepted()
+signal client_accepted(work: Quest)
 
 @onready var client_id: Label = %ClientNumber
 @onready var complaint_label: Label = %ComplaintLabel
@@ -14,4 +14,4 @@ func init_item() -> void:
 	complaint_label.text = quest.complaint
 
 func _on_accept_button_pressed() -> void:
-	pass # Replace with function body.
+	client_accepted.emit(quest)

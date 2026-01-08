@@ -1,7 +1,286 @@
-[gd_scene load_steps=2 format=3 uid="uid://udq5n3c656wl"]
+[gd_scene load_steps=39 format=3 uid="uid://udq5n3c656wl"]
 
 [ext_resource type="PackedScene" uid="uid://btxfa6tqmcjpk" path="res://Assets/Resources/3d Models/PC Components/Case/case.tscn" id="1_c830r"]
+[ext_resource type="Script" uid="uid://c51gmm3jvm2cj" path="res://Scripts/Objects/computer.gd" id="1_p73vt"]
+[ext_resource type="Script" uid="uid://hgbgekrw1n4p" path="res://Scripts/Quests/quest_condition.gd" id="2_30qfc"]
+[ext_resource type="PackedScene" uid="uid://bm3o4x3ku2760" path="res://Assets/Resources/3d Models/PC Components/Motherboard/Motherboard.blend" id="2_hfnwu"]
+[ext_resource type="Script" uid="uid://dl17x06gixwkn" path="res://Scripts/Quests/component_state.gd" id="3_g3oml"]
+[ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="3_q17hr"]
+[ext_resource type="PackedScene" uid="uid://mu1sbqv0ag7j" path="res://Assets/Resources/3d Models/PC Components/CPU/CartoonCPU.blend" id="3_yua5f"]
+[ext_resource type="Script" uid="uid://b6asgc2ojnuvg" path="res://Scripts/Quests/component_type.gd" id="4_5itcf"]
+[ext_resource type="PackedScene" uid="uid://c7lww7bdaaae1" path="res://Assets/Resources/3d Models/PC Components/RAM/CartoonRAM.blend" id="4_caqkj"]
+[ext_resource type="PackedScene" uid="uid://d2u5afuaoatvg" path="res://Assets/Resources/3d Models/PC Components/GPU/GPU.blend" id="5_37nt6"]
+[ext_resource type="PackedScene" uid="uid://x5bagbq6ycbh" path="res://Assets/Resources/3d Models/PC Components/Case/psu.tscn" id="6_37nt6"]
+[ext_resource type="PackedScene" uid="uid://dglewya0y2g18" path="res://Assets/Resources/3d Models/PC Components/Storage/CartoonNVMESSD.blend" id="6_n7d1v"]
+[ext_resource type="PackedScene" uid="uid://bkwtvdsfqq02j" path="res://Assets/Resources/3d Models/PC Components/CPU Cooler/CPUCooler.blend" id="7_cko6k"]
+[ext_resource type="PackedScene" uid="uid://c1m6fxta4308s" path="res://Assets/Resources/3d Models/PC Components/Fan/fan.tscn" id="8_ue6n6"]
+[ext_resource type="PackedScene" uid="uid://bjhbj1jvf0ljf" path="res://Scenes/Object/dirty_particle_emitter.tscn" id="11_tc54y"]
+[ext_resource type="PackedScene" uid="uid://mjai6liwtxe1" path="res://Assets/Resources/3d Models/PC Components/Case/front_panel.tscn" id="11_tyvka"]
+
+[sub_resource type="Resource" id="Resource_8lyjr"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_pu67r"]
+script = ExtResource("4_5itcf")
+component_state = SubResource("Resource_8lyjr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_3y36k"]
+script = ExtResource("2_30qfc")
+component_type = SubResource("Resource_pu67r")
+metadata/_custom_type_script = "uid://hgbgekrw1n4p"
+
+[sub_resource type="Resource" id="Resource_g3oml"]
+script = ExtResource("3_q17hr")
+quest_id = "Test00"
+initial_conditions = Array[ExtResource("2_30qfc")]([SubResource("Resource_3y36k")])
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_5itcf"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_b8jlm"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_skcs0"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_sirx0"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_d68of"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_0pk7l"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_poq5w"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7p3qu"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_qvi1a"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_b6wpq"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_0s64x"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_5ndx6"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_nff6l"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c1yo6"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_01x0e"]
+script = ExtResource("3_g3oml")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Animation" id="Animation_tc54y"]
+resource_name = "motherboard_install"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.007992387, 0, 0), Vector3(-0.008, 0.2, 0), Vector3(-0.007992387, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_5jr16"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.007992387, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_30qfc"]
+_data = {
+&"RESET": SubResource("Animation_5jr16"),
+&"motherboard_install": SubResource("Animation_tc54y")
+}
 
 [node name="Computer" type="Node3D"]
+script = ExtResource("1_p73vt")
+quest_data = SubResource("Resource_g3oml")
+motherboard_state = SubResource("Resource_5itcf")
+cpu_state = SubResource("Resource_b8jlm")
+ram_state = SubResource("Resource_skcs0")
+gpu_state = SubResource("Resource_sirx0")
+storage_state = SubResource("Resource_d68of")
+intake_fan_state = SubResource("Resource_0pk7l")
+exhaust_fan_state = SubResource("Resource_poq5w")
+cpu_cooler_state = SubResource("Resource_7p3qu")
+psu_state = SubResource("Resource_qvi1a")
+display_cable_state = SubResource("Resource_b6wpq")
+power_cable_state = SubResource("Resource_0s64x")
+usb_port_state = SubResource("Resource_5ndx6")
+wifi_state = SubResource("Resource_nff6l")
+audio_state = SubResource("Resource_c1yo6")
+start_up_apps_state = SubResource("Resource_01x0e")
 
-[node name="Case" parent="." instance=ExtResource("1_c830r")]
+[node name="CaseContainer" type="Node3D" parent="."]
+
+[node name="Case" parent="CaseContainer" instance=ExtResource("1_c830r")]
+
+[node name="MotherboardContainer" type="Node3D" parent="CaseContainer"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.06553376, 0.4711965, -0.11012089)
+
+[node name="Motherboard" parent="CaseContainer/MotherboardContainer" instance=ExtResource("2_hfnwu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007992387, 0, 0)
+
+[node name="CPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007856667, 0.007070981, -0.15084788)
+visible = false
+
+[node name="CartoonCPU" parent="CaseContainer/MotherboardContainer/CPUContainer" instance=ExtResource("3_yua5f")]
+
+[node name="RAMContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10475128, -7.450581e-09, -0.1443002)
+visible = false
+
+[node name="RAM1" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013688505, 0, 0)
+
+[node name="CartoonRAM" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM1" instance=ExtResource("4_caqkj")]
+
+[node name="RAM2" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013202667, 0, 0)
+
+[node name="CartoonRAM" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM2" instance=ExtResource("4_caqkj")]
+
+[node name="GPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08794519, 0.004909344, 0.088480234)
+visible = false
+
+[node name="GPU2" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("5_37nt6")]
+
+[node name="SSDContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.038874477, 0.011314519, 0)
+visible = false
+
+[node name="CartoonNVMESSD" parent="CaseContainer/MotherboardContainer/SSDContainer" instance=ExtResource("6_n7d1v")]
+
+[node name="CPUCoolerContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006053686, 0.0135458335, -0.15436432)
+visible = false
+
+[node name="CPUCooler" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" instance=ExtResource("7_cko6k")]
+
+[node name="CPUFanContainer" type="Node3D" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer"]
+transform = Transform3D(-1.9670126e-09, 0.045, 3.758344e-24, -0.045, -1.9670126e-09, 3.3087225e-23, 3.3087225e-23, 0, 0.045, -0.04077947, 0.131673, -4.4703484e-08)
+
+[node name="Fan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUFanContainer" instance=ExtResource("8_ue6n6")]
+
+[node name="PSUContainer" type="Node3D" parent="CaseContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21967931, 0.08551064, 0.033254147)
+
+[node name="PSU" parent="CaseContainer/PSUContainer" instance=ExtResource("6_37nt6")]
+
+[node name="CaseFanContainer" type="Node3D" parent="CaseContainer"]
+
+[node name="ExhaustFanContainer" type="Node3D" parent="CaseContainer/CaseFanContainer"]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, -0.31407994, 0.68262243, 0.07260555)
+
+[node name="Fan" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" instance=ExtResource("8_ue6n6")]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
+
+[node name="IntakeFan1" type="Node3D" parent="CaseContainer/CaseFanContainer"]
+transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.68262243, 0.035289466)
+
+[node name="Fan" parent="CaseContainer/CaseFanContainer/IntakeFan1" instance=ExtResource("8_ue6n6")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="IntakeFan2" type="Node3D" parent="CaseContainer/CaseFanContainer"]
+transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.4761976, 0.035289466)
+
+[node name="Fan" parent="CaseContainer/CaseFanContainer/IntakeFan2" instance=ExtResource("8_ue6n6")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="SidePanelContainer" type="Node3D" parent="."]
+
+[node name="FrontPanel" parent="SidePanelContainer" instance=ExtResource("11_tyvka")]
+transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0, 0.41102928, 0.1773068)
+
+[node name="BackPanel" parent="SidePanelContainer" instance=ExtResource("11_tyvka")]
+transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0, 0.41102928, -0.17462012)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_30qfc")
+}
+
+[node name="ParticleEmitters" type="Node3D" parent="."]
+
+[node name="CPUCoolerParticleEmitter" parent="ParticleEmitters" instance=ExtResource("11_tc54y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05919461, 0.60545796, 0.049930513)
+emitting = false
+local_coords = true
+
+[node name="ExhaustFanParticleEmitter" parent="ParticleEmitters" instance=ExtResource("11_tc54y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33365792, 0.6789605, 0.072109684)
+emitting = false
+local_coords = true
+
+[node name="IntakeFanParticleEmitter" parent="ParticleEmitters" instance=ExtResource("11_tc54y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32123458, 0.4930238, 0.03651336)
+emitting = false
+local_coords = true

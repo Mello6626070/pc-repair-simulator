@@ -1,7 +1,7 @@
 class_name Quest extends Resource
 @export var quest_id: String
-@export var complaint: String
-@export var explaination: String
-@export var initial_conditions: Array[QuestCondition]
-@export var winning_conditions: Array[QuestCondition]
-@export var reward: float
+@export_multiline var complaint: String
+@export_multiline var explaination: String
+@export var initial_conditions: Array[ComponentType] = []
+@export var winning_conditions: Array[ComponentType] = []
+@export var reward: float = 100.0

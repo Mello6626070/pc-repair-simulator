@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjhbj1jvf0ljf"]
+
+[sub_resource type="Curve" id="Curve_njrw0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16831684, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_y8ja8"]
+curve = SubResource("Curve_njrw0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wspur"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 180.0
+gravity = Vector3(0, 1, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 0.04999776
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 0.09999776
+scale_min = 0.01
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_y8ja8")
+turbulence_noise_strength = 0.0
+
+[sub_resource type="Gradient" id="Gradient_njrw0"]
+offsets = PackedFloat32Array(0, 0.37366548, 0.3772242)
+colors = PackedColorArray(0.5803922, 0.48235294, 0, 1, 0.5019608, 0.41568628, 0, 0.3647059, 0.46892625, 0.380262, 0.2681103, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y8ja8"]
+gradient = SubResource("Gradient_njrw0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyodu"]
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_y8ja8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nhdgo"]
+material = SubResource("StandardMaterial3D_kyodu")
+
+[node name="DirtyParticleEmitter" type="GPUParticles3D"]
+amount = 20
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_wspur")
+draw_pass_1 = SubResource("QuadMesh_nhdgo")

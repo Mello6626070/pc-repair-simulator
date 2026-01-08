@@ -7,7 +7,7 @@ extends Control
 
 
 func _ready() -> void:
-	pass
+	login_screen.show()
 
 func _on_login_button_pressed() -> void:
 	login_screen.hide()
@@ -23,9 +23,13 @@ func _on_power_button_pressed() -> void:
 	shut_down_prompt.show()
 
 func _on_shutdown_button_pressed() -> void:
+	var player: Player = get_parent().get_parent()
+	player.current_state = 1
 	queue_free()
 	
 func _on_yes_shut_down_button_pressed() -> void:
+	var player: Player = get_parent().get_parent()
+	player.current_state = 1
 	queue_free()
 
 func _on_no_shut_down_button_pressed() -> void:

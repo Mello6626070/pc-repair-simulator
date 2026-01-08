@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1l3en8ghdjlw"]
+
+[ext_resource type="PackedScene" uid="uid://b7i3fe40854w0" path="res://Assets/Resources/3d Models/PC Components/Storage/PCFan.fbx" id="1_hq8ii"]
+
+[sub_resource type="Animation" id="Animation_hq8ii"]
+resource_name = "FanOn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fan/Plane_002:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.07721076, 0.211935, -0.92268836)]
+}
+
+[sub_resource type="Animation" id="Animation_2e05p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fan/Plane_002:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.07721076, 0.211935, -0.92268836)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6ljm"]
+_data = {
+&"FanOn": SubResource("Animation_hq8ii"),
+&"RESET": SubResource("Animation_2e05p")
+}
+
+[node name="PCFan" instance=ExtResource("1_hq8ii")]
+
+[node name="Plane_002" parent="fan" index="5"]
+transform = Transform3D(0.5752437, 0.73403955, 0.2000359, -0.7581297, 0.57407355, 0.073570445, -0.06377828, -0.2033699, 0.9296809, -0.00010092338, -0.00017233577, 0.0016973414)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_o6ljm")
+}

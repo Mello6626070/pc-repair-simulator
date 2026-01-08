@@ -1,15 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://dsika842cj85v"]
+[gd_scene load_steps=21 format=3 uid="uid://dsika842cj85v"]
 
 [ext_resource type="Theme" uid="uid://2nuei3rxhon2" path="res://Assets/Resources/theme.tres" id="1_vi77b"]
 [ext_resource type="Script" uid="uid://4ymry88c3ni2" path="res://Scripts/UI/work_computer_screen.gd" id="1_yfn37"]
 [ext_resource type="Texture2D" uid="uid://ceavtr03v2b37" path="res://Assets/Resources/UI/windows-x-p-bliss-wallpaper-cartoon-version-4jh1qoyhci02p5d8.jpg" id="3_d7v3h"]
 [ext_resource type="Script" uid="uid://cw7l2uwfit5ub" path="res://Scripts/UI/work_screen.gd" id="4_8uiv3"]
-[ext_resource type="PackedScene" uid="uid://deb5nhc5xgogi" path="res://Scenes/UI/level_item.tscn" id="4_83ua0"]
 [ext_resource type="Script" uid="uid://jhjk5n6vofyn" path="res://Scripts/Quests/quest_list.gd" id="5_ggagi"]
-[ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="6_dnytd"]
-[ext_resource type="Script" uid="uid://hgbgekrw1n4p" path="res://Scripts/Quests/quest_condition.gd" id="7_8uiv3"]
-[ext_resource type="Script" uid="uid://dl17x06gixwkn" path="res://Scripts/Quests/component_state.gd" id="8_dnytd"]
-[ext_resource type="Script" uid="uid://b6asgc2ojnuvg" path="res://Scripts/Quests/component_type.gd" id="8_ygl6q"]
+[ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="6_sl5fi"]
+[ext_resource type="Script" uid="uid://hgbgekrw1n4p" path="res://Scripts/Quests/quest_condition.gd" id="7_wr0o4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83ua0"]
 texture = ExtResource("3_d7v3h")
@@ -21,7 +18,17 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="Resource" id="Resource_ggagi"]
+script = ExtResource("6_sl5fi")
+quest_id = "E00"
+complaint = "WTF"
+explaination = "WTH"
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
 [sub_resource type="FontFile" id="FontFile_d7v3h"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/32/0/ascent = 0.0
 cache/0/32/0/descent = 0.0
 cache/0/32/0/underline_position = 0.0
@@ -42,6 +49,16 @@ cache/0/64/0/descent = 0.0
 cache/0/64/0/underline_position = 0.0
 cache/0/64/0/underline_thickness = 0.0
 cache/0/64/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygl6q"]
 bg_color = Color(0.98039216, 0.15294118, 0.14901961, 1)
@@ -52,46 +69,6 @@ bg_color = Color(0.98039216, 0.15294118, 0.14901961, 1)
 bg_color = Color(0.9529412, 0.9529412, 0.9529412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wr0o4"]
-
-[sub_resource type="Resource" id="Resource_8uiv3"]
-script = ExtResource("8_dnytd")
-state = 4
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_g0mym"]
-script = ExtResource("8_ygl6q")
-type = 4
-metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
-
-[sub_resource type="Resource" id="Resource_xxf6b"]
-script = ExtResource("7_8uiv3")
-component_type = SubResource("Resource_g0mym")
-component_state = SubResource("Resource_8uiv3")
-metadata/_custom_type_script = "uid://hgbgekrw1n4p"
-
-[sub_resource type="Resource" id="Resource_dnytd"]
-script = ExtResource("8_dnytd")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_ygl6q"]
-script = ExtResource("8_ygl6q")
-type = 4
-metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
-
-[sub_resource type="Resource" id="Resource_ru1sr"]
-script = ExtResource("7_8uiv3")
-component_type = SubResource("Resource_ygl6q")
-component_state = SubResource("Resource_dnytd")
-metadata/_custom_type_script = "uid://hgbgekrw1n4p"
-
-[sub_resource type="Resource" id="Resource_8v5mw"]
-script = ExtResource("6_dnytd")
-quest_id = "E00"
-complaint = "“My PC won’t turn on.”"
-explaination = "Check if the power cable is plugged in and the switch is turned on."
-initial_conditions = Array[ExtResource("7_8uiv3")]([SubResource("Resource_xxf6b")])
-winning_conditions = Array[ExtResource("7_8uiv3")]([SubResource("Resource_ru1sr")])
-metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uiv3"]
 bg_color = Color(0.9529412, 0.9529412, 0.9529412, 1)
@@ -164,10 +141,16 @@ theme_override_constants/margin_bottom = 16
 
 [node name="WorkScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_swodi")
 script = ExtResource("4_8uiv3")
-list_item = ExtResource("4_83ua0")
+
+[node name="QuestList" type="Node" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen"]
+unique_name_in_owner = true
+script = ExtResource("5_ggagi")
+easy_quest = Array[ExtResource("6_sl5fi")]([SubResource("Resource_ggagi")])
+metadata/_custom_type_script = "uid://jhjk5n6vofyn"
 
 [node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen"]
 layout_mode = 2
@@ -191,11 +174,13 @@ theme_override_font_sizes/font_size = 72
 text = "WORK"
 
 [node name="WorkExitButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 40)
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontFile_d7v3h")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_ygl6q")
 text = "X"
 icon_alignment = 1
@@ -267,15 +252,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
-
-[node name="LevelItem" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/ClientList/MarginContainer/ScrollContainer/ClientGridList" instance=ExtResource("4_83ua0")]
-layout_mode = 2
-
-[node name="QuestList" type="Node" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen"]
-unique_name_in_owner = true
-script = ExtResource("5_ggagi")
-easy_quest = Array[ExtResource("6_dnytd")]([SubResource("Resource_8v5mw")])
-metadata/_custom_type_script = "uid://jhjk5n6vofyn"
 
 [node name="ShutDownPrompt" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer"]
 unique_name_in_owner = true

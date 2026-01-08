@@ -4,7 +4,7 @@ enum STATE{
 	LOOSE,
 	MISSING,
 	DISCONNECTED,
-	OFF,
-	DIRTY
+	DIRTY,
+	DISABLED
 }
 @export var state: STATE
