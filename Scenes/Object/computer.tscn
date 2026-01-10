@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://udq5n3c656wl"]
+[gd_scene load_steps=44 format=3 uid="uid://udq5n3c656wl"]
 
 [ext_resource type="PackedScene" uid="uid://btxfa6tqmcjpk" path="res://Assets/Resources/3d Models/PC Components/Case/case.tscn" id="1_c830r"]
 [ext_resource type="Script" uid="uid://c51gmm3jvm2cj" path="res://Scripts/Objects/computer.gd" id="1_p73vt"]
@@ -359,26 +359,133 @@ tracks/22/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("SidePanelContainer/FrontPanel:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.41102928, 0.1773068)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("SidePanelContainer/BackPanel:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.41102928, -0.17462012)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("SidePanelContainer/FrontPanel:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("SidePanelContainer/BackPanel:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="Animation" id="Animation_tc54y"]
-resource_name = "motherboard_install"
+[sub_resource type="Animation" id="Animation_8lyjr"]
+resource_name = "cpu_cooler_install"
 length = 0.5
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:position")
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_pu67r"]
+resource_name = "cpu_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_b8jlm"]
+resource_name = "exhaust_fan_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
 "transitions": PackedFloat32Array(1e-05, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.007992387, 0, 0), Vector3(0.04, 0.2, 0), Vector3(0.04, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0.2), Vector3(0, -0.01, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:visible")
+tracks/1/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -408,6 +515,116 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_3y36k"]
+resource_name = "intake_fan_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.05, -0.2), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.36, 0.46),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.05, -0.2), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_tc54y"]
+resource_name = "motherboard_install"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.007992387, 0, 0), Vector3(0.04, 0.2, 0), Vector3(0.04, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_skcs0"]
+resource_name = "psu_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/PSUContainer/PSU:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.03, 0, 0.2), Vector3(0.03, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/PSUContainer/PSU:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -511,96 +728,38 @@ tracks/2/keys = {
 "values": [false, true, true]
 }
 
-[sub_resource type="Animation" id="Animation_8lyjr"]
-resource_name = "cpu_cooler_install"
+[sub_resource type="Animation" id="Animation_sirx0"]
+resource_name = "side_panel_install"
 length = 0.5
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1e-05, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_pu67r"]
-resource_name = "cpu_install"
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1e-05, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_3y36k"]
-resource_name = "intake_fan_install"
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:position")
+tracks/0/path = NodePath("SidePanelContainer/FrontPanel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
 "transitions": PackedFloat32Array(1e-05, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.05, -0.2), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0.41102928, 0.1773068), Vector3(0, 1.5, 0.2), Vector3(0, 0.411, 0.2), Vector3(0, 0.41102928, 0.1773068)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:position")
+tracks/1/path = NodePath("SidePanelContainer/BackPanel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.36, 0.46),
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
 "transitions": PackedFloat32Array(1e-05, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.05, -0.2), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0.41102928, -0.17462012), Vector3(0, 1.5, -0.2), Vector3(0, 0.411, -0.2), Vector3(0, 0.41102928, -0.17462012)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:visible")
+tracks/2/path = NodePath("SidePanelContainer/FrontPanel:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -612,68 +771,10 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:visible")
+tracks/3/path = NodePath("SidePanelContainer/BackPanel:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_b8jlm"]
-resource_name = "exhaust_fan_install"
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
-"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0.2), Vector3(0, -0.01, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_skcs0"]
-resource_name = "psu_install"
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/PSUContainer/PSU:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
-"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.03, 0, 0.2), Vector3(0.03, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/PSUContainer/PSU:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -691,6 +792,7 @@ _data = {
 &"motherboard_install": SubResource("Animation_tc54y"),
 &"psu_install": SubResource("Animation_skcs0"),
 &"ram_install": SubResource("Animation_g3oml"),
+&"side_panel_install": SubResource("Animation_sirx0"),
 &"ssd_install": SubResource("Animation_5itcf")
 }
 
@@ -803,7 +905,6 @@ transform = Transform3D(8.742278e-07, 20, -7.6427424e-14, 20, -8.742278e-07, -1.
 local_coords = true
 
 [node name="SidePanelContainer" type="Node3D" parent="."]
-visible = false
 
 [node name="FrontPanel" parent="SidePanelContainer" instance=ExtResource("11_tyvka")]
 transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0, 0.41102928, 0.1773068)

@@ -28,6 +28,7 @@ var current_state: int
 
 func _ready() -> void:
 	current_state = States.NORMAL
+	print("mouse captured")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event: InputEvent) -> void:
