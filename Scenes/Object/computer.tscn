@@ -1,8 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://udq5n3c656wl"]
+[gd_scene load_steps=43 format=3 uid="uid://udq5n3c656wl"]
 
 [ext_resource type="PackedScene" uid="uid://btxfa6tqmcjpk" path="res://Assets/Resources/3d Models/PC Components/Case/case.tscn" id="1_c830r"]
 [ext_resource type="Script" uid="uid://c51gmm3jvm2cj" path="res://Scripts/Objects/computer.gd" id="1_p73vt"]
-[ext_resource type="Script" uid="uid://hgbgekrw1n4p" path="res://Scripts/Quests/quest_condition.gd" id="2_30qfc"]
 [ext_resource type="PackedScene" uid="uid://bm3o4x3ku2760" path="res://Assets/Resources/3d Models/PC Components/Motherboard/Motherboard.blend" id="2_hfnwu"]
 [ext_resource type="Script" uid="uid://dl17x06gixwkn" path="res://Scripts/Quests/component_state.gd" id="3_g3oml"]
 [ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="3_q17hr"]
@@ -17,24 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://bjhbj1jvf0ljf" path="res://Scenes/Object/dirty_particle_emitter.tscn" id="11_tc54y"]
 [ext_resource type="PackedScene" uid="uid://mjai6liwtxe1" path="res://Assets/Resources/3d Models/PC Components/Case/front_panel.tscn" id="11_tyvka"]
 
-[sub_resource type="Resource" id="Resource_8lyjr"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_pu67r"]
-script = ExtResource("4_5itcf")
-component_state = SubResource("Resource_8lyjr")
-metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
-
-[sub_resource type="Resource" id="Resource_3y36k"]
-script = ExtResource("2_30qfc")
-component_type = SubResource("Resource_pu67r")
-metadata/_custom_type_script = "uid://hgbgekrw1n4p"
-
 [sub_resource type="Resource" id="Resource_g3oml"]
 script = ExtResource("3_q17hr")
 quest_id = "Test00"
-initial_conditions = Array[ExtResource("2_30qfc")]([SubResource("Resource_3y36k")])
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_5itcf"]
@@ -97,34 +81,6 @@ metadata/_custom_type_script = "uid://dl17x06gixwkn"
 script = ExtResource("3_g3oml")
 metadata/_custom_type_script = "uid://dl17x06gixwkn"
 
-[sub_resource type="Animation" id="Animation_tc54y"]
-resource_name = "motherboard_install"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.007992387, 0, 0), Vector3(-0.008, 0.2, 0), Vector3(-0.007992387, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
 [sub_resource type="Animation" id="Animation_5jr16"]
 length = 0.001
 tracks/0/type = "value"
@@ -151,11 +107,591 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("CaseContainer/PSUContainer/PSU:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("CaseContainer/PSUContainer/PSU:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tc54y"]
+resource_name = "motherboard_install"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.007992387, 0, 0), Vector3(0.04, 0.2, 0), Vector3(0.04, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_q17hr"]
+resource_name = "gpu_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, -2, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02, 0.2, 0), Vector3(0.02, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_g3oml"]
+resource_name = "ram_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.35),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1.328361e-05, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_5itcf"]
+resource_name = "ssd_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.35, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0.01), Vector3(0, 0, 0.01), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.35, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.34906584, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_8lyjr"]
+resource_name = "cpu_cooler_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_pu67r"]
+resource_name = "cpu_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/CPUContainer/CartoonCPU:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_3y36k"]
+resource_name = "intake_fan_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.05, -0.2), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.36, 0.46),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.05, -0.2), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_b8jlm"]
+resource_name = "exhaust_fan_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0.2), Vector3(0, -0.01, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_skcs0"]
+resource_name = "psu_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/PSUContainer/PSU:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.03, 0, 0.2), Vector3(0.03, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/PSUContainer/PSU:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30qfc"]
 _data = {
 &"RESET": SubResource("Animation_5jr16"),
-&"motherboard_install": SubResource("Animation_tc54y")
+&"cpu_cooler_install": SubResource("Animation_8lyjr"),
+&"cpu_install": SubResource("Animation_pu67r"),
+&"exhaust_fan_install": SubResource("Animation_b8jlm"),
+&"gpu_install": SubResource("Animation_q17hr"),
+&"intake_fan_install": SubResource("Animation_3y36k"),
+&"motherboard_install": SubResource("Animation_tc54y"),
+&"psu_install": SubResource("Animation_skcs0"),
+&"ram_install": SubResource("Animation_g3oml"),
+&"ssd_install": SubResource("Animation_5itcf")
 }
 
 [node name="Computer" type="Node3D"]
@@ -188,14 +724,12 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007992387, 0, 0)
 
 [node name="CPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007856667, 0.007070981, -0.15084788)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008932352, 0.007070981, -0.15084788)
 
 [node name="CartoonCPU" parent="CaseContainer/MotherboardContainer/CPUContainer" instance=ExtResource("3_yua5f")]
 
 [node name="RAMContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10475128, -7.450581e-09, -0.1443002)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113864, -7.450581e-09, -0.1443002)
 
 [node name="RAM1" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013688505, 0, 0)
@@ -209,26 +743,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013202667, 0, 0)
 
 [node name="GPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08794519, 0.004909344, 0.088480234)
-visible = false
 
 [node name="GPU2" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("5_37nt6")]
 
 [node name="SSDContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.038874477, 0.011314519, 0)
-visible = false
 
 [node name="CartoonNVMESSD" parent="CaseContainer/MotherboardContainer/SSDContainer" instance=ExtResource("6_n7d1v")]
 
 [node name="CPUCoolerContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006053686, 0.0135458335, -0.15436432)
-visible = false
 
 [node name="CPUCooler" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" instance=ExtResource("7_cko6k")]
 
-[node name="CPUFanContainer" type="Node3D" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer"]
-transform = Transform3D(-1.9670126e-09, 0.045, 3.758344e-24, -0.045, -1.9670126e-09, 3.3087225e-23, 3.3087225e-23, 0, 0.045, -0.04077947, 0.131673, -4.4703484e-08)
+[node name="CPUFanContainer" type="Node3D" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler"]
+transform = Transform3D(-1.9670126e-09, 0.045, -7.516685e-24, -0.045, -1.9670126e-09, 0, 0, -8.598086e-17, 0.045, -0.04077947, 0.131673, -5.9604645e-08)
 
-[node name="Fan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUFanContainer" instance=ExtResource("8_ue6n6")]
+[node name="Fan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler/CPUFanContainer" instance=ExtResource("8_ue6n6")]
+
+[node name="CPUCoolerParticleEmitter" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler" instance=ExtResource("11_tc54y")]
+transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, -0.012392834, 0.14650556, -0.020102859)
+local_coords = true
 
 [node name="PSUContainer" type="Node3D" parent="CaseContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21967931, 0.08551064, 0.033254147)
@@ -243,11 +778,19 @@ transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-
 [node name="Fan" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" instance=ExtResource("8_ue6n6")]
 transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
 
+[node name="ExhaustFanParticleEmitter" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan" instance=ExtResource("11_tc54y")]
+transform = Transform3D(-9.713642e-07, 22.222223, 0, -22.222223, -9.713642e-07, 0, 0, 0, 22.222221, -0.081376076, -0.9748521, -0.01101923)
+local_coords = true
+
 [node name="IntakeFan1" type="Node3D" parent="CaseContainer/CaseFanContainer"]
 transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.68262243, 0.035289466)
 
 [node name="Fan" parent="CaseContainer/CaseFanContainer/IntakeFan1" instance=ExtResource("8_ue6n6")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="IntakeFanParticleEmitter" parent="CaseContainer/CaseFanContainer/IntakeFan1/Fan" instance=ExtResource("11_tc54y")]
+transform = Transform3D(8.742278e-07, 20, -7.6427424e-14, 20, -8.742278e-07, -1.7484556e-06, -1.7484554e-06, 6.6174453e-21, -19.999998, -3.7919722, -1.0435629, -0.02447778)
+local_coords = true
 
 [node name="IntakeFan2" type="Node3D" parent="CaseContainer/CaseFanContainer"]
 transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.4761976, 0.035289466)
@@ -255,7 +798,12 @@ transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4
 [node name="Fan" parent="CaseContainer/CaseFanContainer/IntakeFan2" instance=ExtResource("8_ue6n6")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
+[node name="IntakeFanParticleEmitter2" parent="CaseContainer/CaseFanContainer/IntakeFan2/Fan" instance=ExtResource("11_tc54y")]
+transform = Transform3D(8.742278e-07, 20, -7.6427424e-14, 20, -8.742278e-07, -1.7484556e-06, -1.7484554e-06, 6.6174453e-21, -19.999998, 4.0372667, -0.769732, -0.02447778)
+local_coords = true
+
 [node name="SidePanelContainer" type="Node3D" parent="."]
+visible = false
 
 [node name="FrontPanel" parent="SidePanelContainer" instance=ExtResource("11_tyvka")]
 transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0, 0.41102928, 0.1773068)
@@ -269,18 +817,3 @@ libraries = {
 }
 
 [node name="ParticleEmitters" type="Node3D" parent="."]
-
-[node name="CPUCoolerParticleEmitter" parent="ParticleEmitters" instance=ExtResource("11_tc54y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05919461, 0.60545796, 0.049930513)
-emitting = false
-local_coords = true
-
-[node name="ExhaustFanParticleEmitter" parent="ParticleEmitters" instance=ExtResource("11_tc54y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33365792, 0.6789605, 0.072109684)
-emitting = false
-local_coords = true
-
-[node name="IntakeFanParticleEmitter" parent="ParticleEmitters" instance=ExtResource("11_tc54y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32123458, 0.4930238, 0.03651336)
-emitting = false
-local_coords = true

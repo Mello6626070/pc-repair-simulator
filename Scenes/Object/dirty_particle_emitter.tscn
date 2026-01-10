@@ -23,8 +23,8 @@ scale_curve = SubResource("CurveTexture_y8ja8")
 turbulence_noise_strength = 0.0
 
 [sub_resource type="Gradient" id="Gradient_njrw0"]
-offsets = PackedFloat32Array(0, 0.37366548, 0.3772242)
-colors = PackedColorArray(0.5803922, 0.48235294, 0, 1, 0.5019608, 0.41568628, 0, 0.3647059, 0.46892625, 0.380262, 0.2681103, 0)
+offsets = PackedFloat32Array(0, 0.1919192, 0.3772242)
+colors = PackedColorArray(0.23598656, 0.19108805, 1.4439226e-07, 1, 0.2823245, 0.23007214, 0, 0.3647059, 0.12149475, 0.09027813, 0.05060643, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y8ja8"]
 gradient = SubResource("Gradient_njrw0")
@@ -40,7 +40,6 @@ albedo_texture = SubResource("GradientTexture2D_y8ja8")
 material = SubResource("StandardMaterial3D_kyodu")
 
 [node name="DirtyParticleEmitter" type="GPUParticles3D"]
-amount = 20
 transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_wspur")
 draw_pass_1 = SubResource("QuadMesh_nhdgo")

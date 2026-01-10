@@ -55,4 +55,7 @@ func apply_quest_data() -> void:
 				start_up_apps_state = condition.component_state
 
 func update_components():
+	update_cpu()
+
+func update_cpu() -> void:
 	pass
