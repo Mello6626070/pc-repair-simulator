@@ -5,9 +5,11 @@ extends Control
 @onready var work_screen: PanelContainer = %WorkScreen
 @onready var shut_down_prompt: CenterContainer = %ShutDownPrompt
 
+var player: Player
 
 func _ready() -> void:
 	login_screen.show()
+	player = get_parent().get_parent()
 
 func _on_login_button_pressed() -> void:
 	login_screen.hide()
@@ -34,3 +36,7 @@ func _on_yes_shut_down_button_pressed() -> void:
 
 func _on_no_shut_down_button_pressed() -> void:
 	shut_down_prompt.hide()
+
+
+func _on_work_screen_quest_accepted(quest: Quest) -> void:
+	player.quest_select(quest)

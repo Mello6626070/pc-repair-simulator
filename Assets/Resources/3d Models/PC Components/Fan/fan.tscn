@@ -383,4 +383,3 @@ root_node = NodePath("../fan/FanCenter")
 libraries = {
 &"": SubResource("AnimationLibrary_f1oty")
 }
-autoplay = "FanSpin"

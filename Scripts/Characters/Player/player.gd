@@ -1,4 +1,5 @@
 class_name Player extends CharacterBody3D
+signal post_selected_quest(quest: Quest)
 
 @export_category("Camera Stuff")
 @export var mouse_sens: float = 0.5
@@ -25,6 +26,8 @@ var tilt_input: float
 var player_rotation: Vector3
 var camera_rotation: Vector3
 var current_state: int
+var target_pc: Computer
+var quest_finished: bool
 
 func _ready() -> void:
 	current_state = States.NORMAL
@@ -60,7 +63,7 @@ func interact_cast():
 		var type: String
 		if target:
 			if target.has_method("grab"):
-				interactable_indicator.text = "Press E to grab"
+				interactable_indicator.text = "Press E to interact"
 				type = "grabbable"
 			elif target.has_method("interact"):
 				interactable_indicator.text = "Press E to interact"
@@ -73,19 +76,26 @@ func interact_cast():
 
 func interact(target, type: String) -> void:
 	match type:
-		"grabbable": target.grab(self)
+		"grabbable": 
+			target.grab(self)
+			print("grabbed")
 		"interactable": 
 			target.interact(self)
 			if target.has_ui:
 				var ui: Control = target.ui_scene.instantiate()
 				current_state = States.ON_UI
 				interactables_ui.add_child(ui)
+				print(target_pc)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit"):
+			get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+		
 
 func _process(delta: float) -> void:
 	if current_state == States.NORMAL:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		if Input.is_action_just_pressed("exit"):
-			get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+		
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -105,3 +115,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+
+func quest_select(quest: Quest) -> void:
+	post_selected_quest.emit(quest)

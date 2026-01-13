@@ -1,6 +1,6 @@
 extends PanelContainer
 
-signal quest_accepted
+signal quest_accepted(quest: Quest)
 
 @onready var quest_list: QuestList = %QuestList
 @onready var client_grid_list: GridContainer = %ClientGridList
@@ -43,4 +43,4 @@ func clear_list() -> void:
 		child.queue_free()
 
 func accept_button_pressed(quest: Quest) -> void:
-	print(quest)
+	quest_accepted.emit(quest)

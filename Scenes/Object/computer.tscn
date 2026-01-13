@@ -1,9 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://udq5n3c656wl"]
+[gd_scene load_steps=46 format=3 uid="uid://udq5n3c656wl"]
 
 [ext_resource type="PackedScene" uid="uid://btxfa6tqmcjpk" path="res://Assets/Resources/3d Models/PC Components/Case/case.tscn" id="1_c830r"]
 [ext_resource type="Script" uid="uid://c51gmm3jvm2cj" path="res://Scripts/Objects/computer.gd" id="1_p73vt"]
 [ext_resource type="PackedScene" uid="uid://bm3o4x3ku2760" path="res://Assets/Resources/3d Models/PC Components/Motherboard/Motherboard.blend" id="2_hfnwu"]
-[ext_resource type="Script" uid="uid://dl17x06gixwkn" path="res://Scripts/Quests/component_state.gd" id="3_g3oml"]
 [ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="3_q17hr"]
 [ext_resource type="PackedScene" uid="uid://mu1sbqv0ag7j" path="res://Assets/Resources/3d Models/PC Components/CPU/CartoonCPU.blend" id="3_yua5f"]
 [ext_resource type="Script" uid="uid://b6asgc2ojnuvg" path="res://Scripts/Quests/component_type.gd" id="4_5itcf"]
@@ -15,71 +14,29 @@
 [ext_resource type="PackedScene" uid="uid://c1m6fxta4308s" path="res://Assets/Resources/3d Models/PC Components/Fan/fan.tscn" id="8_ue6n6"]
 [ext_resource type="PackedScene" uid="uid://bjhbj1jvf0ljf" path="res://Scenes/Object/dirty_particle_emitter.tscn" id="11_tc54y"]
 [ext_resource type="PackedScene" uid="uid://mjai6liwtxe1" path="res://Assets/Resources/3d Models/PC Components/Case/front_panel.tscn" id="11_tyvka"]
+[ext_resource type="PackedScene" uid="uid://dial4ywu24llo" path="res://Scenes/Object/selected_indicator.tscn" id="13_q17hr"]
+[ext_resource type="Script" uid="uid://bnkhnxwloj5tf" path="res://Scripts/Objects/computer_raycast_detector.gd" id="16_g3oml"]
+[ext_resource type="PackedScene" uid="uid://cfuv1dqfj6iiu" path="res://Scenes/UI/computer_repair.tscn" id="17_5itcf"]
 
 [sub_resource type="Resource" id="Resource_g3oml"]
 script = ExtResource("3_q17hr")
 quest_id = "Test00"
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
-[sub_resource type="Resource" id="Resource_5itcf"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5itcf"]
+albedo_color = Color(0.24115604, 0.24115604, 0.24115604, 1)
 
-[sub_resource type="Resource" id="Resource_b8jlm"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
+[sub_resource type="BoxMesh" id="BoxMesh_5itcf"]
+material = SubResource("StandardMaterial3D_5itcf")
+size = Vector3(0.075, 0.035, 0.03)
 
-[sub_resource type="Resource" id="Resource_skcs0"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
+[sub_resource type="CylinderMesh" id="CylinderMesh_8lyjr"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 1.0
 
-[sub_resource type="Resource" id="Resource_sirx0"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_d68of"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_0pk7l"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_poq5w"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_7p3qu"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_qvi1a"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_b6wpq"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_0s64x"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_5ndx6"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_nff6l"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_c1yo6"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
-
-[sub_resource type="Resource" id="Resource_01x0e"]
-script = ExtResource("3_g3oml")
-metadata/_custom_type_script = "uid://dl17x06gixwkn"
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lyjr"]
+albedo_color = Color(0.32544088, 0.3254409, 0.32544088, 1)
 
 [sub_resource type="Animation" id="Animation_5jr16"]
 length = 0.001
@@ -110,7 +67,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:position")
+tracks/2/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -122,7 +79,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:visible")
+tracks/3/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -134,7 +91,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:position")
+tracks/4/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM1:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -146,7 +103,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:position")
+tracks/5/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM2:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -158,7 +115,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:visible")
+tracks/6/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM1:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -170,7 +127,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:visible")
+tracks/7/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM2:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -266,7 +223,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:position")
+tracks/15/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/IntakeFan1:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -278,7 +235,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:position")
+tracks/16/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/IntakeFan2:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -290,7 +247,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:visible")
+tracks/17/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/IntakeFan1:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -302,7 +259,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:visible")
+tracks/18/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/IntakeFan2:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -314,7 +271,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:position")
+tracks/19/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/ExhaustFan:position")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -326,7 +283,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:visible")
+tracks/20/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/ExhaustFan:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -407,6 +364,114 @@ tracks/26/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM1:rotation")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM2:rotation")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("DisplayCable:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.31853855, 0.3680521, 0.028820753)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("DisplayCable:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("CaseContainer/PowerCable:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.3457755, 0.116212755, -0.040855303)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("CaseContainer/PowerCable:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("AnimationPlayer:current_animation")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("AnimationPlayer:speed_scale")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_8lyjr"]
 resource_name = "cpu_cooler_install"
@@ -466,6 +531,35 @@ tracks/1/keys = {
 "values": [false, true, true]
 }
 
+[sub_resource type="Animation" id="Animation_0pk7l"]
+resource_name = "display_cable_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DisplayCable:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(-0.31853855, 0.3680521, 0.028820753), Vector3(-0.4, 0.368, 0.029), Vector3(-0.31853855, 0.3680521, 0.028820753)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DisplayCable:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
 [sub_resource type="Animation" id="Animation_b8jlm"]
 resource_name = "exhaust_fan_install"
 length = 0.5
@@ -473,7 +567,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:position")
+tracks/0/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/ExhaustFan:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -485,7 +579,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan:visible")
+tracks/1/path = NodePath("CaseContainer/CaseFanContainer/ExhaustFanContainer/ExhaustFan:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -502,7 +596,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:position")
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -514,7 +608,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU2:visible")
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -524,6 +618,51 @@ tracks/1/keys = {
 "values": [false, true, true]
 }
 
+[sub_resource type="Animation" id="Animation_30qfc"]
+resource_name = "gpu_selected"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/GPUContainer/GPU:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_7p3qu"]
+resource_name = "install_reinstall_cpu"
+length = 1.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:current_animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.01, 0.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"cpu_cooler_install", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+
 [sub_resource type="Animation" id="Animation_3y36k"]
 resource_name = "intake_fan_install"
 length = 0.5
@@ -531,7 +670,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:position")
+tracks/0/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/IntakeFan1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -543,7 +682,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:position")
+tracks/1/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/IntakeFan2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -555,7 +694,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/Fan:visible")
+tracks/2/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan1/IntakeFan1:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -567,7 +706,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/Fan:visible")
+tracks/3/path = NodePath("CaseContainer/CaseFanContainer/IntakeFan2/IntakeFan2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -575,6 +714,36 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_d68of"]
+resource_name = "loose_ram_sway"
+length = 0.7
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.59999996),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.05235988), Vector3(0, 0, 0), Vector3(0, 0, -0.05235988)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19884698, 0.39884698, 0.59999996),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.05235988), Vector3(0, 0, 0), Vector3(0, 0, -0.05235988)]
 }
 
 [sub_resource type="Animation" id="Animation_tc54y"]
@@ -596,6 +765,35 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("CaseContainer/MotherboardContainer/Motherboard:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_poq5w"]
+resource_name = "power_cable_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/PowerCable:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1),
+"update": 0,
+"values": [Vector3(-0.3457755, 0.116212755, -0.040855303), Vector3(-0.5, 0.116, -0.041), Vector3(-0.3457755, 0.116212755, -0.040855303)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/PowerCable:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -641,7 +839,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:position")
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -653,7 +851,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:position")
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -665,7 +863,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM:visible")
+tracks/2/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM1/CartoonRAM1:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -677,53 +875,12 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM:visible")
+tracks/3/path = NodePath("CaseContainer/MotherboardContainer/RAMContainer/RAM2/CartoonRAM2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.5),
 "transitions": PackedFloat32Array(1.328361e-05, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_5itcf"]
-resource_name = "ssd_install"
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.35, 0.5),
-"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0.01), Vector3(0, 0, 0.01), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.35, 0.5),
-"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.34906584, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, true]
 }
@@ -781,39 +938,96 @@ tracks/3/keys = {
 "values": [false, true, true]
 }
 
+[sub_resource type="Animation" id="Animation_5itcf"]
+resource_name = "ssd_install"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.35, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0.01), Vector3(0, 0, 0.01), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.35, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.34906584, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaseContainer/MotherboardContainer/SSDContainer/CartoonNVMESSD:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30qfc"]
 _data = {
 &"RESET": SubResource("Animation_5jr16"),
 &"cpu_cooler_install": SubResource("Animation_8lyjr"),
 &"cpu_install": SubResource("Animation_pu67r"),
+&"display_cable_install": SubResource("Animation_0pk7l"),
 &"exhaust_fan_install": SubResource("Animation_b8jlm"),
 &"gpu_install": SubResource("Animation_q17hr"),
+&"gpu_selected": SubResource("Animation_30qfc"),
+&"install_reinstall_cpu": SubResource("Animation_7p3qu"),
 &"intake_fan_install": SubResource("Animation_3y36k"),
+&"loose_ram_sway": SubResource("Animation_d68of"),
 &"motherboard_install": SubResource("Animation_tc54y"),
+&"power_cable_install": SubResource("Animation_poq5w"),
 &"psu_install": SubResource("Animation_skcs0"),
 &"ram_install": SubResource("Animation_g3oml"),
 &"side_panel_install": SubResource("Animation_sirx0"),
 &"ssd_install": SubResource("Animation_5itcf")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_q17hr"]
+size = Vector3(0.31292725, 0.7328491, 0.08502197)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8lyjr"]
+size = Vector3(0.055, 0.015, 0.04)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pu67r"]
+radius = 0.005
+height = 0.03
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3y36k"]
+top_radius = 0.005
+bottom_radius = 0.005
+height = 0.3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b8jlm"]
+radius = 0.005
+height = 0.1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_skcs0"]
+top_radius = 0.005
+bottom_radius = 0.005
+height = 1.0
+
 [node name="Computer" type="Node3D"]
 script = ExtResource("1_p73vt")
 quest_data = SubResource("Resource_g3oml")
-motherboard_state = SubResource("Resource_5itcf")
-cpu_state = SubResource("Resource_b8jlm")
-ram_state = SubResource("Resource_skcs0")
-gpu_state = SubResource("Resource_sirx0")
-storage_state = SubResource("Resource_d68of")
-intake_fan_state = SubResource("Resource_0pk7l")
-exhaust_fan_state = SubResource("Resource_poq5w")
-cpu_cooler_state = SubResource("Resource_7p3qu")
-psu_state = SubResource("Resource_qvi1a")
-display_cable_state = SubResource("Resource_b6wpq")
-power_cable_state = SubResource("Resource_0s64x")
-usb_port_state = SubResource("Resource_5ndx6")
-wifi_state = SubResource("Resource_nff6l")
-audio_state = SubResource("Resource_c1yo6")
-start_up_apps_state = SubResource("Resource_01x0e")
+display_cable_state = 2
+power_cable_state = 2
 
 [node name="CaseContainer" type="Node3D" parent="."]
 
@@ -826,82 +1040,144 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007992387, 0, 0)
 
 [node name="CPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008932352, 0.007070981, -0.15084788)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007610321, 0.007070981, -0.15084788)
 
 [node name="CartoonCPU" parent="CaseContainer/MotherboardContainer/CPUContainer" instance=ExtResource("3_yua5f")]
+unique_name_in_owner = true
+
+[node name="CPUSelectedIndicator" parent="CaseContainer/MotherboardContainer/CPUContainer" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.085, 0, 0, 0, 0.03, 0, 0, 0, 0.1, 0, 0.004023552, 0)
 
 [node name="RAMContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113864, -7.450581e-09, -0.1443002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10576182, -7.450581e-09, -0.1443002)
 
 [node name="RAM1" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013688505, 0, 0)
 
-[node name="CartoonRAM" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM1" instance=ExtResource("4_caqkj")]
+[node name="CartoonRAM1" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM1" instance=ExtResource("4_caqkj")]
+unique_name_in_owner = true
 
 [node name="RAM2" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013202667, 0, 0)
 
-[node name="CartoonRAM" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM2" instance=ExtResource("4_caqkj")]
+[node name="CartoonRAM2" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM2" instance=ExtResource("4_caqkj")]
+unique_name_in_owner = true
+
+[node name="RAMSelectedIndicator" parent="CaseContainer/MotherboardContainer/RAMContainer" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.06, 0, 0, 0, 0.055, 0, 0, 0, 0.295, 0, 0.058248762, 0)
 
 [node name="GPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08794519, 0.004909344, 0.088480234)
 
-[node name="GPU2" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("5_37nt6")]
+[node name="GPU" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("5_37nt6")]
+unique_name_in_owner = true
+
+[node name="GPUSelectedIndicator" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.535, 0, 0, 0, 0.245, 0, 0, 0, 0.115, 0.097802274, 0.11272934, 0.033854663)
 
 [node name="SSDContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.038874477, 0.011314519, 0)
 
 [node name="CartoonNVMESSD" parent="CaseContainer/MotherboardContainer/SSDContainer" instance=ExtResource("6_n7d1v")]
+unique_name_in_owner = true
+
+[node name="SSDSelectedIndicator" parent="CaseContainer/MotherboardContainer/SSDContainer" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.065, 0, 1.6703743e-23, 0, 0.04, 0, -5.4287163e-24, 0, 0.2, 0, 0, 0.069687955)
 
 [node name="CPUCoolerContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006053686, 0.0135458335, -0.15436432)
 
 [node name="CPUCooler" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" instance=ExtResource("7_cko6k")]
+unique_name_in_owner = true
 
 [node name="CPUFanContainer" type="Node3D" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler"]
 transform = Transform3D(-1.9670126e-09, 0.045, -7.516685e-24, -0.045, -1.9670126e-09, 0, 0, -8.598086e-17, 0.045, -0.04077947, 0.131673, -5.9604645e-08)
 
-[node name="Fan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler/CPUFanContainer" instance=ExtResource("8_ue6n6")]
+[node name="CPUCoolerFan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler/CPUFanContainer" instance=ExtResource("8_ue6n6")]
 
 [node name="CPUCoolerParticleEmitter" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler" instance=ExtResource("11_tc54y")]
+unique_name_in_owner = true
 transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, -0.012392834, 0.14650556, -0.020102859)
+emitting = false
 local_coords = true
+
+[node name="CPUCoolerSelectedIndicator" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.155, -1.0587912e-22, -3.5077858e-23, 0, 0.235, 0, -2.5890801e-23, 0, 0.21, 0, 0.11276293, 0)
+
+[node name="PowerCable" type="Node3D" parent="CaseContainer"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3457755, 0.116212755, -0.040855303)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseContainer/PowerCable"]
+mesh = SubResource("BoxMesh_5itcf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseContainer/PowerCable/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.023271292, 0, -0.49321347)
+mesh = SubResource("CylinderMesh_8lyjr")
+surface_material_override/0 = SubResource("StandardMaterial3D_8lyjr")
 
 [node name="PSUContainer" type="Node3D" parent="CaseContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21967931, 0.08551064, 0.033254147)
 
 [node name="PSU" parent="CaseContainer/PSUContainer" instance=ExtResource("6_37nt6")]
+unique_name_in_owner = true
+
+[node name="PSUSelectedIndicator" parent="CaseContainer/PSUContainer" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.26, 0, 0, 0, 0.155, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="CaseFanContainer" type="Node3D" parent="CaseContainer"]
 
 [node name="ExhaustFanContainer" type="Node3D" parent="CaseContainer/CaseFanContainer"]
 transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, -0.31407994, 0.68262243, 0.07260555)
 
-[node name="Fan" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" instance=ExtResource("8_ue6n6")]
+[node name="ExhaustFanSelectedIndicator" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.19, 0, 0, 0, 0.04, 0, 0, 0, 0.19, 0, 0, 0)
+
+[node name="ExhaustFan" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" instance=ExtResource("8_ue6n6")]
+unique_name_in_owner = true
 transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
 
-[node name="ExhaustFanParticleEmitter" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer/Fan" instance=ExtResource("11_tc54y")]
+[node name="ExhaustFanParticleEmitter" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer/ExhaustFan" instance=ExtResource("11_tc54y")]
+unique_name_in_owner = true
 transform = Transform3D(-9.713642e-07, 22.222223, 0, -22.222223, -9.713642e-07, 0, 0, 0, 22.222221, -0.081376076, -0.9748521, -0.01101923)
+emitting = false
 local_coords = true
 
 [node name="IntakeFan1" type="Node3D" parent="CaseContainer/CaseFanContainer"]
 transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.68262243, 0.035289466)
 
-[node name="Fan" parent="CaseContainer/CaseFanContainer/IntakeFan1" instance=ExtResource("8_ue6n6")]
+[node name="IntakeFan1" parent="CaseContainer/CaseFanContainer/IntakeFan1" instance=ExtResource("8_ue6n6")]
+unique_name_in_owner = true
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
-[node name="IntakeFanParticleEmitter" parent="CaseContainer/CaseFanContainer/IntakeFan1/Fan" instance=ExtResource("11_tc54y")]
+[node name="IntakeFan1ParticleEmitter" parent="CaseContainer/CaseFanContainer/IntakeFan1/IntakeFan1" instance=ExtResource("11_tc54y")]
+unique_name_in_owner = true
 transform = Transform3D(8.742278e-07, 20, -7.6427424e-14, 20, -8.742278e-07, -1.7484556e-06, -1.7484554e-06, 6.6174453e-21, -19.999998, -3.7919722, -1.0435629, -0.02447778)
+emitting = false
 local_coords = true
+
+[node name="IntakeFanSelectedIndicator" parent="CaseContainer/CaseFanContainer/IntakeFan1" instance=ExtResource("13_q17hr")]
+unique_name_in_owner = true
+transform = Transform3D(0.44, -1.6703742e-23, -6.7377626e-23, 1.4699292e-22, 0.05, -1.8651748e-15, 1.4117216e-22, 4.4408926e-16, 0.21, -0.09580499, 0, 0)
 
 [node name="IntakeFan2" type="Node3D" parent="CaseContainer/CaseFanContainer"]
 transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.4761976, 0.035289466)
 
-[node name="Fan" parent="CaseContainer/CaseFanContainer/IntakeFan2" instance=ExtResource("8_ue6n6")]
+[node name="IntakeFan2" parent="CaseContainer/CaseFanContainer/IntakeFan2" instance=ExtResource("8_ue6n6")]
+unique_name_in_owner = true
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
-[node name="IntakeFanParticleEmitter2" parent="CaseContainer/CaseFanContainer/IntakeFan2/Fan" instance=ExtResource("11_tc54y")]
+[node name="IntakeFan2ParticleEmitter2" parent="CaseContainer/CaseFanContainer/IntakeFan2/IntakeFan2" instance=ExtResource("11_tc54y")]
+unique_name_in_owner = true
 transform = Transform3D(8.742278e-07, 20, -7.6427424e-14, 20, -8.742278e-07, -1.7484556e-06, -1.7484554e-06, 6.6174453e-21, -19.999998, 4.0372667, -0.769732, -0.02447778)
+emitting = false
 local_coords = true
 
 [node name="SidePanelContainer" type="Node3D" parent="."]
@@ -913,8 +1189,53 @@ transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0,
 transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0, 0.41102928, -0.17462012)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_30qfc")
 }
 
 [node name="ParticleEmitters" type="Node3D" parent="."]
+
+[node name="RayCastDetector" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 9
+script = ExtResource("16_g3oml")
+ui_scene = ExtResource("17_5itcf")
+has_ui = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RayCastDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019195557, 0.4527893, 0.17324829)
+shape = SubResource("BoxShape3D_q17hr")
+
+[node name="DisplayCable" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31853855, 0.3680521, 0.028820753)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015553862, 0, 0)
+mesh = SubResource("BoxMesh_8lyjr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.03778869, 0, 0)
+mesh = SubResource("CapsuleMesh_pu67r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.15172498, -0.009423673, 0)
+mesh = SubResource("CylinderMesh_3y36k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.15033242, -0.04513582)
+mesh = SubResource("CapsuleMesh_b8jlm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5414224, 2.2351742e-08)
+mesh = SubResource("CylinderMesh_skcs0")
+
+[node name="AnimationTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="interact_signal_recieved" from="RayCastDetector" to="." method="_on_ray_cast_detector_interact_signal_recieved"]
+[connection signal="interact_signal_recieved" from="RayCastDetector" to="RayCastDetector" method="_on_interact_signal_recieved"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]

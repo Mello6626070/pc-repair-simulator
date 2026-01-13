@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Camera3D" type="Camera3D" parent="CameraContainer"]
 
 [node name="InteractionRayCast" type="RayCast3D" parent="CameraContainer"]
-target_position = Vector3(0, 0, -1.5)
+target_position = Vector3(0, 0, -1)
 collision_mask = 20
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -50,14 +50,21 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Press E to interact"
 
-[node name="InteractablesUI" type="CanvasLayer" parent="."]
-
-[node name="ComputerInteractUI" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="ComputerInteractUI"]
+[node name="Control" type="Control" parent="HUD"]
+visible = false
 layout_mode = 3
+anchors_preset = 0
+offset_left = 1488.0
+offset_top = 240.0
+offset_right = 1918.0
+offset_bottom = 771.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="InteractablesUI" type="CanvasLayer" parent="."]

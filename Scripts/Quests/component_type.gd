@@ -1,5 +1,6 @@
 class_name ComponentType extends Resource
 enum TYPE {
+	NONE,
 	CPU,
 	RAM,
 	GPU,

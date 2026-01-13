@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dsika842cj85v"]
+[gd_scene load_steps=26 format=3 uid="uid://dsika842cj85v"]
 
 [ext_resource type="Theme" uid="uid://2nuei3rxhon2" path="res://Assets/Resources/theme.tres" id="1_vi77b"]
 [ext_resource type="Script" uid="uid://4ymry88c3ni2" path="res://Scripts/UI/work_computer_screen.gd" id="1_yfn37"]
@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://cw7l2uwfit5ub" path="res://Scripts/UI/work_screen.gd" id="4_8uiv3"]
 [ext_resource type="Script" uid="uid://jhjk5n6vofyn" path="res://Scripts/Quests/quest_list.gd" id="5_ggagi"]
 [ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="6_sl5fi"]
-[ext_resource type="Script" uid="uid://hgbgekrw1n4p" path="res://Scripts/Quests/quest_condition.gd" id="7_wr0o4"]
+[ext_resource type="Script" uid="uid://b6asgc2ojnuvg" path="res://Scripts/Quests/component_type.gd" id="7_wr0o4"]
+[ext_resource type="Script" uid="uid://dl17x06gixwkn" path="res://Scripts/Quests/component_state.gd" id="8_ggagi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83ua0"]
 texture = ExtResource("3_d7v3h")
@@ -18,11 +19,34 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="Resource" id="Resource_dnytd"]
+script = ExtResource("8_ggagi")
+state = 2
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8uiv3"]
+script = ExtResource("7_wr0o4")
+type = 6
+component_state = SubResource("Resource_dnytd")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ygl6q"]
+script = ExtResource("8_ggagi")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_g0mym"]
+script = ExtResource("7_wr0o4")
+type = 5
+component_state = SubResource("Resource_ygl6q")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
 [sub_resource type="Resource" id="Resource_ggagi"]
 script = ExtResource("6_sl5fi")
 quest_id = "E00"
 complaint = "WTF"
 explaination = "WTH"
+initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_8uiv3"), SubResource("Resource_g0mym")])
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="FontFile" id="FontFile_d7v3h"]
@@ -141,7 +165,6 @@ theme_override_constants/margin_bottom = 16
 
 [node name="WorkScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_swodi")
 script = ExtResource("4_8uiv3")
@@ -380,6 +403,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "SHUTDOWN"
 
+[connection signal="quest_accepted" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" to="." method="_on_work_screen_quest_accepted"]
 [connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer/WorkExitButton" to="." method="_on_work_exit_button_pressed"]
 [connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/DifficultyPanel/MarginContainer/VBoxContainer/EasyButton" to="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" method="_on_easy_button_pressed"]
 [connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/DifficultyPanel/MarginContainer/VBoxContainer/ModerateButton" to="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" method="_on_moderate_button_pressed"]

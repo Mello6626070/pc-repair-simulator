@@ -1,4 +1,4 @@
-class_name Grabbable extends RigidBody3D
+class_name Grabbable extends StaticBody3D
 signal grab_signal_recieved()
 var player: Player
 func grab(emitter: Player) -> void: 

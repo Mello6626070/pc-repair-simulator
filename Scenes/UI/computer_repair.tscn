@@ -1,0 +1,152 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfuv1dqfj6iiu"]
+
+[ext_resource type="Script" uid="uid://bdiayl2n218c1" path="res://Scripts/UI/computer_repair.gd" id="1_lquwv"]
+
+[node name="ComputerRepair" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lquwv")
+
+[node name="ComponentSelection" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ComponentSelection"]
+layout_mode = 2
+
+[node name="CheckPC" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Check PC STATUS"
+
+[node name="CheckCPUButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK CPU"
+
+[node name="CheckRAMButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK RAM"
+
+[node name="CheckGPUButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK GPU"
+
+[node name="CheckStorageButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK STORAGE"
+
+[node name="CheckPSUButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK PSU"
+
+[node name="CheckCPUCoolerButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK CPU COOLER"
+
+[node name="CheckIntakeFanButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK INTAKE FANS"
+
+[node name="CheckExhaustFanButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK EXHAUST FANS"
+
+[node name="ComponentView" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -597.0
+offset_right = -1339.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="ComponentView"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ComponentView/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ComponentView/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ComponentLabel" type="Label" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PROCESSOR"
+
+[node name="Component" type="PanelContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer"]
+layout_mode = 2
+
+[node name="ComponentSpecificOption" type="PanelContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CPUView" type="PanelContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ReseatCPUButton" type="Button" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "RESEAT CPU"
+
+[node name="CommentHeader" type="Label" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Comment: "
+
+[node name="CommentLabel" type="Label" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckPC" to="." method="_on_check_pc_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckCPUButton" to="." method="_on_check_cpu_button_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckRAMButton" to="." method="_on_check_ram_button_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckGPUButton" to="." method="_on_check_gpu_button_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckStorageButton" to="." method="_on_check_storage_button_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckPSUButton" to="." method="_on_check_psu_button_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckCPUCoolerButton" to="." method="_on_check_cpu_cooler_button_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckIntakeFanButton" to="." method="_on_check_intake_fan_button_pressed"]
+[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckExhaustFanButton" to="." method="_on_check_exhaust_fan_button_pressed"]
