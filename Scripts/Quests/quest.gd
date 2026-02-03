@@ -4,4 +4,4 @@ class_name Quest extends Resource
 @export_multiline var explaination: String
 @export var initial_conditions: Array[ComponentType] = []
 @export var winning_conditions: Array[ComponentType] = []
-@export var reward: float = 100.0
+@export var time: float

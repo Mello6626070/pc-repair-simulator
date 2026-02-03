@@ -13,8 +13,18 @@ enum TYPE {
 	CPU_COOLER,
 	USB_PORT,
 	WIFI,
+	LAN,
 	AUDIO,
-	START_UP_APPS
+	START_UP_APPS,
+	KEYBOARD,
+	MOUSE,
+	HEADPHONES,
+	SPEAKERS,
+	MICROPHONE,
+	DISK,
+	THERMAL_PASTE,
+	OPERATING_SYSTEM,
+	BOOTLOADER
 }
 @export var type: TYPE
 @export var component_state: ComponentState

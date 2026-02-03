@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca62jvtgcixta"]
+
+[ext_resource type="AudioStream" uid="uid://bl2lxfd2j7g1n" path="res://Assets/computer-mouse-click-352734.mp3" id="1_l2w14"]
+
+[node name="MouseClick" type="AudioStreamPlayer"]
+stream = ExtResource("1_l2w14")

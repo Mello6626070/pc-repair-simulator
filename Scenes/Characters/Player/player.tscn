@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce7rustx5t43l"]
+[gd_scene load_steps=11 format=3 uid="uid://ce7rustx5t43l"]
 
 [ext_resource type="Script" uid="uid://ce2jrwlbxpmtv" path="res://Scripts/Characters/Player/player.gd" id="1_6xdwp"]
+[ext_resource type="AudioStream" uid="uid://c1a3ka0bh4n5b" path="res://Assets/walking-sound-effect-272246.mp3" id="2_lyjr2"]
+[ext_resource type="AudioStream" uid="uid://bcewa2mnmkpv6" path="res://Assets/mixkit-wrong-answer-fail-notification-946.wav" id="3_qqvsf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ygrrk"]
 
@@ -8,6 +10,46 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27cb7"]
 albedo_color = Color(1, 0.5294118, 0.30588236, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27cb7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_27cb7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lyjr2"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_siygm"]
+_data = {
+&"RESET": SubResource("Animation_27cb7"),
+&"fade_out": SubResource("Animation_lyjr2")
+}
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -30,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Camera3D" type="Camera3D" parent="CameraContainer"]
 
 [node name="InteractionRayCast" type="RayCast3D" parent="CameraContainer"]
-target_position = Vector3(0, 0, -1)
+target_position = Vector3(0, 0, -1.5)
 collision_mask = 20
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -50,16 +92,27 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Press E to interact"
 
-[node name="Control" type="Control" parent="HUD"]
+[node name="TimerLabel" type="Label" parent="HUD"]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1488.0
-offset_top = 240.0
-offset_right = 1918.0
-offset_bottom = 771.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
 
-[node name="PanelContainer" type="PanelContainer" parent="HUD/Control"]
+[node name="Hints" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MoveHint" type="CenterContainer" parent="HUD/Hints"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,4 +120,220 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Hints/MoveHint"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Hints/MoveHint/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Hints/MoveHint/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Hints/MoveHint/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "HOW TO MOVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Hints/MoveHint/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Hints/MoveHint/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Use WASD to move"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="HUD/Hints/MoveHint/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Move your mouse to look around"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HowToMoveOkButton" type="Button" parent="HUD/Hints/MoveHint/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "OK"
+
+[node name="HowToPlayHint" type="CenterContainer" parent="HUD/Hints"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/Hints/HowToPlayHint"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Hints/HowToPlayHint/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Hints/HowToPlayHint/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Hints/HowToPlayHint/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HUD/Hints/HowToPlayHint/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "To start a level, interact with the PC behind you and select a level in a work section. After that, go to the work bench on the right side and start fixing the problem."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HowToPlayOkButton" type="Button" parent="HUD/Hints/HowToPlayHint/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "OK"
+
+[node name="TaskPanel" type="PanelContainer" parent="HUD"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 200)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/TaskPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/TaskPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/TaskPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "TASK"
+horizontal_alignment = 1
+
+[node name="TaskLabel" type="Label" parent="HUD/TaskPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "
+"
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="HUD"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_27cb7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
+unique_name_in_owner = true
+root_node = NodePath("../Panel")
+libraries = {
+&"": SubResource("AnimationLibrary_siygm")
+}
+
+[node name="ExitButton" type="Button" parent="HUD"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "EXIT"
+
 [node name="InteractablesUI" type="CanvasLayer" parent="."]
+
+[node name="TimerTimeoutWarning" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="TimerTimeoutWarning"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="TimerTimeoutWarning/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TimerTimeoutWarning/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimerTimeoutWarning/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TimerTimeoutWarning/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "You took too long, your time in finished"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TimeOutOkButton" type="Button" parent="TimerTimeoutWarning/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "OK"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lyjr2")
+
+[node name="LostSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qqvsf")
+
+[connection signal="post_quest_finished" from="." to="." method="_on_post_quest_finished"]
+[connection signal="pressed" from="HUD/Hints/MoveHint/PanelContainer/MarginContainer/VBoxContainer/HowToMoveOkButton" to="." method="_on_how_to_move_ok_button_pressed"]
+[connection signal="pressed" from="HUD/Hints/HowToPlayHint/PanelContainer/MarginContainer/VBoxContainer/HowToPlayOkButton" to="." method="_on_how_to_play_ok_button_pressed"]
+[connection signal="pressed" from="HUD/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TimerTimeoutWarning/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TimeOutOkButton" to="." method="_on_time_out_ok_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

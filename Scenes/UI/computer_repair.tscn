@@ -1,6 +1,120 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfuv1dqfj6iiu"]
+[gd_scene load_steps=27 format=3 uid="uid://cfuv1dqfj6iiu"]
 
 [ext_resource type="Script" uid="uid://bdiayl2n218c1" path="res://Scripts/UI/computer_repair.gd" id="1_lquwv"]
+[ext_resource type="Script" uid="uid://cwuwtxnnh46oc" path="res://Scripts/UI/system_view.gd" id="2_8fgly"]
+[ext_resource type="AudioStream" uid="uid://d1factlu55isp" path="res://Assets/old-radio-button-click-97549.mp3" id="3_fulgj"]
+[ext_resource type="AudioStream" uid="uid://8a33c4d30sia" path="res://Assets/computer-mouse-click-352734.mp3" id="4_6f70v"]
+[ext_resource type="AudioStream" uid="uid://b58sjih13a0ek" path="res://Assets/mixkit-fantasy-game-success-notification-270.wav" id="5_7ddsn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f70v"]
+bg_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ddsn"]
+bg_color = Color(0.4828354, 0.47847474, 0.00229988, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yh7q"]
+bg_color = Color(0.73993707, 0.73347586, 0.0039906166, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwv"]
+bg_color = Color(0.021434633, 0.021434639, 0.021434614, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fgly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fulgj"]
+bg_color = Color(0, 0, 0.9529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40nmw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5oes"]
+bg_color = Color(0.20914808, 0.6436902, 0.8698012, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wc3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yuu5j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k52wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko1ql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_844or"]
+bg_color = Color(0.34781694, 0.34781697, 0.34781682, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6t4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlm5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqpjm"]
+bg_color = Color(0.2520276, 0.25202766, 0.25202754, 1)
+
+[sub_resource type="CurveTexture" id="CurveTexture_lquwv"]
+texture_mode = 1
+
+[sub_resource type="Animation" id="Animation_fulgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/FinishedButton:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8fgly"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6f70v"]
+resource_name = "finished_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/FinishedButton:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.427493, 0.42749307, 0.42749307, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6f70v"]
+_data = {
+&"RESET": SubResource("Animation_fulgj"),
+&"fade_in": SubResource("Animation_8fgly"),
+&"finished_animation": SubResource("Animation_6f70v")
+}
 
 [node name="ComputerRepair" type="Control"]
 layout_mode = 3
@@ -11,142 +125,1185 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lquwv")
 
-[node name="ComponentSelection" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ComponentSelection" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ComponentSelection"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ComponentSelection"]
 layout_mode = 2
 
-[node name="CheckPC" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "EXIT"
+
+[node name="CheckPC" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Check PC STATUS"
 
-[node name="CheckCPUButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="Hardware" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CheckCPUButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK CPU"
 
-[node name="CheckRAMButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="CheckRAMButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK RAM"
 
-[node name="CheckGPUButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="CheckGPUButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK GPU"
 
-[node name="CheckStorageButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="CheckStorageButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK STORAGE"
 
-[node name="CheckPSUButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="CheckPSUButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK PSU"
 
-[node name="CheckCPUCoolerButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="CheckCPUCoolerButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK CPU COOLER"
 
-[node name="CheckIntakeFanButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="CheckIntakeFanButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK INTAKE FANS"
 
-[node name="CheckExhaustFanButton" type="Button" parent="ComponentSelection/VBoxContainer"]
+[node name="CheckExhaustFanButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CHECK EXHAUST FANS"
 
-[node name="ComponentView" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -597.0
-offset_right = -1339.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="CheckKeyboard" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK KEYBOARD"
+
+[node name="CheckMouse" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK MOUSE"
+
+[node name="CheckSpeaker" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK SPEAKER"
+
+[node name="CheckHeadphone" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK HEADPHONE"
+
+[node name="CheckMic" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHECK MICROPHONE"
+
+[node name="System" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="OpenBIOSButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/System"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Open BIOS"
+
+[node name="OpenSystemButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/System"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "OPEN SYSTEM"
+
+[node name="FinishedButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f70v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7ddsn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6yh7q")
+text = "Finished"
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ComponentView" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="PanelContainer" type="PanelContainer" parent="ComponentView"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ComponentView/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ComponentView/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="ComponentLabel" type="Label" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ComponentLabel" type="Label" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "PROCESSOR"
 
-[node name="Component" type="PanelContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Component" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer"]
 layout_mode = 2
 
-[node name="ComponentSpecificOption" type="PanelContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "What I can do:"
+
+[node name="ComponentSpecificOption" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CPUView" type="PanelContainer" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+[node name="CPUView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
-[node name="ReseatCPUButton" type="Button" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUView"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUView"]
+layout_mode = 2
+alignment = 1
+
+[node name="ReseatCPUButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUView/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "RESEAT CPU"
 
-[node name="CommentHeader" type="Label" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
+[node name="RAMView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/RAMView"]
+layout_mode = 2
+alignment = 1
+
+[node name="ReseatRAMButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/RAMView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Reseat RAM"
+
+[node name="GPUView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView"]
+layout_mode = 2
+alignment = 1
+
+[node name="ReseatGPUButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Reseat GPU"
+
+[node name="ConnectDisplayCableButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DIS/Connect Display Cable"
+
+[node name="CleanGPUButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CLEAN GPU"
+
+[node name="StorageView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/StorageView"]
+layout_mode = 2
+alignment = 1
+
+[node name="ReseatStorageButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/StorageView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Reseat Storage"
+
+[node name="PSUView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/PSUView"]
+layout_mode = 2
+alignment = 1
+
+[node name="CleanPSUButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/PSUView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Clean PSU"
+
+[node name="ConnectPowerCableButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/PSUView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Dis/connect POWER CABLE"
+
+[node name="TurnONPSUButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/PSUView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "TURN ON/OFF"
+
+[node name="CPUCoolerView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUCoolerView"]
+layout_mode = 2
+alignment = 1
+
+[node name="CleanCPUCoolerButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUCoolerView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CLEAN CPU Cooler"
+
+[node name="IntakeFanView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/IntakeFanView"]
+layout_mode = 2
+alignment = 1
+
+[node name="CleanIntakeFanButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/IntakeFanView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CLEAN INTAKE FAN"
+
+[node name="ExhaustFanView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/ExhaustFanView"]
+layout_mode = 2
+alignment = 1
+
+[node name="CleanExhaustFanButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/ExhaustFanView/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CLEAN EXHAUST FAN"
+
+[node name="SystemUnitView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TurnPCOnButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/SystemUnitView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "TURN PC ON/OFF"
+
+[node name="KeyboardView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ToggleKeyboardButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/KeyboardView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Toggle Keyboard Connection"
+
+[node name="MouseView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ToggleMouseButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/MouseView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Toggle Mouse Connection"
+
+[node name="SpeakerView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ToggleSpeakerButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/SpeakerView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Toggle Speaker Connection"
+
+[node name="HeadphoneView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ToggleHeadphoneButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/HeadphoneView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Dis/connect Headphones"
+
+[node name="MicView" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ToggleMicButton" type="Button" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/MicView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Dis/connect Mic"
+
+[node name="CommentHeader" type="Label" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = "Comment: "
 
-[node name="CommentLabel" type="Label" parent="ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
+[node name="CommentLabel" type="Label" parent="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 24
 
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckPC" to="." method="_on_check_pc_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckCPUButton" to="." method="_on_check_cpu_button_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckRAMButton" to="." method="_on_check_ram_button_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckGPUButton" to="." method="_on_check_gpu_button_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckStorageButton" to="." method="_on_check_storage_button_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckPSUButton" to="." method="_on_check_psu_button_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckCPUCoolerButton" to="." method="_on_check_cpu_cooler_button_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckIntakeFanButton" to="." method="_on_check_intake_fan_button_pressed"]
-[connection signal="pressed" from="ComponentSelection/VBoxContainer/CheckExhaustFanButton" to="." method="_on_check_exhaust_fan_button_pressed"]
+[node name="CantBootWarning" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CantBootWarning"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CantBootWarning/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CantBootWarning/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CantBootWarning/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CantBootWarning/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "WARNING!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CantBootWarning/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "PC cant boot
+TRY CHECKING the SYSTEM's 
+POWER AND DISPLAY CONNECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CantBootWarningOkayButton" type="Button" parent="CantBootWarning/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "OKAY"
+
+[node name="BIOSView" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BIOSView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lquwv")
+
+[node name="MarginContainer" type="MarginContainer" parent="BIOSView/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 72
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 72
+theme_override_constants/margin_bottom = 72
+
+[node name="PanelContainer" type="PanelContainer" parent="BIOSView/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fgly")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BIOSView/PanelContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BIOSView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fulgj")
+
+[node name="SystemView" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_8fgly")
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_40nmw")
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 72
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 72
+theme_override_constants/margin_bottom = 72
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5oes")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Control" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TempsPanel" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1wc3f")
+
+[node name="Panel" type="Panel" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "TEMPS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "CPU: "
+
+[node name="CPUTempLabel" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "69C"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "GPU: "
+
+[node name="GPUTempLabel" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/TempsPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "69C"
+
+[node name="DriversPanel" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yuu5j")
+
+[node name="Panel" type="Panel" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "DRIVERS"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "MOUSE DRIVER"
+
+[node name="Control" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MouseDriverUpdateButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UPDATE"
+
+[node name="Control2" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "KEYBOARD DRIVER"
+
+[node name="Control2" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="KeyboardDriverUpdateButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UPDATE"
+
+[node name="Control3" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "WIFI DRIVER"
+
+[node name="Control2" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WifiDriverUpdate" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UPDATE"
+
+[node name="Control4" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "GPU DRIVER"
+
+[node name="Control2" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GPUDriverUpdate" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UPDATE"
+
+[node name="Control5" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "USB DRIVER"
+
+[node name="Control2" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="USBDriverUpdate" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UPDATE"
+
+[node name="Control6" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "AUDIO DRIVER"
+
+[node name="Control2" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AudioDriverUpdate" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UPDATE"
+
+[node name="DiskPanel" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k52wo")
+
+[node name="Panel" type="Panel" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "DISK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DiskPercentageBar" type="ProgressBar" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="Control2" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ClearSpaceButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CLEAR SPACE"
+
+[node name="Control3" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="RunCHKDSKButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "RUN CHKDSK"
+
+[node name="Control4" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="RunDefragmentButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "RUN Disk defragment"
+
+[node name="AudioPanel" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ko1ql")
+
+[node name="Panel" type="Panel" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "AUDIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "OUTPUT"
+
+[node name="Control" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OutputSelection" type="OptionButton" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+item_count = 3
+popup/item_0/text = "NONE"
+popup/item_0/id = 0
+popup/item_1/text = "SPEAKER"
+popup/item_1/id = 1
+popup/item_2/text = "HEADPHONE"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "INPUT"
+
+[node name="Control" type="Control" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputSelection" type="OptionButton" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+item_count = 2
+popup/item_0/text = "NONE"
+popup/item_0/id = 0
+popup/item_1/text = "MICROPHONE"
+popup/item_1/id = 2
+
+[node name="ToggleMuteButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "MUTE"
+
+[node name="StartPanel" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+alignment = 2
+
+[node name="CPUTempButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_844or")
+text = "CPU TEMP"
+
+[node name="DriversButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_844or")
+text = "DRIVERS"
+
+[node name="DiskButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_844or")
+text = "DISK"
+
+[node name="AudioButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_844or")
+text = "AUDIO"
+
+[node name="PowerButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_844or")
+text = "EXIT"
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6t4u")
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "START"
+
+[node name="LoadingPanel" type="CenterContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/LoadingPanel"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/LoadingPanel/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/LoadingPanel/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/LoadingPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "LOADING"
+horizontal_alignment = 1
+
+[node name="LoadingBar" type="ProgressBar" parent="SystemView/PanelContainer/MarginContainer/PanelContainer/LoadingPanel/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_mlm5r")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bqpjm")
+fill_mode = 1
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="SystemView"]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[node name="ButtonSFX2" type="AudioStreamPlayer" parent="SystemView"]
+stream = ExtResource("4_6f70v")
+
+[node name="ExitDialog" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FinishedScreen" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="FinishedScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="FinishedScreen/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="FinishedScreen/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FinishedScreen/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FinishedScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "FINISHED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="FinishedScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "TIME: "
+
+[node name="ActionLabel" type="Label" parent="FinishedScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "NO. OF ACTIONS: "
+
+[node name="ScoreLabel" type="Label" parent="FinishedScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "SCORE: "
+
+[node name="FinishedPanelButton" type="Button" parent="FinishedScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "OKAY"
+
+[node name="Panel" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CurveTexture_lquwv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_6f70v")
+}
+autoplay = "finished_animation"
+
+[node name="PCButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fulgj")
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6f70v")
+
+[node name="WinSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7ddsn")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/CheckPC" to="." method="_on_check_pc_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckCPUButton" to="." method="_on_check_cpu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckRAMButton" to="." method="_on_check_ram_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckGPUButton" to="." method="_on_check_gpu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckStorageButton" to="." method="_on_check_storage_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckPSUButton" to="." method="_on_check_psu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckCPUCoolerButton" to="." method="_on_check_cpu_cooler_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckIntakeFanButton" to="." method="_on_check_intake_fan_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckExhaustFanButton" to="." method="_on_check_exhaust_fan_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckKeyboard" to="." method="_on_check_keyboard_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckMouse" to="." method="_on_check_mouse_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckSpeaker" to="." method="_on_check_speaker_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckHeadphone" to="." method="_on_check_headphone_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckMic" to="." method="_on_check_mic_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/System/OpenSystemButton" to="." method="_on_open_system_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/FinishedButton" to="." method="_on_finished_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUView/VBoxContainer/ReseatCPUButton" to="." method="_on_reseat_cpu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/RAMView/VBoxContainer/ReseatRAMButton" to="." method="_on_reseat_ram_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView/VBoxContainer/ReseatGPUButton" to="." method="_on_reseat_gpu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView/VBoxContainer/ConnectDisplayCableButton" to="." method="_on_connect_display_cable_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView/VBoxContainer/CleanGPUButton" to="." method="_on_clean_gpu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/StorageView/VBoxContainer/ReseatStorageButton" to="." method="_on_reseat_storage_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/PSUView/VBoxContainer/CleanPSUButton" to="." method="_on_clean_psu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/PSUView/VBoxContainer/ConnectPowerCableButton" to="." method="_on_connect_power_cable_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/PSUView/VBoxContainer/TurnONPSUButton" to="." method="_on_turn_onpsu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUCoolerView/VBoxContainer/CleanCPUCoolerButton" to="." method="_on_clean_cpu_cooler_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/IntakeFanView/VBoxContainer/CleanIntakeFanButton" to="." method="_on_clean_intake_fan_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/ExhaustFanView/VBoxContainer/CleanExhaustFanButton" to="." method="_on_clean_exhaust_fan_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/SystemUnitView/TurnPCOnButton" to="." method="_on_turn_pc_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/KeyboardView/ToggleKeyboardButton" to="." method="_on_toggle_keyboard_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/MouseView/ToggleMouseButton" to="." method="_on_toggle_mouse_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/SpeakerView/ToggleSpeakerButton" to="." method="_on_toggle_speaker_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/HeadphoneView/ToggleHeadphoneButton" to="." method="_on_toggle_headphone_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/MicView/ToggleMicButton" to="." method="_on_toggle_mic_button_pressed"]
+[connection signal="pressed" from="CantBootWarning/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CantBootWarningOkayButton" to="." method="_on_cant_boot_warning_okay_button_pressed"]
+[connection signal="system_exited" from="SystemView" to="." method="_on_system_view_system_exited"]
+[connection signal="visibility_changed" from="SystemView" to="SystemView" method="_on_visibility_changed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MouseDriverUpdateButton" to="SystemView" method="_on_mouse_driver_update_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/KeyboardDriverUpdateButton" to="SystemView" method="_on_keyboard_driver_update_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/WifiDriverUpdate" to="SystemView" method="_on_wifi_driver_update_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/GPUDriverUpdate" to="SystemView" method="_on_gpu_driver_update_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/USBDriverUpdate" to="SystemView" method="_on_usb_driver_update_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DriversPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6/AudioDriverUpdate" to="SystemView" method="_on_audio_driver_update_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ClearSpaceButton" to="SystemView" method="_on_clear_space_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/RunCHKDSKButton" to="SystemView" method="_on_run_chkdsk_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/DiskPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/RunDefragmentButton" to="SystemView" method="_on_run_defragment_button_pressed"]
+[connection signal="item_selected" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/OutputSelection" to="SystemView" method="_on_output_selection_item_selected"]
+[connection signal="item_selected" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/InputSelection" to="SystemView" method="_on_input_selection_item_selected"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/AudioPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ToggleMuteButton" to="SystemView" method="_on_toggle_mute_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer/CPUTempButton" to="SystemView" method="_on_cpu_temp_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer/DriversButton" to="SystemView" method="_on_drivers_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer/DiskButton" to="SystemView" method="_on_disk_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer/AudioButton" to="SystemView" method="_on_audio_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/Control/StartPanel/MarginContainer/VBoxContainer/PowerButton" to="SystemView" method="_on_power_button_pressed"]
+[connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/StartButton" to="SystemView" method="_on_start_button_pressed"]
+[connection signal="timeout" from="SystemView/Timer" to="SystemView" method="_on_timer_timeout"]
+[connection signal="pressed" from="FinishedScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FinishedPanelButton" to="." method="_on_finished_panel_button_pressed"]

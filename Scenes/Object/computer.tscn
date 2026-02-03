@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://udq5n3c656wl"]
+[gd_scene load_steps=48 format=3 uid="uid://udq5n3c656wl"]
 
 [ext_resource type="PackedScene" uid="uid://btxfa6tqmcjpk" path="res://Assets/Resources/3d Models/PC Components/Case/case.tscn" id="1_c830r"]
 [ext_resource type="Script" uid="uid://c51gmm3jvm2cj" path="res://Scripts/Objects/computer.gd" id="1_p73vt"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dial4ywu24llo" path="res://Scenes/Object/selected_indicator.tscn" id="13_q17hr"]
 [ext_resource type="Script" uid="uid://bnkhnxwloj5tf" path="res://Scripts/Objects/computer_raycast_detector.gd" id="16_g3oml"]
 [ext_resource type="PackedScene" uid="uid://cfuv1dqfj6iiu" path="res://Scenes/UI/computer_repair.tscn" id="17_5itcf"]
+[ext_resource type="AudioStream" uid="uid://gwyxpjccj1e6" path="res://Assets/pc-buzzing-fan-66135.mp3" id="18_8lyjr"]
+[ext_resource type="AudioStream" uid="uid://cets4ora2civk" path="res://Assets/creepy-broken-pc-fan-ambient-sound-249927.mp3" id="19_pu67r"]
 
 [sub_resource type="Resource" id="Resource_g3oml"]
 script = ExtResource("3_q17hr")
@@ -1000,7 +1002,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q17hr"]
-size = Vector3(0.31292725, 0.7328491, 0.08502197)
+size = Vector3(0.31292725, 0.49369812, 0.08502197)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8lyjr"]
 size = Vector3(0.055, 0.015, 0.04)
@@ -1026,8 +1028,7 @@ height = 1.0
 [node name="Computer" type="Node3D"]
 script = ExtResource("1_p73vt")
 quest_data = SubResource("Resource_g3oml")
-display_cable_state = 2
-power_cable_state = 2
+psu_state = 5
 
 [node name="CaseContainer" type="Node3D" parent="."]
 
@@ -1074,6 +1075,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08794519, 0.004909344, 0.0
 [node name="GPU" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("5_37nt6")]
 unique_name_in_owner = true
 
+[node name="GPUParticleEmitter" parent="CaseContainer/MotherboardContainer/GPUContainer/GPU" instance=ExtResource("11_tc54y")]
+unique_name_in_owner = true
+transform = Transform3D(-0.99186337, -0.12730686, 0, -5.5647598e-09, 4.3355726e-08, 1, -0.12730686, 0.99186337, -4.371139e-08, 0.25046325, 0.11003479, 0.035934895)
+emitting = false
+local_coords = true
+
 [node name="GPUSelectedIndicator" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.535, 0, 0, 0, 0.245, 0, 0, 0, 0.115, 0.097802274, 0.11272934, 0.033854663)
@@ -1098,6 +1105,7 @@ unique_name_in_owner = true
 transform = Transform3D(-1.9670126e-09, 0.045, -7.516685e-24, -0.045, -1.9670126e-09, 0, 0, -8.598086e-17, 0.045, -0.04077947, 0.131673, -5.9604645e-08)
 
 [node name="CPUCoolerFan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler/CPUFanContainer" instance=ExtResource("8_ue6n6")]
+unique_name_in_owner = true
 
 [node name="CPUCoolerParticleEmitter" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler" instance=ExtResource("11_tc54y")]
 unique_name_in_owner = true
@@ -1126,6 +1134,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21967931, 0.08551064, 0.03
 
 [node name="PSU" parent="CaseContainer/PSUContainer" instance=ExtResource("6_37nt6")]
 unique_name_in_owner = true
+
+[node name="PSUParticleEmitter" parent="CaseContainer/PSUContainer/PSU" instance=ExtResource("11_tc54y")]
+unique_name_in_owner = true
+transform = Transform3D(8.08162, 0, 0, 0, 15.560574, 0, 0, 0, 8.839305, 0.03618765, 1.0805501, 0.34345594)
+emitting = false
+local_coords = true
 
 [node name="PSUSelectedIndicator" parent="CaseContainer/PSUContainer" instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
@@ -1204,7 +1218,7 @@ ui_scene = ExtResource("17_5itcf")
 has_ui = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RayCastDetector"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019195557, 0.4527893, 0.17324829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019195557, 0.4626541, 0.17324829)
 shape = SubResource("BoxShape3D_q17hr")
 
 [node name="DisplayCable" type="Node3D" parent="."]
@@ -1235,7 +1249,16 @@ mesh = SubResource("CylinderMesh_skcs0")
 unique_name_in_owner = true
 one_shot = true
 
+[node name="FanSfX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_8lyjr")
+
+[node name="SidePanelFx" type="AudioStreamPlayer" parent="."]
+
+[node name="DirtyFanFx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_pu67r")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="interact_signal_recieved" from="RayCastDetector" to="." method="_on_ray_cast_detector_interact_signal_recieved"]
-[connection signal="interact_signal_recieved" from="RayCastDetector" to="RayCastDetector" method="_on_interact_signal_recieved"]
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
+[connection signal="finished" from="FanSfX" to="." method="_on_fan_sf_x_finished"]
+[connection signal="finished" from="DirtyFanFx" to="." method="_on_dirty_fan_fx_finished"]

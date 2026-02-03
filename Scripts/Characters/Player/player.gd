@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody3D
 signal post_selected_quest(quest: Quest)
+signal post_quest_finished()
+signal timer_timeout()
 
 @export_category("Camera Stuff")
 @export var mouse_sens: float = 0.5
@@ -13,6 +15,19 @@ signal post_selected_quest(quest: Quest)
 @onready var interaction_ray_cast: RayCast3D = $CameraContainer/InteractionRayCast
 @onready var interactable_indicator: Label = $HUD/InteractableIndicator
 @onready var interactables_ui: CanvasLayer = $InteractablesUI
+@onready var timer: Timer = $Timer
+@onready var timer_label: Label = $HUD/TimerLabel
+@onready var task_label: Label = %TaskLabel
+@onready var task_panel: PanelContainer = %TaskPanel
+@onready var panel: Panel = %Panel
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var move_hint: CenterContainer = $HUD/Hints/MoveHint
+@onready var how_to_play_hint: CenterContainer = $HUD/Hints/HowToPlayHint
+@onready var hints: Control = $HUD/Hints
+@onready var timer_timeout_warning: CanvasLayer = %TimerTimeoutWarning
+@onready var lost_sfx: AudioStreamPlayer = $LostSFX
+
 
 enum States{
 	NORMAL = 1,
@@ -28,11 +43,18 @@ var camera_rotation: Vector3
 var current_state: int
 var target_pc: Computer
 var quest_finished: bool
+var quest_selected: bool
+var time: int
+var walking: bool = false
 
 func _ready() -> void:
-	current_state = States.NORMAL
+	panel.show()
+	move_hint.show()
+	current_state = States.ON_UI
+	animation_player.play("fade_out")
+	await animation_player.animation_finished
+	panel.hide()
 	print("mouse captured")
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event: InputEvent) -> void:
 	mouse_input = event is InputEventMouseMotion && Input.mouse_mode && current_state == States.NORMAL
@@ -93,11 +115,18 @@ func _input(event: InputEvent) -> void:
 		
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+		panel.show()
+		animation_player.play_backwards("fade_out")
+		await animation_player.animation_finished
+		get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
 	if current_state == States.NORMAL:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	timer_label.text = str(int(timer.time_left))
 
 func _physics_process(delta: float) -> void:
 	update_camera(delta)
@@ -111,10 +140,74 @@ func _physics_process(delta: float) -> void:
 	if direction && current_state == States.NORMAL:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if !walking:
+			walking = true
+			audio_stream_player.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		if walking:
+			walking = false
+			audio_stream_player.stop()
 	move_and_slide()
 
 func quest_select(quest: Quest) -> void:
+	quest_selected = true
+	time = quest.time
 	post_selected_quest.emit(quest)
+	task_panel.show()
+	task_label.text = quest.explaination
+
+func start_timer() -> void:
+	timer_label.show()
+	timer.start(time)
+
+func stop_timer() -> void:
+	timer_label.hide()
+	timer.stop()
+
+func _on_timer_timeout() -> void:
+	timer_label.hide()
+	timer_timeout_warning.show()
+	lost_sfx.play()
+	task_panel.hide()
+	current_state = States.ON_UI
+
+func _on_post_quest_finished() -> void:
+	task_panel.hide()
+
+func _on_exit_button_pressed() -> void:
+	panel.show()
+	animation_player.play_backwards("fade_out")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+
+
+func _on_audio_stream_player_finished() -> void:
+	if walking:
+		audio_stream_player.play(0.8)
+
+
+func _on_how_to_play_ok_button_pressed() -> void:
+	hints.hide()
+	current_state = States.NORMAL
+
+
+func _on_how_to_move_ok_button_pressed() -> void:
+	move_hint.hide()
+	how_to_play_hint.show()
+
+
+func _on_time_out_ok_button_pressed() -> void:
+	panel.show()
+	animation_player.play_backwards("fade_out")
+	await animation_player.animation_finished
+	if interactables_ui.get_child_count() > 0:
+		for child in interactables_ui.get_children():
+			child.queue_free()
+	timer_timeout_warning.hide()
+	timer_timeout.emit()
+	animation_player.play("fade_out")
+	await  animation_player.animation_finished
+	panel.hide()
+	current_state = States.NORMAL

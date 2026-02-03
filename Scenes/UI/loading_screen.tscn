@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://blq44aosoep7t"]
+
+[ext_resource type="Shader" uid="uid://4pirsy8x2i6n" path="res://Scripts/UI/loading_screen.gdshader" id="1_63kij"]
+[ext_resource type="Script" uid="uid://bprw17kic8b0e" path="res://Scripts/UI/loading_screen.gd" id="1_u08of"]
+[ext_resource type="Texture2D" uid="uid://b4lek06kqsxil" path="res://Assets/IMG_20260201_185819.png" id="2_u08of"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63kij"]
+bg_color = Color(2.4065375e-06, 0.7294852, 0.7294853, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mlp0r"]
+shader = ExtResource("1_63kij")
+shader_parameter/dot_scale = 0.39600001811148
+shader_parameter/ring_radius = 0.35600001365012
+shader_parameter/num_points = 10
+shader_parameter/gap_ratio = 0.2
+shader_parameter/all_dots_same_size = false
+shader_parameter/dot_color_start = Color(0.68396026, 0.7890422, 1, 1)
+shader_parameter/dot_color_end = Color(0, 0, 1, 1)
+shader_parameter/enable_shadow = true
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/shadow_offset = Vector2(0.05, -0.05)
+shader_parameter/rotation_speed = 1.0
+shader_parameter/reverse_rotation = false
+shader_parameter/icon_texture = ExtResource("2_u08of")
+shader_parameter/icon_size = 0.246000011685
+shader_parameter/enable_icon_rotation = false
+shader_parameter/reverse_icon_rotation = false
+shader_parameter/icon_rotation_speed = 1.0
+shader_parameter/show_icon = true
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u08of")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_63kij")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_mlp0r")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u08of")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

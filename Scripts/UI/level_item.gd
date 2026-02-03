@@ -13,14 +13,20 @@ var status: String = "default"
 func init_item() -> void:
 	client_id.text = quest.quest_id
 	complaint_label.text = quest.complaint
-	match status:
-		"default":
-			status_label.hide()
-		"current":
-			status_label.show()
-			status_label.text = "Current Quest"
-		"finished":
-			status_label.text = "Quest Finished"
+	update_status()
+
+func update_status() -> void:
+		match status:
+			"default":
+				status_label.hide()
+			"current":
+				status_label.show()
+				status_label.text = "Current"
+			"finished":
+				status_label.show()
+				status_label.text = "Finished"
 
 func _on_accept_button_pressed() -> void:
 	client_accepted.emit(quest)
+	status = "current"
+	update_status()
