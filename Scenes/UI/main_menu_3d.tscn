@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bb84yh2vgre8h"]
+[gd_scene load_steps=18 format=3 uid="uid://bb84yh2vgre8h"]
 
 [ext_resource type="Script" uid="uid://c1f6rhlt4gjpi" path="res://Scripts/UI/main_menu_3d.gd" id="1_hadd6"]
 [ext_resource type="PackedScene" uid="uid://udq5n3c656wl" path="res://Scenes/Object/computer.tscn" id="2_y1i53"]
+[ext_resource type="Shader" uid="uid://xkvhr4wbin3r" path="res://toonshader.gdshader" id="3_i6cbg"]
 [ext_resource type="Texture2D" uid="uid://b4lek06kqsxil" path="res://Assets/IMG_20260201_185819.png" id="3_y1i53"]
 [ext_resource type="AudioStream" uid="uid://gwyxpjccj1e6" path="res://Assets/pc-buzzing-fan-66135.mp3" id="4_ae0ig"]
 [ext_resource type="AudioStream" uid="uid://8a33c4d30sia" path="res://Assets/computer-mouse-click-352734.mp3" id="5_swvoq"]
@@ -23,6 +24,25 @@ sky = SubResource("Sky_y1i53")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="QuadMesh" id="QuadMesh_i6cbg"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wuapd"]
+render_priority = 0
+shader = ExtResource("3_i6cbg")
+shader_parameter/light_direction = Vector3(0.5, 0, 0)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/mid1_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/mid2_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/shadow_color = Color(0.3, 0.3, 0.3, 1)
+shader_parameter/highlight_threshold = 0.85
+shader_parameter/mid1_threshold = 0.6
+shader_parameter/mid2_threshold = 0.35
+shader_parameter/smoothness = 0.1
+shader_parameter/roughness = 1.0
+shader_parameter/roughness_channel = 0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bll8"]
 bg_color = Color(0.37008938, 0.8011732, 0.99999994, 1)
 
@@ -30,6 +50,7 @@ bg_color = Color(0.37008938, 0.8011732, 0.99999994, 1)
 bg_color = Color(0.36862746, 0.8, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_vwvrj"]
+flip_faces = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i6cbg"]
 render_priority = 0
@@ -48,6 +69,11 @@ environment = SubResource("Environment_ae0ig")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.9552061, 0, 0.29594144, 0, 1, 0, -0.29594144, 0, 0.9552061, -0.14909413, 0.43684256, 1.0275258)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_i6cbg")
+surface_material_override/0 = SubResource("ShaderMaterial_wuapd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2416729, 1.3177195)
@@ -118,7 +144,7 @@ stream = ExtResource("6_vwvrj")
 autoplay = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.235853, 0, 3.8339283, 0, 10, 0, -3.8339283, 0, 9.235853, -0.828573, 0, -1.1579797)
+transform = Transform3D(-9.529211, 0, -3.0321815, 0, 10, 0, 3.0321815, 0, -9.529211, -0.828573, 0, -1.1579797)
 mesh = SubResource("QuadMesh_vwvrj")
 surface_material_override/0 = SubResource("ShaderMaterial_i6cbg")
 

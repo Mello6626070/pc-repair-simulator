@@ -6,15 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://8a33c4d30sia" path="res://Assets/computer-mouse-click-352734.mp3" id="4_6f70v"]
 [ext_resource type="AudioStream" uid="uid://b58sjih13a0ek" path="res://Assets/mixkit-fantasy-game-success-notification-270.wav" id="5_7ddsn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f70v"]
-bg_color = Color(1, 1, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ddsn"]
-bg_color = Color(0.4828354, 0.47847474, 0.00229988, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yh7q"]
-bg_color = Color(0.73993707, 0.73347586, 0.0039906166, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwv"]
 bg_color = Color(0.021434633, 0.021434639, 0.021434614, 1)
 
@@ -67,7 +58,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/FinishedButton:self_modulate")
+tracks/1/path = NodePath("FinishedButton:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -99,7 +90,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/FinishedButton:self_modulate")
+tracks/0/path = NodePath("FinishedButton:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -115,6 +106,15 @@ _data = {
 &"fade_in": SubResource("Animation_8fgly"),
 &"finished_animation": SubResource("Animation_6f70v")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f70v"]
+bg_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ddsn"]
+bg_color = Color(0.4828354, 0.47847474, 0.00229988, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yh7q"]
+bg_color = Color(0.73993707, 0.73347586, 0.0039906166, 1)
 
 [node name="ComputerRepair" type="Control"]
 layout_mode = 3
@@ -241,17 +241,6 @@ text = "Open BIOS"
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "OPEN SYSTEM"
-
-[node name="FinishedButton" type="Button" parent="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_6f70v")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7ddsn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6yh7q")
-text = "Finished"
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
@@ -1249,6 +1238,28 @@ stream = ExtResource("4_6f70v")
 [node name="WinSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7ddsn")
 
+[node name="FinishedButton" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.5
+offset_top = -34.0
+offset_right = 132.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f70v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7ddsn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6yh7q")
+text = "Finished"
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/CheckPC" to="." method="_on_check_pc_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckCPUButton" to="." method="_on_check_cpu_button_pressed"]
@@ -1265,7 +1276,6 @@ stream = ExtResource("5_7ddsn")
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckHeadphone" to="." method="_on_check_headphone_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/Hardware/CheckMic" to="." method="_on_check_mic_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/System/OpenSystemButton" to="." method="_on_open_system_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComponentSelection/VBoxContainer2/FinishedButton" to="." method="_on_finished_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/CPUView/VBoxContainer/ReseatCPUButton" to="." method="_on_reseat_cpu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/RAMView/VBoxContainer/ReseatRAMButton" to="." method="_on_reseat_ram_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/ComponentView/PanelContainer/MarginContainer/VBoxContainer/Component/MarginContainer/VBoxContainer/ComponentSpecificOption/GPUView/VBoxContainer/ReseatGPUButton" to="." method="_on_reseat_gpu_button_pressed"]
@@ -1307,3 +1317,4 @@ stream = ExtResource("5_7ddsn")
 [connection signal="pressed" from="SystemView/PanelContainer/MarginContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/StartButton" to="SystemView" method="_on_start_button_pressed"]
 [connection signal="timeout" from="SystemView/Timer" to="SystemView" method="_on_timer_timeout"]
 [connection signal="pressed" from="FinishedScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FinishedPanelButton" to="." method="_on_finished_panel_button_pressed"]
+[connection signal="pressed" from="FinishedButton" to="." method="_on_finished_button_pressed"]

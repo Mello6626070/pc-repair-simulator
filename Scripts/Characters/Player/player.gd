@@ -197,6 +197,14 @@ func _on_how_to_move_ok_button_pressed() -> void:
 	move_hint.hide()
 	how_to_play_hint.show()
 
+func minus_time() -> void:
+	if timer.time_left > 0:
+		var time: float = timer.time_left
+		timer.stop()
+		time -= 10.0
+		if time <= 0:
+			time = 0
+		timer.start(time)
 
 func _on_time_out_ok_button_pressed() -> void:
 	panel.show()

@@ -1,6 +1,7 @@
 class_name Computer extends Node3D
 signal cant_boot()
 signal animation_finished()
+signal not_neccessary()
 signal winning_condition_achieved()
 @onready var cpu: Node3D = %CartoonCPU
 @onready var ram_1: Node3D = %CartoonRAM1
@@ -372,6 +373,7 @@ func toggle_case() -> void:
 func _on_ray_cast_detector_interact_signal_recieved(player: Player) -> void:
 	toggle_case()
 	player.target_pc = self
+	not_neccessary.connect(player.minus_time)
 
 func deselect_all() -> void:
 	cpu_selected_indicator.hide()
@@ -481,17 +483,20 @@ func reseat_cpu() -> void:
 	do_remove_install_animation("cpu_install")
 	if cpu_state == ComponentState.STATE.LOOSE:
 		cpu_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.CPU)
 
 func reseat_ram() -> void:
 	do_remove_install_animation("ram_install")
 	if ram_state == ComponentState.STATE.LOOSE:
 		ram_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.RAM)
 
 func reseat_gpu() -> void:
 	do_remove_install_animation("gpu_install")
 	display_cable.hide()
 	if gpu_state == ComponentState.STATE.LOOSE:
 		gpu_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.GPU)
 
 func toggle_display_cable_connection() -> void:
 	if display_cable_state == ComponentState.STATE.DISCONNECTED:
@@ -500,23 +505,27 @@ func toggle_display_cable_connection() -> void:
 	elif display_cable_state == ComponentState.STATE.OK:
 		display_cable_state = ComponentState.STATE.DISCONNECTED
 		install_animation("display_cable_install", "backward")
+	is_neccessary(ComponentType.TYPE.GPU)
 
 func clean_gpu() -> void:
 	do_remove_install_animation("gpu_install")
 	display_cable.hide()
 	if gpu_state == ComponentState.STATE.DIRTY:
 		gpu_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.GPU)
 
 func reseat_storage() -> void:
 	do_remove_install_animation("ssd_install")
 	power_cable.hide()
 	if storage_state == ComponentState.STATE.LOOSE:
 		storage_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.STORAGE)
 
 func clean_psu() -> void:
 	do_remove_install_animation("psu_install")
 	if psu_state == ComponentState.STATE.DIRTY:
 		psu_state = ComponentState.STATE.DISABLED
+	is_neccessary(ComponentType.TYPE.PSU)
 
 func toggle_power_cable_connection() -> void:
 	if power_cable_state == ComponentState.STATE.DISCONNECTED:
@@ -525,6 +534,7 @@ func toggle_power_cable_connection() -> void:
 	elif power_cable_state == ComponentState.STATE.OK:
 		power_cable_state = ComponentState.STATE.DISCONNECTED
 		install_animation("power_cable_install", "backward")
+	is_neccessary(ComponentType.TYPE.POWER_CABLE)
 
 func toggle_psu_power() -> void:
 	if psu_state == ComponentState.STATE.DISABLED:
@@ -533,21 +543,25 @@ func toggle_psu_power() -> void:
 	elif psu_state == ComponentState.STATE.OK:
 		psu_state = ComponentState.STATE.DISABLED
 		selected_component_state = psu_state
+	is_neccessary(ComponentType.TYPE.PSU)
 
 func clean_cpu_cooler() -> void:
 	do_remove_install_animation("cpu_cooler_install")
 	if cpu_cooler_state == ComponentState.STATE.DIRTY:
 		cpu_cooler_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.CPU_COOLER)
 
 func clean_intake_fan() -> void:
 	do_remove_install_animation("intake_fan_install")
 	if intake_fan_state == ComponentState.STATE.DIRTY:
 		intake_fan_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.INTAKE_FANS)
 
 func clean_exhaust_fan() -> void:
 	do_remove_install_animation("exhaust_fan_install")
 	if exhaust_fan_state == ComponentState.STATE.DIRTY:
 		exhaust_fan_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.EXHAUST_FANS)
 
 func boot() -> void:
 	if !is_on:
@@ -581,6 +595,7 @@ func toggle_keyboard() -> void:
 	elif keyboard_state == ComponentState.STATE.OK:
 		keyboard_state = ComponentState.STATE.DISCONNECTED
 	selected_component_state = keyboard_state
+	is_neccessary(ComponentType.TYPE.KEYBOARD)
 
 func toggle_mouse() -> void:
 	if mouse_state == ComponentState.STATE.DISCONNECTED:
@@ -588,6 +603,7 @@ func toggle_mouse() -> void:
 	elif mouse_state == ComponentState.STATE.OK:
 		mouse_state = ComponentState.STATE.DISCONNECTED
 	selected_component_state = mouse_state
+	is_neccessary(ComponentType.TYPE.MOUSE)
 
 func toggle_speaker() -> void:
 	if speaker_state == ComponentState.STATE.DISCONNECTED:
@@ -595,6 +611,7 @@ func toggle_speaker() -> void:
 	elif speaker_state == ComponentState.STATE.OK:
 		speaker_state = ComponentState.STATE.DISCONNECTED
 	selected_component_state = speaker_state
+	is_neccessary(ComponentType.TYPE.SPEAKERS)
 
 func toggle_headphone() -> void:
 	if headphone_state == ComponentState.STATE.DISCONNECTED:
@@ -602,6 +619,7 @@ func toggle_headphone() -> void:
 	elif headphone_state == ComponentState.STATE.OK:
 		headphone_state = ComponentState.STATE.DISCONNECTED
 	selected_component_state = headphone_state
+	is_neccessary(ComponentType.TYPE.HEADPHONES)
 
 func toggle_mic() -> void:
 	if mic_state == ComponentState.STATE.DISCONNECTED:
@@ -609,42 +627,52 @@ func toggle_mic() -> void:
 	elif mic_state == ComponentState.STATE.OK:
 		mic_state = ComponentState.STATE.DISCONNECTED
 	selected_component_state = mic_state
+	is_neccessary(ComponentType.TYPE.MICROPHONE)
 
 func update_keyboard_driver() -> void:
 	if keyboard_state == ComponentState.STATE.DISABLED:
 		keyboard_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.KEYBOARD)
 
 func update_mouse_driver() -> void:
 	if mouse_state == ComponentState.STATE.DISABLED:
 		mouse_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.MOUSE)
 
 func update_wifi_driver() -> void:
 	if wifi_state == ComponentState.STATE.DISABLED:
 		wifi_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.WIFI)
 
 func update_gpu_driver() -> void:
 	if gpu_state == ComponentState.STATE.DISABLED:
 		gpu_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.GPU)
 
 func update_usb_driver() -> void:
 	if usb_port_state == ComponentState.STATE.DISABLED:
 		usb_port_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.USB_PORT)
 
 func update_audio_driver() -> void:
 	if audio_state == ComponentState.STATE.DISCONNECTED:
 		audio_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.AUDIO)
 
 func clear_disk_space() -> void:
 	if disk_state == ComponentState.STATE.DISABLED:
 		disk_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.DISK)
 
 func run_chkdsk() -> void:
 	if disk_state == ComponentState.STATE.DISCONNECTED:
 		disk_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.DISK)
 
 func run_defragment() -> void:
 	if disk_state == ComponentState.STATE.MISSING:
 		disk_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.DISK)
 
 func toggle_mute() -> void:
 	print("mute toggled")
@@ -652,26 +680,33 @@ func toggle_mute() -> void:
 		audio_state = ComponentState.STATE.DISABLED
 	elif audio_state == ComponentState.STATE.DISABLED:
 		audio_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.AUDIO)
 
 func disable_all_output() -> void:
 	speaker_state = ComponentState.STATE.DISABLED
 	headphone_state = ComponentState.STATE.DISABLED
+	is_neccessary(ComponentType.TYPE.SPEAKERS)
+	is_neccessary(ComponentType.TYPE.HEADPHONES)
 
 func enable_speaker() -> void:
 	speaker_state = ComponentState.STATE.OK
 	headphone_state = ComponentState.STATE.DISABLED
+	is_neccessary(ComponentType.TYPE.SPEAKERS)
 
 func enable_headphone() -> void:
 	speaker_state = ComponentState.STATE.DISABLED
 	headphone_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.HEADPHONES)
 
 func enable_mic() -> void:
 	if mic_state == ComponentState.STATE.DISABLED:
 		mic_state = ComponentState.STATE.OK
+	is_neccessary(ComponentType.TYPE.MICROPHONE)
 
 func disable_mic() -> void:
 	if mic_state == ComponentState.STATE.OK:
 		mic_state = ComponentState.STATE.DISABLED
+	is_neccessary(ComponentType.TYPE.MICROPHONE)
 
 
 func _on_fan_sf_x_finished() -> void:
@@ -680,3 +715,11 @@ func _on_fan_sf_x_finished() -> void:
 func _on_dirty_fan_fx_finished() -> void:
 	if is_on:
 		dirty_fan_fx.play()
+
+func is_neccessary(com: ComponentType.TYPE) -> void:
+	var list: Array[ComponentType.TYPE] = []
+	for component in quest_data.initial_conditions:
+		list.append(component.type)
+	
+	if !list.has(com):
+		not_neccessary.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://5smg8ucqwo5f"]
+[gd_scene load_steps=48 format=3 uid="uid://5smg8ucqwo5f"]
 
 [ext_resource type="PackedScene" uid="uid://ce7rustx5t43l" path="res://Scenes/Characters/Player/player.tscn" id="1_30ga2"]
 [ext_resource type="Script" uid="uid://bo8q575r4q2t1" path="res://Scripts/World/Office/office.gd" id="1_giavn"]
@@ -7,8 +7,10 @@
 [ext_resource type="ArrayMesh" uid="uid://7dhxdw1spc1l" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/wallWindow.obj" id="4_in14v"]
 [ext_resource type="ArrayMesh" uid="uid://drji7qxoicd1u" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/wallDoorway.obj" id="5_soob8"]
 [ext_resource type="ArrayMesh" uid="uid://douv4bl07h6my" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/wall.obj" id="6_mdna1"]
+[ext_resource type="Shader" uid="uid://tb62xjfvd8u1" path="res://Scenes/Worlds/Office/wood.gdshader" id="7_d1sem"]
 [ext_resource type="ArrayMesh" uid="uid://baxrgta4r4gjy" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/doorway.obj" id="7_mdna1"]
 [ext_resource type="PackedScene" uid="uid://doov880hdxkso" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Tables/Desk.fbx" id="8_el43v"]
+[ext_resource type="PackedScene" uid="uid://cu2l7fmku1sml" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/DAE format/coatRack.dae" id="8_myewj"]
 [ext_resource type="PackedScene" uid="uid://cbi3bo7pohasu" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Shelves/Shelf E.fbx" id="9_3dh5i"]
 [ext_resource type="PackedScene" uid="uid://ym83qupmqtfx" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Carpets/Carpet B.fbx" id="10_pbwrw"]
 [ext_resource type="PackedScene" uid="uid://onk1esl5wcea" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Shelves/Shelf B.fbx" id="11_3aaeu"]
@@ -19,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ca0wxwsll2jkr" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Electronics/Keyboard.fbx" id="15_ij4l3"]
 [ext_resource type="PackedScene" uid="uid://dsika842cj85v" path="res://Scenes/UI/work_computer_screen.tscn" id="15_opvmx"]
 [ext_resource type="PackedScene" uid="uid://udq5n3c656wl" path="res://Scenes/Object/computer.tscn" id="18_oyjoi"]
-[ext_resource type="AudioStream" uid="uid://f4gmtvo37m06" path="res://Assets/background-piano-music-_-samples-61960.mp3" id="20_nc3e4"]
+[ext_resource type="AudioStream" uid="uid://pc0guyi3vodd" path="res://Assets/mixkit-pop-05-695.mp3" id="22_d1sem"]
 
 [sub_resource type="Environment" id="Environment_cpduc"]
 background_mode = 1
@@ -40,9 +42,97 @@ emission = Color(0.9297146, 0.9297147, 0.9297146, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_in14v"]
 size = Vector3(10, 0.1, 10)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5xl6"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = -0.26
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_msecj"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = -0.275
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqou2"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = -0.245
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_soob8"]
 transparency = 1
 albedo_color = Color(0.76915205, 0.9989199, 0.99999994, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fensf"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = -0.26
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhu0g"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = 0.39
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqkft"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = 0.175
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5uxx"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = 0.19
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rj6m6"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = -0.65
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1sem"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = 0.18
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6iqiv"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.44909853, 0.55359423, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mn5w"]
+render_priority = 0
+shader = ExtResource("7_d1sem")
+shader_parameter/alb_wood = Color(0.4509804, 0.5529412, 1, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.0
+shader_parameter/scale = 0.145
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdna1"]
 size = Vector3(0.017089844, 0.33642578, 1)
@@ -63,11 +153,10 @@ size = Vector3(6.110779, 10.710724, 1.8916626)
 size = Vector2(4.045, 2.725)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij4l3"]
-albedo_color = Color(0, 0.33448055, 0.6152329, 1)
+albedo_color = Color(0.5644088, 0.767129, 0.9999961, 1)
 emission_enabled = true
 emission = Color(0.67143977, 1, 0.9954794, 1)
-emission_energy_multiplier = 16.0
-emission_operator = 1
+emission_energy_multiplier = 0.57
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ij4l3"]
 size = Vector3(4.496521, 3.2940674, 1.8084717)
@@ -101,8 +190,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
 shadow_enabled = true
-omni_range = 6.9170747
-omni_attenuation = 0.4
+omni_range = 15.0
+omni_attenuation = -0.1
 
 [node name="Ceiling Light2" parent="Ceiling" instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -4.2888813, 0.33905077, -4.189139)
@@ -118,8 +207,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
 shadow_enabled = true
-omni_range = 10.0
-omni_attenuation = 0.4
+omni_range = 15.0
+omni_attenuation = -0.1
 
 [node name="Ceiling Light3" parent="Ceiling" instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.2888794, 0.33905077, -4.189139)
@@ -135,8 +224,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
 shadow_enabled = true
-omni_range = 10.0
-omni_attenuation = 0.4
+omni_range = 15.0
+omni_attenuation = -0.1
 
 [node name="Ceiling Light4" parent="Ceiling" instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.2888794, 0.33905077, 4.189138)
@@ -152,8 +241,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -3.6201715, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
 shadow_enabled = true
-omni_range = 10.0
-omni_attenuation = 0.4
+omni_range = 15.0
+omni_attenuation = -0.1
 
 [node name="Ceiling Light5" parent="Ceiling" instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -4.139268, 0.33905077, 4.189138)
@@ -169,8 +258,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
 shadow_enabled = true
-omni_range = 10.0
-omni_attenuation = 0.4
+omni_range = 15.0
+omni_attenuation = -0.1
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
@@ -191,57 +280,68 @@ shape = SubResource("BoxShape3D_in14v")
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 2.5, 0, 3, 0, -1.3113416e-07, 5, 0, -3.3504589)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../WallCorner")
+surface_material_override/3 = SubResource("ShaderMaterial_b5xl6")
 
 [node name="WallCorner" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, -3.35, 0, -5)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../..")
+surface_material_override/3 = SubResource("ShaderMaterial_msecj")
 
 [node name="WallWindow" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 2.5, 0, 3, 0, -1.3113416e-07, 5, 0, 1.495)
 mesh = ExtResource("4_in14v")
 skeleton = NodePath("../..")
+surface_material_override/4 = SubResource("ShaderMaterial_oqou2")
 surface_material_override/6 = SubResource("StandardMaterial3D_soob8")
 
 [node name="WallDoorway" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, -0.36, 0, -5)
 mesh = ExtResource("5_soob8")
 skeleton = NodePath("../..")
+surface_material_override/5 = SubResource("ShaderMaterial_fensf")
 
 [node name="Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(5.393, 0, 0, 0, 2.5, 0, 0, 0, 3, 4.484, 0, -5)
+transform = Transform3D(4.8535357, 0, 0, 0, 2.5, 0, 0, 0, 3, 4.484, 0, -5)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
+surface_material_override/5 = SubResource("ShaderMaterial_yhu0g")
 
 [node name="Wall2" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 2.5, 0, 3, 0, -1.3113416e-07, 5, 0, -1.3113413)
+transform = Transform3D(-9.0282285e-08, 0, -3, 0, 2.5, 0, 2.0654182, 0, -1.3113416e-07, 5, 0, -1.3113413)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
+surface_material_override/5 = SubResource("ShaderMaterial_hqkft")
 
 [node name="WallCorner3" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 2.5, 0, -3, 0, -1.3113416e-07, -5, 0, 3.35)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../..")
+surface_material_override/3 = SubResource("ShaderMaterial_j5uxx")
 
 [node name="Wall3" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2.9687672e-07, 0, 3, 0, 2.5, 0, -6.791748, 0, -1.3113416e-07, -5, 0, -3.381)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
+surface_material_override/5 = SubResource("ShaderMaterial_rj6m6")
 
 [node name="WallCorner4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 2.5, 0, 2.6226832e-07, 0, -3, 3.35, 0, 5)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../..")
+surface_material_override/3 = SubResource("ShaderMaterial_d1sem")
 
 [node name="Wall4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-6.832058, 0, -2.6226834e-07, 0, 2.5, 0, 5.9727745e-07, 0, -3.0000005, -3.404648, 0, 5)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
+surface_material_override/5 = SubResource("ShaderMaterial_6iqiv")
 
 [node name="Wall5" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 2.5, 0, 3, 0, -1.3113416e-07, 5, 0, 3.9700027)
+transform = Transform3D(-8.162385e-08, 0, -3, 0, 2.5, 0, 1.867336, 0, -1.3113416e-07, 5, 0, 3.3433013)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
+surface_material_override/5 = SubResource("ShaderMaterial_0mn5w")
 
 [node name="Doorway" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, -1.1761898, 1.899898e-07, -5.0698156)
@@ -267,6 +367,9 @@ shape = SubResource("BoxShape3D_mdna1")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls/WallCollision"]
 transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 0.036, 1.594, 4.9010587)
 shape = SubResource("BoxShape3D_mdna1")
+
+[node name="coatRack" parent="Walls" instance=ExtResource("8_myewj")]
+transform = Transform3D(-2, 0, -1.509958e-07, 0, 1, 0, 3.019916e-07, 0, -1, 0.00967592, 1.9850317, -4.7155457)
 
 [node name="WorkTable" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.929205, 0.14694285, 2.4306684)
@@ -354,7 +457,7 @@ ambient_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
 transform = Transform3D(-0.39, 0, -4.5298744e-08, 0, 0.325, 0, 5.888836e-08, 0, -0.3, 2.8735883, 1.3592322, 3.6316762)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.0744157, 0.06790924)
+transform = Transform3D(1, 2.842171e-14, 0, 0, -4.371139e-08, -1, -2.842171e-14, 1, -4.371139e-08, 0, 1.0744157, 0.13451862)
 mesh = SubResource("PlaneMesh_r8s40")
 surface_material_override/0 = SubResource("StandardMaterial3D_ij4l3")
 
@@ -401,7 +504,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3281736, 0.92725587, 1.161
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_nc3e4")
+stream = ExtResource("22_d1sem")
 volume_db = -0.365
 autoplay = true
 
