@@ -11,10 +11,11 @@ signal timer_timeout()
 @export_category("Player Movemenent")
 @export var SPEED: float = 5.0
 
+@export var target: Node3D
 @onready var camera_container: Node3D = $CameraContainer
 @onready var interaction_ray_cast: RayCast3D = $CameraContainer/InteractionRayCast
 @onready var interactable_indicator: Label = $HUD/InteractableIndicator
-@onready var interactables_ui: CanvasLayer = $InteractablesUI
+@onready var interactables_ui: CanvasLayer = %InteractablesUI
 @onready var timer: Timer = $Timer
 @onready var timer_label: Label = $HUD/TimerLabel
 @onready var task_label: Label = %TaskLabel
@@ -27,6 +28,7 @@ signal timer_timeout()
 @onready var hints: Control = $HUD/Hints
 @onready var timer_timeout_warning: CanvasLayer = %TimerTimeoutWarning
 @onready var lost_sfx: AudioStreamPlayer = $LostSFX
+@onready var pointer: Node3D = %Pointer
 
 
 enum States{
@@ -44,7 +46,9 @@ var current_state: int
 var target_pc: Computer
 var quest_finished: bool
 var quest_selected: bool
+var quest_working: bool
 var time: int
+var timer_value: int
 var walking: bool = false
 
 func _ready() -> void:
@@ -107,19 +111,19 @@ func interact(target, type: String) -> void:
 				var ui: Control = target.ui_scene.instantiate()
 				current_state = States.ON_UI
 				interactables_ui.add_child(ui)
+				quest_working = true
 				print(target_pc)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit"):
-			get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
-		
+	pass
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		panel.show()
 		animation_player.play_backwards("fade_out")
 		await animation_player.animation_finished
-		get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/UI/main_menu_3d.tscn")
 	if current_state == States.NORMAL:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
@@ -127,6 +131,13 @@ func _process(delta: float) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	timer_label.text = str(int(timer.time_left))
+	timer_value = int(timer.time_left)
+	
+	if quest_selected and not quest_working:
+		pointer.show()
+		pointer.look_at(target.global_transform.origin, Vector3.UP)
+	else:
+		pointer.hide()
 
 func _physics_process(delta: float) -> void:
 	update_camera(delta)
@@ -156,7 +167,9 @@ func quest_select(quest: Quest) -> void:
 	time = quest.time
 	post_selected_quest.emit(quest)
 	task_panel.show()
-	task_label.text = quest.explaination
+	var text: String = quest.explaination
+	task_label.text = text
+	print(quest.explaination)
 
 func start_timer() -> void:
 	timer_label.show()
@@ -167,8 +180,9 @@ func stop_timer() -> void:
 	timer.stop()
 
 func _on_timer_timeout() -> void:
-	timer_label.hide()
+	timer_label.self_modulate = Color.RED
 	timer_timeout_warning.show()
+	timer.stop()
 	lost_sfx.play()
 	task_panel.hide()
 	current_state = States.ON_UI
@@ -207,6 +221,7 @@ func minus_time() -> void:
 		timer.start(time)
 
 func _on_time_out_ok_button_pressed() -> void:
+	timer_label.hide()
 	panel.show()
 	animation_player.play_backwards("fade_out")
 	await animation_player.animation_finished

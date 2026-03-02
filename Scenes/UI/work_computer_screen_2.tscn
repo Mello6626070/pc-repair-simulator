@@ -1,0 +1,2460 @@
+[gd_scene format=3 uid="uid://duc74wd3rultb"]
+
+[ext_resource type="Script" uid="uid://4ymry88c3ni2" path="res://Scripts/UI/work_computer_screen.gd" id="1_3p12j"]
+[ext_resource type="Theme" uid="uid://2nuei3rxhon2" path="res://Assets/Resources/theme.tres" id="2_2p4ed"]
+[ext_resource type="Texture2D" uid="uid://ceavtr03v2b37" path="res://Assets/Resources/UI/windows-x-p-bliss-wallpaper-cartoon-version-4jh1qoyhci02p5d8.jpg" id="3_oq6ig"]
+[ext_resource type="Texture2D" uid="uid://rxmeymenu3cp" path="res://Assets/Resources/o9mvkvk9voocdb28o6k7upgon8-2cdf61256859e8f1dd8b532d5f7bd45c.png" id="4_qixew"]
+[ext_resource type="Texture2D" uid="uid://cewn1kwmv4kv3" path="res://Assets/Resources/google-chrome-computer-icons-web-browser-logo-icon-google-chrome-drawing-4e1a8bea3d2a60436a0cdbb953cf708b.png" id="5_y83pf"]
+[ext_resource type="Texture2D" uid="uid://dwwkkebe8lp74" path="res://Assets/Resources/recycling-bin-trash-rubbish-bins-waste-paper-baskets-computer-icons-window-9e6919d846283d75380af5cc5f5e6faa.png" id="6_coog2"]
+[ext_resource type="Script" uid="uid://cw7l2uwfit5ub" path="res://Scripts/UI/work_screen.gd" id="7_ly81q"]
+[ext_resource type="Script" uid="uid://jhjk5n6vofyn" path="res://Scripts/Quests/quest_list.gd" id="8_0t15w"]
+[ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="9_isipi"]
+[ext_resource type="Script" uid="uid://b6asgc2ojnuvg" path="res://Scripts/Quests/component_type.gd" id="10_5hb4k"]
+[ext_resource type="Script" uid="uid://dl17x06gixwkn" path="res://Scripts/Quests/component_state.gd" id="11_yv24x"]
+[ext_resource type="AudioStream" uid="uid://8a33c4d30sia" path="res://Assets/computer-mouse-click-352734.mp3" id="12_w4t31"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi77b"]
+bg_color = Color(0.30669686, 0.5986533, 0.7826357, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfn37"]
+bg_color = Color(0.41215244, 0.4121525, 0.41215235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83ua0"]
+texture = ExtResource("3_oq6ig")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swodi"]
+bg_color = Color(0.9515795, 0.95157963, 0.9515795, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Resource" id="Resource_dnytd"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8uiv3"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_dnytd")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ygl6q"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_g0mym"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_ygl6q")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xxf6b"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8v5mw"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_xxf6b")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ru1sr"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6buak"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_ru1sr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ggagi"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 1"
+complaint = "The PC doesn't turn on"
+explaination = "Check the power cable connection and PSU switch"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_8uiv3"), SubResource("Resource_g0mym")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_8v5mw"), SubResource("Resource_6buak")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_d2vnm"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_bidbd"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_d2vnm")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2odwn"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7wtb2"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_2odwn")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_1eqlh"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 2"
+complaint = "The monitor is black"
+explaination = "Reseat the HDMI/VGA cable"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_bidbd")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_7wtb2")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_s8614"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ophbg"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_s8614")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_8a6r6"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vh7gx"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_8a6r6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_y4mlv"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_trqdd"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_y4mlv")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_1daop"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_at0jt"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_1daop")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_oto1e"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_f07xc"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_oto1e")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_bdlla"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_45683"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_bdlla")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_b5pvb"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 3"
+complaint = "My PC is getting hot."
+explaination = "Clean basic dust on vents."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_ophbg"), SubResource("Resource_vh7gx"), SubResource("Resource_trqdd")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_at0jt"), SubResource("Resource_f07xc"), SubResource("Resource_45683")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_ue36q"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_mo7n0"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_ue36q")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_uc14c"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_q4oby"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_uc14c")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lu74m"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 4"
+complaint = "No sound in my speakers."
+explaination = "Check if speakers are plugged in and volume is not muted"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_mo7n0")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_q4oby")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_afr13"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_1luww"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_afr13")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_08nf8"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_sixsk"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_08nf8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_t6se8"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 5"
+complaint = "I can’t save files."
+explaination = "Clear space on the PC"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_1luww")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_sixsk")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_1pdiq"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_l71ku"]
+script = ExtResource("10_5hb4k")
+type = 16
+component_state = SubResource("Resource_1pdiq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_o1oeu"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_j5q83"]
+script = ExtResource("10_5hb4k")
+type = 16
+component_state = SubResource("Resource_o1oeu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jbih1"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 6"
+complaint = "My keyboard types weird."
+explaination = "Update basic keyboard driver."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_l71ku")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_j5q83")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_kod6e"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xmifg"]
+script = ExtResource("10_5hb4k")
+type = 18
+component_state = SubResource("Resource_kod6e")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_4tcmw"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_r6f4d"]
+script = ExtResource("10_5hb4k")
+type = 18
+component_state = SubResource("Resource_4tcmw")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ke8a6"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 7"
+complaint = "Headphones not detected."
+explaination = "Set headphones as default audio output."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_xmifg")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_r6f4d")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_1lcpn"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xl3gr"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_1lcpn")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_f6v6b"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_k8kds"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_f6v6b")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_frhl2"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ompdp"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_frhl2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_oloxt"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c3bet"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_oloxt")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vdjtk"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_w6lk2"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_vdjtk")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_4a8p2"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_66ii7"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_4a8p2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_hdjmv"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 8"
+complaint = "Fan is noisy."
+explaination = "Remove dusts in the fans."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_xl3gr"), SubResource("Resource_k8kds"), SubResource("Resource_ompdp")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_c3bet"), SubResource("Resource_w6lk2"), SubResource("Resource_66ii7")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_8wqhu"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yupwk"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_8wqhu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xsqpm"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_0addv"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_xsqpm")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_7x4fo"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 9"
+complaint = "HDMI loose connection."
+explaination = "Re-seat cable"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_yupwk")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_0addv")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_aefob"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8iw1r"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_aefob")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_6nkry"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_i1gvb"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_6nkry")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_kqni3"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 10"
+complaint = "WiFi keeps disconnecting."
+explaination = "Reinstall or update WiFi driver."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_8iw1r")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_i1gvb")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_smlmc"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tu7cl"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_smlmc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_550rf"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_mibjm"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_550rf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_iqgt0"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 1"
+complaint = "PC restarts randomly."
+explaination = "Check PSU cable and test power outlet."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_tu7cl")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_mibjm")])
+time = 300.0
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_52wx6"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_v23f2"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_52wx6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0ie2j"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_cvsii"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_0ie2j")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_srhxv"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 2"
+complaint = "Monitor says NO SIGNAL."
+explaination = "Check GPU connection."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_v23f2")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_cvsii")])
+time = 300.0
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_ahvye"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ba0nn"]
+script = ExtResource("10_5hb4k")
+type = 20
+component_state = SubResource("Resource_ahvye")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_k4md1"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6p2y8"]
+script = ExtResource("10_5hb4k")
+type = 20
+component_state = SubResource("Resource_k4md1")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_3wy2t"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 3"
+complaint = "Microphone not recording."
+explaination = "Configure input device settings."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_ba0nn")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_6p2y8")])
+time = 300.0
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_qxuls"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_pulmi"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_qxuls")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_v6sgf"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_oh510"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_v6sgf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_dq2gx"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 4"
+complaint = "PC says disk needs repair."
+explaination = "Run CHKDSK."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_pulmi")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_oh510")])
+time = 300.0
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_nf6kh"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_rnktj"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_nf6kh")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_veyms"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xvrxj"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_veyms")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_kkoeo"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ckich"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_kkoeo")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_fgevs"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_11gag"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_fgevs")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_aver8"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_3h63o"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_aver8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_tnltq"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ogo78"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_tnltq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_hm50f"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_1g2t4"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_hm50f")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ngqh7"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_2kvlg"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_ngqh7")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0hhti"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ufb6k"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_0hhti")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_5ffv5"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_dvf38"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_5ffv5")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_rhd0q"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 5"
+complaint = "System shuts down during games.
+"
+explaination = "Clean fans and other dirty components."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_rnktj"), SubResource("Resource_xvrxj"), SubResource("Resource_ckich"), SubResource("Resource_11gag"), SubResource("Resource_3h63o")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_ogo78"), SubResource("Resource_1g2t4"), SubResource("Resource_2kvlg"), SubResource("Resource_ufb6k"), SubResource("Resource_dvf38")])
+time = 300.0
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_8up7j"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_wuwdx"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_8up7j")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_06vjh"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6fn2j"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_06vjh")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pwu24"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 6"
+complaint = "Printer not detected."
+explaination = "Install USB drivers"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_wuwdx")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_6fn2j")])
+time = 300.0
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_icnjn"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vljjm"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_icnjn")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_08s58"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6fcrh"]
+script = ExtResource("10_5hb4k")
+type = 1
+component_state = SubResource("Resource_08s58")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_e37sr"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7ntjc"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_e37sr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xyh21"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_brr6i"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_xyh21")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_g11at"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 7"
+complaint = "My power supply is dirty and restarts randomly"
+explaination = "Clean the power supply and reseat the cpu"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_vljjm"), SubResource("Resource_6fcrh")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_7ntjc"), SubResource("Resource_brr6i")])
+time = 120.0
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_brnai"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_4ktd5"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_brnai")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vwuyr"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_5lebv"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_vwuyr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lndwp"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yavma"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_lndwp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vgvhf"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_w06jr"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_vgvhf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_cy8du"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 8"
+complaint = "My GPU is dirty, and my display is black"
+explaination = "Clean the GPU and connect the display cable"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_4ktd5"), SubResource("Resource_5lebv")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_yavma"), SubResource("Resource_w06jr")])
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_l72hy"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8m13i"]
+script = ExtResource("10_5hb4k")
+type = 20
+component_state = SubResource("Resource_l72hy")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jcfgg"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_m4o8o"]
+script = ExtResource("10_5hb4k")
+type = 20
+component_state = SubResource("Resource_jcfgg")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2jjnj"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 9"
+complaint = "My mic, isn't detected by my computer"
+explaination = "Check the microphone connection and if the microphone is enabled by the computer"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_8m13i")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_m4o8o")])
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_0y0vw"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_5qogh"]
+script = ExtResource("10_5hb4k")
+type = 16
+component_state = SubResource("Resource_0y0vw")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_bc1ps"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_4cg1r"]
+script = ExtResource("10_5hb4k")
+type = 17
+component_state = SubResource("Resource_bc1ps")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_tditm"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 10"
+complaint = "I can't use my keyboard and mouse"
+explaination = "Check it's connection or update the drivers"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_5qogh"), SubResource("Resource_4cg1r")])
+difficulty = 1
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_6r58q"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_l4rn3"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_6r58q")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pt1wr"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ls1j5"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_pt1wr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_po84r"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 1"
+complaint = "Audio crackling."
+explaination = "Update audio driver."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_l4rn3")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_ls1j5")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_jlmmc"]
+script = ExtResource("11_yv24x")
+state = 2
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_b86fc"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_jlmmc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_t1he4"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7mpog"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_t1he4")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_tuqwp"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 2"
+complaint = "Hard drive too slow."
+explaination = "Run disk defragment."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_b86fc")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_7mpog")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_tcnkg"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8ahnq"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_tcnkg")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_h8ivu"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_egv8s"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_h8ivu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_iijhg"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 3"
+complaint = "Display glitches"
+explaination = "Install GPU drivers."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_8ahnq")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_egv8s")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_5r7k6"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_np1nu"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_5r7k6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_li0cr"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_e5ugf"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_li0cr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_fps04"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 4"
+complaint = "PC freezes randomly."
+explaination = "Check RAM seating."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_np1nu")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_e5ugf")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_n3eok"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tfyay"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_n3eok")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2od7f"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ky2la"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_2od7f")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_utgdf"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7tmea"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_utgdf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qx16b"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_o3b34"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_qx16b")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_gecgm"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_mge1o"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_gecgm")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_wyc3y"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_5w4hr"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_wyc3y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_eja7f"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n2h2t"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_eja7f")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_6hiwv"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6jx3e"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_6hiwv")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2q2wm"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 5"
+complaint = "Game crashes often."
+explaination = "Update drivers."
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_tfyay"), SubResource("Resource_ky2la"), SubResource("Resource_7tmea"), SubResource("Resource_o3b34")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_mge1o"), SubResource("Resource_5w4hr"), SubResource("Resource_n2h2t"), SubResource("Resource_6jx3e")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_jp80h"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_gwydb"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_jp80h")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lljh0"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_x2fal"]
+script = ExtResource("10_5hb4k")
+type = 18
+component_state = SubResource("Resource_lljh0")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xjnw5"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xjb58"]
+script = ExtResource("10_5hb4k")
+type = 19
+component_state = SubResource("Resource_xjnw5")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pwt2d"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yqt1o"]
+script = ExtResource("10_5hb4k")
+type = 20
+component_state = SubResource("Resource_pwt2d")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2vij6"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 6"
+complaint = "My audio devices doesn't work"
+explaination = "Check the audio devices"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_gwydb"), SubResource("Resource_x2fal"), SubResource("Resource_xjb58"), SubResource("Resource_yqt1o")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_6cdic"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tr0nt"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_6cdic")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lj2gi"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vb8dd"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_lj2gi")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_88b27"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ccna6"]
+script = ExtResource("10_5hb4k")
+type = 21
+component_state = SubResource("Resource_88b27")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_igji8"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_1mq5w"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_igji8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qhbk4"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 7"
+complaint = "My disk has problems and my computer restarts randomly"
+explaination = "Try running some checks on the computer and reseat the RAM"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_tr0nt"), SubResource("Resource_vb8dd")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_ccna6"), SubResource("Resource_1mq5w")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_1vsy2"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_151uh"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_1vsy2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_yr2kq"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_2srdd"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_yr2kq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ibo7x"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_63m1u"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_ibo7x")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_5dxqg"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7akxc"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_5dxqg")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_4il84"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tr1ln"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_4il84")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qll8l"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_gwwkn"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_qll8l")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_j5iop"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_dvlmk"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_j5iop")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_h6m4l"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ml54k"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_h6m4l")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_c2m78"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_aua6o"]
+script = ExtResource("10_5hb4k")
+type = 16
+component_state = SubResource("Resource_c2m78")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_x2t1g"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_4wv5t"]
+script = ExtResource("10_5hb4k")
+type = 17
+component_state = SubResource("Resource_x2t1g")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vp1ob"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ffttg"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_vp1ob")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xilsv"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_du68b"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_xilsv")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2ncol"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_se7xk"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_2ncol")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ehtx8"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_lgi0c"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_ehtx8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xy3fp"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8oavb"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_xy3fp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pv3v6"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_nhmy8"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_pv3v6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_untih"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_25ud3"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_untih")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_76yc8"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_56j11"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_76yc8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_1toxb"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_o6n32"]
+script = ExtResource("10_5hb4k")
+type = 16
+component_state = SubResource("Resource_1toxb")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_uwroe"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_nkvdg"]
+script = ExtResource("10_5hb4k")
+type = 17
+component_state = SubResource("Resource_uwroe")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qn3s8"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 8"
+complaint = "My PC is so dirty and I need my drivers to be updated"
+explaination = "Clean the PC and update the drivers"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_151uh"), SubResource("Resource_2srdd"), SubResource("Resource_63m1u"), SubResource("Resource_7akxc"), SubResource("Resource_tr1ln"), SubResource("Resource_gwwkn"), SubResource("Resource_dvlmk"), SubResource("Resource_ml54k"), SubResource("Resource_aua6o"), SubResource("Resource_4wv5t")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_ffttg"), SubResource("Resource_du68b"), SubResource("Resource_se7xk"), SubResource("Resource_lgi0c"), SubResource("Resource_8oavb"), SubResource("Resource_nhmy8"), SubResource("Resource_25ud3"), SubResource("Resource_56j11"), SubResource("Resource_o6n32"), SubResource("Resource_nkvdg")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_fexk2"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_luf7j"]
+script = ExtResource("10_5hb4k")
+type = 1
+component_state = SubResource("Resource_fexk2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_do7rf"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_pq31h"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_do7rf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_q16jp"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_r821q"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_q16jp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jmqc8"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ppdja"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_jmqc8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_3kc4c"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n48lj"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_3kc4c")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ye4i8"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_a2v1l"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_ye4i8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_g66uh"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_3wcgr"]
+script = ExtResource("10_5hb4k")
+type = 1
+component_state = SubResource("Resource_g66uh")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_it7sc"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_uu3tk"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_it7sc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_kh0r8"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vomwo"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_kh0r8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_c5k6y"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8mfgv"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_c5k6y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_n0uy8"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8uh2s"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_n0uy8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_t2mm0"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_arq4s"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_t2mm0")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qd4od"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 9"
+complaint = "My CPU and RAM seems loose, the display is black, and I can't turn it on"
+explaination = "Check the CPU, RAM, GPU, and PSU"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_luf7j"), SubResource("Resource_pq31h"), SubResource("Resource_r821q"), SubResource("Resource_ppdja"), SubResource("Resource_n48lj"), SubResource("Resource_a2v1l")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_3wcgr"), SubResource("Resource_uu3tk"), SubResource("Resource_vomwo"), SubResource("Resource_8mfgv"), SubResource("Resource_8uh2s"), SubResource("Resource_arq4s")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_fbvt6"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_2kxt8"]
+script = ExtResource("10_5hb4k")
+type = 1
+component_state = SubResource("Resource_fbvt6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_mhl4w"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yyefd"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_mhl4w")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_nyf4d"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_0yx20"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_nyf4d")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jvh82"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_nwfqp"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_jvh82")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_7vxl1"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tis6p"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_7vxl1")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_p4bfs"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ex2ol"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_p4bfs")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_mv3ae"]
+script = ExtResource("11_yv24x")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vo7tr"]
+script = ExtResource("10_5hb4k")
+type = 7
+component_state = SubResource("Resource_mv3ae")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jlkmq"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xl8oy"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_jlkmq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_a55vb"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_3y8m8"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_a55vb")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0f2km"]
+script = ExtResource("11_yv24x")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_r4tix"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_0f2km")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_6ptqb"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_wnv10"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_6ptqb")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xb8ph"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n0lja"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_xb8ph")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_y48fc"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8xxdc"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_y48fc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_28k7y"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_b4yyq"]
+script = ExtResource("10_5hb4k")
+type = 16
+component_state = SubResource("Resource_28k7y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_nedo8"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c2bbt"]
+script = ExtResource("10_5hb4k")
+type = 17
+component_state = SubResource("Resource_nedo8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_8xg0a"]
+script = ExtResource("11_yv24x")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_74wbt"]
+script = ExtResource("10_5hb4k")
+type = 18
+component_state = SubResource("Resource_8xg0a")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_k8v7y"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_02req"]
+script = ExtResource("10_5hb4k")
+type = 19
+component_state = SubResource("Resource_k8v7y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qpl8i"]
+script = ExtResource("11_yv24x")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c13uk"]
+script = ExtResource("10_5hb4k")
+type = 20
+component_state = SubResource("Resource_qpl8i")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_r1x0p"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_aq5ny"]
+script = ExtResource("10_5hb4k")
+type = 1
+component_state = SubResource("Resource_r1x0p")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_or2uy"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ly83k"]
+script = ExtResource("10_5hb4k")
+type = 2
+component_state = SubResource("Resource_or2uy")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_phl1m"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c6103"]
+script = ExtResource("10_5hb4k")
+type = 3
+component_state = SubResource("Resource_phl1m")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_dp1mu"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_llvx4"]
+script = ExtResource("10_5hb4k")
+type = 4
+component_state = SubResource("Resource_dp1mu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_68t2r"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_g13gb"]
+script = ExtResource("10_5hb4k")
+type = 5
+component_state = SubResource("Resource_68t2r")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_r6rur"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7n2aw"]
+script = ExtResource("10_5hb4k")
+type = 6
+component_state = SubResource("Resource_r6rur")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xobwp"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c1faa"]
+script = ExtResource("10_5hb4k")
+type = 7
+component_state = SubResource("Resource_xobwp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vqu23"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_w7n4p"]
+script = ExtResource("10_5hb4k")
+type = 8
+component_state = SubResource("Resource_vqu23")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_3ecdr"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ujjlp"]
+script = ExtResource("10_5hb4k")
+type = 9
+component_state = SubResource("Resource_3ecdr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_do3s3"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_eqo1f"]
+script = ExtResource("10_5hb4k")
+type = 10
+component_state = SubResource("Resource_do3s3")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_fu7b7"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vo8i5"]
+script = ExtResource("10_5hb4k")
+type = 11
+component_state = SubResource("Resource_fu7b7")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xqny6"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8osfa"]
+script = ExtResource("10_5hb4k")
+type = 12
+component_state = SubResource("Resource_xqny6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ojs1u"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n466b"]
+script = ExtResource("10_5hb4k")
+type = 14
+component_state = SubResource("Resource_ojs1u")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_8qjma"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vn3j3"]
+script = ExtResource("10_5hb4k")
+type = 16
+component_state = SubResource("Resource_8qjma")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ucplp"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_t10te"]
+script = ExtResource("10_5hb4k")
+type = 17
+component_state = SubResource("Resource_ucplp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_sflb5"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c4gh0"]
+script = ExtResource("10_5hb4k")
+type = 18
+component_state = SubResource("Resource_sflb5")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_e6w2o"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_623yc"]
+script = ExtResource("10_5hb4k")
+type = 19
+component_state = SubResource("Resource_e6w2o")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0i5lf"]
+script = ExtResource("11_yv24x")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_g8wio"]
+script = ExtResource("10_5hb4k")
+type = 20
+component_state = SubResource("Resource_0i5lf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_r1beb"]
+script = ExtResource("9_isipi")
+quest_id = "LEVEL 10"
+complaint = "My PC doesn't work, I don't know what's the problem"
+explaination = "Check the whole system"
+initial_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_2kxt8"), SubResource("Resource_yyefd"), SubResource("Resource_0yx20"), SubResource("Resource_nwfqp"), SubResource("Resource_tis6p"), SubResource("Resource_ex2ol"), SubResource("Resource_vo7tr"), SubResource("Resource_xl8oy"), SubResource("Resource_3y8m8"), SubResource("Resource_r4tix"), SubResource("Resource_wnv10"), SubResource("Resource_n0lja"), SubResource("Resource_8xxdc"), SubResource("Resource_b4yyq"), SubResource("Resource_c2bbt"), SubResource("Resource_74wbt"), SubResource("Resource_02req"), SubResource("Resource_c13uk")])
+winning_conditions = Array[ExtResource("10_5hb4k")]([SubResource("Resource_aq5ny"), SubResource("Resource_ly83k"), SubResource("Resource_c6103"), SubResource("Resource_llvx4"), SubResource("Resource_g13gb"), SubResource("Resource_7n2aw"), SubResource("Resource_c1faa"), SubResource("Resource_w7n4p"), SubResource("Resource_ujjlp"), SubResource("Resource_eqo1f"), SubResource("Resource_vo8i5"), SubResource("Resource_8osfa"), SubResource("Resource_n466b"), SubResource("Resource_vn3j3"), SubResource("Resource_t10te"), SubResource("Resource_c4gh0"), SubResource("Resource_623yc"), SubResource("Resource_g8wio")])
+time = 420.0
+difficulty = 2
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="FontFile" id="FontFile_d7v3h"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/72/0/ascent = 0.0
+cache/0/72/0/descent = 0.0
+cache/0/72/0/underline_position = 0.0
+cache/0/72/0/underline_thickness = 0.0
+cache/0/72/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygl6q"]
+bg_color = Color(0.98039216, 0.15294118, 0.14901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wr0o4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uiv3"]
+bg_color = Color(0.9529412, 0.9529412, 0.9529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7v3h"]
+bg_color = Color(0.8992584, 0.8992584, 0.8992584, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83ua0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[node name="WorkComputerScreen2" type="Control" unique_id=540871348]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3p12j")
+
+[node name="MonitorPanel" type="PanelContainer" parent="." unique_id=1279639423]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2p4ed")
+theme_type_variation = &"DefaultPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel" unique_id=165700710]
+layout_mode = 2
+theme_override_constants/margin_left = 72
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 72
+theme_override_constants/margin_bottom = 72
+
+[node name="LoginScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer" unique_id=856322592]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vi77b")
+
+[node name="CenterContainer" type="CenterContainer" parent="MonitorPanel/MarginContainer/LoginScreen" unique_id=196628061]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer" unique_id=846960160]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yfn37")
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer" unique_id=1379073385]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer" unique_id=447489697]
+layout_mode = 2
+
+[node name="PlayerNameLabel" type="Label" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=81386841]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoginButton" type="Button" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1563533089]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "LOGIN"
+
+[node name="ShutdownButton" type="Button" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=822321020]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "SHUTDOWN"
+
+[node name="HomeScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer" unique_id=868169678]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_83ua0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen" unique_id=363484601]
+layout_mode = 2
+
+[node name="MainView" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer" unique_id=331739828]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView" unique_id=798574204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Control" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer" unique_id=198879269]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control" unique_id=1610271979]
+position = Vector2(67, 186)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_qixew")
+
+[node name="Sprite2D2" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control" unique_id=647064217]
+position = Vector2(67, 66)
+scale = Vector2(0.19999999, 0.19999999)
+texture = ExtResource("5_y83pf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control" unique_id=1396798387]
+position = Vector2(67, 309)
+scale = Vector2(0.19999999, 0.19999999)
+texture = ExtResource("6_coog2")
+
+[node name="WorkScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer" unique_id=1873604452]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_swodi")
+script = ExtResource("7_ly81q")
+
+[node name="QuestList" type="Node" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" unique_id=1489982165]
+unique_name_in_owner = true
+script = ExtResource("8_0t15w")
+easy_quest = Array[ExtResource("9_isipi")]([SubResource("Resource_ggagi"), SubResource("Resource_1eqlh"), SubResource("Resource_b5pvb"), SubResource("Resource_lu74m"), SubResource("Resource_t6se8"), SubResource("Resource_jbih1"), SubResource("Resource_ke8a6"), SubResource("Resource_hdjmv"), SubResource("Resource_7x4fo"), SubResource("Resource_kqni3")])
+moderate_quest = Array[ExtResource("9_isipi")]([SubResource("Resource_iqgt0"), SubResource("Resource_srhxv"), SubResource("Resource_3wy2t"), SubResource("Resource_dq2gx"), SubResource("Resource_rhd0q"), SubResource("Resource_pwu24"), SubResource("Resource_g11at"), SubResource("Resource_cy8du"), SubResource("Resource_2jjnj"), SubResource("Resource_tditm")])
+hard_quest = Array[ExtResource("9_isipi")]([SubResource("Resource_po84r"), SubResource("Resource_tuqwp"), SubResource("Resource_iijhg"), SubResource("Resource_fps04"), SubResource("Resource_2q2wm"), SubResource("Resource_2vij6"), SubResource("Resource_qhbk4"), SubResource("Resource_qn3s8"), SubResource("Resource_qd4od"), SubResource("Resource_r1beb")])
+metadata/_custom_type_script = "uid://jhjk5n6vofyn"
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" unique_id=400415319]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer" unique_id=487954131]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer" unique_id=122837298]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1687862507]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.27022192, 0.27022192, 0.2702219, 1)
+theme_override_font_sizes/font_size = 72
+text = "WORK"
+
+[node name="WorkExitButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=621687689]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_d7v3h")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ygl6q")
+text = "X"
+icon_alignment = 1
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer" unique_id=1435477563]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1185341306]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ClientList" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=765970000]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wr0o4")
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/ClientList" unique_id=1156817465]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/ClientList/MarginContainer" unique_id=678919602]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="ClientGridList" type="GridContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/ClientList/MarginContainer/ScrollContainer" unique_id=1722863120]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=701091674]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_2p4ed")
+theme_type_variation = &"EasyPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer" unique_id=1656049352]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer" unique_id=1221181719]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=774321463]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "EASY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=580691069]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+
+[node name="EasyList" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=119489113]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=1638788880]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_2p4ed")
+theme_type_variation = &"MediumPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2" unique_id=1671390390]
+layout_mode = 2
+theme = ExtResource("2_2p4ed")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer" unique_id=906966830]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1236101689]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "MEDIUM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1565897850]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+
+[node name="MediumList" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1696497344]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LockPanelMedium" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2" unique_id=1907802454]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/LockPanelMedium" unique_id=136760784]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/LockPanelMedium/CenterContainer" unique_id=1536097185]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "This stage is not available"
+
+[node name="PanelContainer3" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=2129979891]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_2p4ed")
+theme_type_variation = &"HardPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3" unique_id=436857602]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer" unique_id=630382724]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer" unique_id=367305548]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "HARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer" unique_id=1393247641]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+
+[node name="HardList" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=311615489]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LockPanelHard" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3" unique_id=1192091932]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/LockPanelHard" unique_id=2068354326]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/LockPanelHard/CenterContainer" unique_id=1532217962]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "This stage is not available"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" unique_id=160015848]
+stream = ExtResource("12_w4t31")
+
+[node name="ShutDownPrompt" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer" unique_id=1687119146]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt" unique_id=1275492543]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8uiv3")
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer" unique_id=872476780]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer" unique_id=914294150]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer" unique_id=768651509]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3180198, 0.31801978, 0.31801975, 1)
+theme_override_font_sizes/font_size = 48
+text = "SHUT DOWN?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer" unique_id=1237141259]
+layout_mode = 2
+
+[node name="YesShutDownButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=345582315]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "YES"
+
+[node name="NoShutDownButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1131503186]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "NO"
+
+[node name="TaskBar" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer" unique_id=1158264317]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_styles/panel = SubResource("StyleBoxFlat_d7v3h")
+
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar" unique_id=211025231]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer" unique_id=701989176]
+layout_mode = 2
+
+[node name="PowerButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=489733427]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "POWER "
+
+[node name="Control" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=1915184060]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="WorkButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=2092855418]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_83ua0")
+text = " WORK "
+
+[node name="Control2" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=508572553]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="ShopButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=920415621]
+visible = false
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_83ua0")
+text = "SHOP"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="." unique_id=1718536560]
+stream = ExtResource("12_w4t31")
+
+[connection signal="pressed" from="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ShutdownButton" to="." method="_on_shutdown_button_pressed"]
+[connection signal="quest_accepted" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" to="." method="_on_work_screen_quest_accepted"]
+[connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer/WorkExitButton" to="." method="_on_work_exit_button_pressed"]
+[connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesShutDownButton" to="." method="_on_yes_shut_down_button_pressed"]
+[connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoShutDownButton" to="." method="_on_no_shut_down_button_pressed"]
+[connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer/PowerButton" to="." method="_on_power_button_pressed"]
+[connection signal="pressed" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer/WorkButton" to="." method="_on_work_button_pressed"]

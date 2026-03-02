@@ -30,12 +30,13 @@ extends Control
 @onready var pc_button_click: AudioStreamPlayer = $PCButtonClick
 @onready var button_sfx: AudioStreamPlayer = $ButtonSFX
 @onready var win_sfx: AudioStreamPlayer = $WinSFX
-
 @onready var system_view: Control = %SystemView
 
+@export var ui_scene: PackedScene
 
 var target_pc: Computer
 var pc_data_model: Quest
+var difficulty: int
 
 var animating_text: bool = false
 
@@ -49,6 +50,8 @@ func _ready() -> void:
 	if target_pc.is_on:
 		hardware.hide()
 		system.show()
+	
+	difficulty = target_pc.quest_data.difficulty
 
 func animation_finished() -> void:
 	comment_component()
@@ -311,6 +314,7 @@ func _on_exit_button_pressed() -> void:
 	var player: Player = get_parent().get_parent()
 	target_pc.toggle_case()
 	player.current_state = 1
+	player.stop_timer()
 	queue_free()
 
 
@@ -319,10 +323,34 @@ func _on_finished_button_pressed() -> void:
 	finished_screen.show()
 	var player: Player = get_parent().get_parent()
 	win_sfx.play()
-	player.task_label.hide()
+	player.task_panel.hide()
 	player.stop_timer()
-	time_label.text = str("Time: ", player.time)
-	score_label.text = str("Score: ", calculate_score(player.time))
+	
+	var time: float = player.timer_value
+	var score: float = calculate_score(time)
+	
+	time_label.text = str("Time: ", time)
+	score_label.text = str("Score: ", score)
+	
+	match difficulty:
+		0:
+			var data_exists: bool = false
+			for data in SavedData.easy_quest:
+				if data["id"] == target_pc.quest_data.quest_id:
+					data_exists = true
+			
+			if data_exists:
+				for data in SavedData.easy_quest:
+					if data["id"] == target_pc.quest_data.quest_id:
+						data["finished"] = true
+						if data["highscore"] < score:
+							data["highscore"] = score
+		
+	
+	SavedData.save_data()
+	
+	
+	finished_button.hide()
 
 func calculate_score(time: int) -> float:
 	var base_score: float = 10000
@@ -407,3 +435,24 @@ func _on_open_system_button_pressed() -> void:
 func _on_system_view_system_exited() -> void:
 	button_sfx.play()
 	target_pc.check_pc_condition()
+
+
+func _on_retry_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_level_select_button_pressed() -> void:
+	button_sfx.play()
+	var player = get_parent().get_parent()
+	var ui: Control = ui_scene.instantiate()
+	panel.show()
+	animation_player.play("fade_in")
+	await animation_player.animation_finished
+	player.post_quest_finished.emit()
+	player.interactables_ui.add_child(ui)
+	animation_player.play_backwards("fade_in")
+	await animation_player.animation_finished
+	target_pc.toggle_case()
+	player.current_state = player.States.ON_UI
+	player.quest_selected = false
+	queue_free()

@@ -1,10 +1,14 @@
-[gd_scene load_steps=48 format=3 uid="uid://5smg8ucqwo5f"]
+[gd_scene format=3 uid="uid://5smg8ucqwo5f"]
 
 [ext_resource type="PackedScene" uid="uid://ce7rustx5t43l" path="res://Scenes/Characters/Player/player.tscn" id="1_30ga2"]
 [ext_resource type="Script" uid="uid://bo8q575r4q2t1" path="res://Scripts/World/Office/office.gd" id="1_giavn"]
+[ext_resource type="Script" uid="uid://jhjk5n6vofyn" path="res://Scripts/Quests/quest_list.gd" id="2_hqkft"]
 [ext_resource type="PackedScene" uid="uid://c0v7kb06g258g" path="res://Assets/Resources/3d Models/Low Poly Household Items/Low Poly Furniture/Tables/Table A.fbx" id="2_vh6io"]
+[ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="3_0mn5w"]
 [ext_resource type="ArrayMesh" uid="uid://gqrli32vk8t4" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/wallCorner.obj" id="3_xq0x4"]
 [ext_resource type="ArrayMesh" uid="uid://7dhxdw1spc1l" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/wallWindow.obj" id="4_in14v"]
+[ext_resource type="Script" uid="uid://b6asgc2ojnuvg" path="res://Scripts/Quests/component_type.gd" id="4_msecj"]
+[ext_resource type="Script" uid="uid://dl17x06gixwkn" path="res://Scripts/Quests/component_state.gd" id="5_fensf"]
 [ext_resource type="ArrayMesh" uid="uid://drji7qxoicd1u" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/wallDoorway.obj" id="5_soob8"]
 [ext_resource type="ArrayMesh" uid="uid://douv4bl07h6my" path="res://Assets/Resources/3d Models/kenney_furniture-kit/Models/OBJ format/wall.obj" id="6_mdna1"]
 [ext_resource type="Shader" uid="uid://tb62xjfvd8u1" path="res://Scenes/Worlds/Office/wood.gdshader" id="7_d1sem"]
@@ -22,6 +26,1922 @@
 [ext_resource type="PackedScene" uid="uid://dsika842cj85v" path="res://Scenes/UI/work_computer_screen.tscn" id="15_opvmx"]
 [ext_resource type="PackedScene" uid="uid://udq5n3c656wl" path="res://Scenes/Object/computer.tscn" id="18_oyjoi"]
 [ext_resource type="AudioStream" uid="uid://pc0guyi3vodd" path="res://Assets/mixkit-pop-05-695.mp3" id="22_d1sem"]
+
+[sub_resource type="Resource" id="Resource_dnytd"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8uiv3"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_dnytd")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ygl6q"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_g0mym"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_ygl6q")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xxf6b"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8v5mw"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_xxf6b")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ru1sr"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6buak"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_ru1sr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ggagi"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 1"
+complaint = "The PC doesn't turn on"
+explaination = "Check the power cable connection and PSU switch"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_8uiv3"), SubResource("Resource_g0mym")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_8v5mw"), SubResource("Resource_6buak")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_d2vnm"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_bidbd"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_d2vnm")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2odwn"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7wtb2"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_2odwn")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_1eqlh"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 2"
+complaint = "The monitor is black"
+explaination = "Reseat the HDMI/VGA cable"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_bidbd")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_7wtb2")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_s8614"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ophbg"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_s8614")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_8a6r6"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vh7gx"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_8a6r6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_y4mlv"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_trqdd"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_y4mlv")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_1daop"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_at0jt"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_1daop")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_oto1e"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_f07xc"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_oto1e")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_bdlla"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_45683"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_bdlla")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_b5pvb"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 3"
+complaint = "My PC is getting hot."
+explaination = "Clean basic dust on vents."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_ophbg"), SubResource("Resource_vh7gx"), SubResource("Resource_trqdd")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_at0jt"), SubResource("Resource_f07xc"), SubResource("Resource_45683")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_ue36q"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_mo7n0"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_ue36q")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_uc14c"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_q4oby"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_uc14c")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lu74m"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 4"
+complaint = "No sound in my speakers."
+explaination = "Check if speakers are plugged in and volume is not muted"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_mo7n0")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_q4oby")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_afr13"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_1luww"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_afr13")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_08nf8"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_sixsk"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_08nf8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_t6se8"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 5"
+complaint = "I can’t save files."
+explaination = "Clear space on the PC"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_1luww")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_sixsk")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_1pdiq"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_l71ku"]
+script = ExtResource("4_msecj")
+type = 16
+component_state = SubResource("Resource_1pdiq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_o1oeu"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_j5q83"]
+script = ExtResource("4_msecj")
+type = 16
+component_state = SubResource("Resource_o1oeu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jbih1"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 6"
+complaint = "My keyboard types weird."
+explaination = "Update basic keyboard driver."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_l71ku")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_j5q83")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_kod6e"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xmifg"]
+script = ExtResource("4_msecj")
+type = 18
+component_state = SubResource("Resource_kod6e")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_4tcmw"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_r6f4d"]
+script = ExtResource("4_msecj")
+type = 18
+component_state = SubResource("Resource_4tcmw")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ke8a6"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 7"
+complaint = "Headphones not detected."
+explaination = "Set headphones as default audio output."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_xmifg")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_r6f4d")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_1lcpn"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xl3gr"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_1lcpn")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_f6v6b"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_k8kds"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_f6v6b")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_frhl2"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ompdp"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_frhl2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_oloxt"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c3bet"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_oloxt")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vdjtk"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_w6lk2"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_vdjtk")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_4a8p2"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_66ii7"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_4a8p2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_hdjmv"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 8"
+complaint = "Fan is noisy."
+explaination = "Remove dusts in the fans."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_xl3gr"), SubResource("Resource_k8kds"), SubResource("Resource_ompdp")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_c3bet"), SubResource("Resource_w6lk2"), SubResource("Resource_66ii7")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_8wqhu"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yupwk"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_8wqhu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xsqpm"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_0addv"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_xsqpm")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_7x4fo"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 9"
+complaint = "HDMI loose connection."
+explaination = "Re-seat cable"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_yupwk")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_0addv")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_aefob"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8iw1r"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_aefob")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_6nkry"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_i1gvb"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_6nkry")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_kqni3"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 10"
+complaint = "WiFi keeps disconnecting."
+explaination = "Reinstall or update WiFi driver."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_8iw1r")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_i1gvb")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_smlmc"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tu7cl"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_smlmc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_550rf"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_mibjm"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_550rf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_iqgt0"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 1"
+complaint = "PC restarts randomly."
+explaination = "Check PSU cable and test power outlet."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_tu7cl")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_mibjm")])
+time = 300.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_52wx6"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_v23f2"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_52wx6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0ie2j"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_cvsii"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_0ie2j")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_srhxv"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 2"
+complaint = "Monitor says NO SIGNAL."
+explaination = "Check GPU connection."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_v23f2")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_cvsii")])
+time = 300.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_ahvye"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ba0nn"]
+script = ExtResource("4_msecj")
+type = 20
+component_state = SubResource("Resource_ahvye")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_k4md1"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6p2y8"]
+script = ExtResource("4_msecj")
+type = 20
+component_state = SubResource("Resource_k4md1")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_3wy2t"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 3"
+complaint = "Microphone not recording."
+explaination = "Configure input device settings."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_ba0nn")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_6p2y8")])
+time = 300.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_qxuls"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_pulmi"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_qxuls")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_v6sgf"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_oh510"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_v6sgf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_dq2gx"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 4"
+complaint = "PC says disk needs repair."
+explaination = "Run CHKDSK."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_pulmi")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_oh510")])
+time = 300.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_nf6kh"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_rnktj"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_nf6kh")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_veyms"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xvrxj"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_veyms")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_kkoeo"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ckich"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_kkoeo")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_fgevs"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_11gag"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_fgevs")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_aver8"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_3h63o"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_aver8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_tnltq"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ogo78"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_tnltq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_hm50f"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_1g2t4"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_hm50f")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ngqh7"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_2kvlg"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_ngqh7")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0hhti"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ufb6k"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_0hhti")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_5ffv5"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_dvf38"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_5ffv5")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_rhd0q"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 5"
+complaint = "System shuts down during games.
+"
+explaination = "Clean fans and other dirty components."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_rnktj"), SubResource("Resource_xvrxj"), SubResource("Resource_ckich"), SubResource("Resource_11gag"), SubResource("Resource_3h63o")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_ogo78"), SubResource("Resource_1g2t4"), SubResource("Resource_2kvlg"), SubResource("Resource_ufb6k"), SubResource("Resource_dvf38")])
+time = 300.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_8up7j"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_wuwdx"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_8up7j")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_06vjh"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6fn2j"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_06vjh")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pwu24"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 6"
+complaint = "Printer not detected."
+explaination = "Install USB drivers"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_wuwdx")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_6fn2j")])
+time = 300.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_icnjn"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vljjm"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_icnjn")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_08s58"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6fcrh"]
+script = ExtResource("4_msecj")
+type = 1
+component_state = SubResource("Resource_08s58")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_e37sr"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7ntjc"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_e37sr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xyh21"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_brr6i"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_xyh21")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_g11at"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 7"
+complaint = "My power supply is dirty and restarts randomly"
+explaination = "Clean the power supply and reseat the cpu"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_vljjm"), SubResource("Resource_6fcrh")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_7ntjc"), SubResource("Resource_brr6i")])
+time = 120.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_brnai"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_4ktd5"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_brnai")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vwuyr"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_5lebv"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_vwuyr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lndwp"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yavma"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_lndwp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vgvhf"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_w06jr"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_vgvhf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_cy8du"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 8"
+complaint = "My GPU is dirty, and my display is black"
+explaination = "Clean the GPU and connect the display cable"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_4ktd5"), SubResource("Resource_5lebv")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_yavma"), SubResource("Resource_w06jr")])
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_l72hy"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8m13i"]
+script = ExtResource("4_msecj")
+type = 20
+component_state = SubResource("Resource_l72hy")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jcfgg"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_m4o8o"]
+script = ExtResource("4_msecj")
+type = 20
+component_state = SubResource("Resource_jcfgg")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2jjnj"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 9"
+complaint = "My mic, isn't detected by my computer"
+explaination = "Check the microphone connection and if the microphone is enabled by the computer"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_8m13i")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_m4o8o")])
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_0y0vw"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_5qogh"]
+script = ExtResource("4_msecj")
+type = 16
+component_state = SubResource("Resource_0y0vw")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_bc1ps"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_4cg1r"]
+script = ExtResource("4_msecj")
+type = 17
+component_state = SubResource("Resource_bc1ps")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_tditm"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 10"
+complaint = "I can't use my keyboard and mouse"
+explaination = "Check it's connection or update the drivers"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_5qogh"), SubResource("Resource_4cg1r")])
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_6r58q"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_l4rn3"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_6r58q")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pt1wr"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ls1j5"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_pt1wr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_po84r"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 1"
+complaint = "Audio crackling."
+explaination = "Update audio driver."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_l4rn3")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_ls1j5")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_jlmmc"]
+script = ExtResource("5_fensf")
+state = 2
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_b86fc"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_jlmmc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_t1he4"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7mpog"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_t1he4")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_tuqwp"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 2"
+complaint = "Hard drive too slow."
+explaination = "Run disk defragment."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_b86fc")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_7mpog")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_tcnkg"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8ahnq"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_tcnkg")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_h8ivu"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_egv8s"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_h8ivu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_iijhg"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 3"
+complaint = "Display glitches"
+explaination = "Install GPU drivers."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_8ahnq")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_egv8s")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_5r7k6"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_np1nu"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_5r7k6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_li0cr"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_e5ugf"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_li0cr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_fps04"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 4"
+complaint = "PC freezes randomly."
+explaination = "Check RAM seating."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_np1nu")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_e5ugf")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_n3eok"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tfyay"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_n3eok")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2od7f"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ky2la"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_2od7f")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_utgdf"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7tmea"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_utgdf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qx16b"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_o3b34"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_qx16b")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_gecgm"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_mge1o"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_gecgm")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_wyc3y"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_5w4hr"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_wyc3y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_eja7f"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n2h2t"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_eja7f")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_6hiwv"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_6jx3e"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_6hiwv")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2q2wm"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 5"
+complaint = "Game crashes often."
+explaination = "Update drivers."
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_tfyay"), SubResource("Resource_ky2la"), SubResource("Resource_7tmea"), SubResource("Resource_o3b34")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_mge1o"), SubResource("Resource_5w4hr"), SubResource("Resource_n2h2t"), SubResource("Resource_6jx3e")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_jp80h"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_gwydb"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_jp80h")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lljh0"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_x2fal"]
+script = ExtResource("4_msecj")
+type = 18
+component_state = SubResource("Resource_lljh0")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xjnw5"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xjb58"]
+script = ExtResource("4_msecj")
+type = 19
+component_state = SubResource("Resource_xjnw5")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pwt2d"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yqt1o"]
+script = ExtResource("4_msecj")
+type = 20
+component_state = SubResource("Resource_pwt2d")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2vij6"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 6"
+complaint = "My audio devices doesn't work"
+explaination = "Check the audio devices"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_gwydb"), SubResource("Resource_x2fal"), SubResource("Resource_xjb58"), SubResource("Resource_yqt1o")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_6cdic"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tr0nt"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_6cdic")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_lj2gi"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vb8dd"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_lj2gi")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_88b27"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ccna6"]
+script = ExtResource("4_msecj")
+type = 21
+component_state = SubResource("Resource_88b27")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_igji8"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_1mq5w"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_igji8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qhbk4"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 7"
+complaint = "My disk has problems and my computer restarts randomly"
+explaination = "Try running some checks on the computer and reseat the RAM"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_tr0nt"), SubResource("Resource_vb8dd")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_ccna6"), SubResource("Resource_1mq5w")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_1vsy2"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_151uh"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_1vsy2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_yr2kq"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_2srdd"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_yr2kq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ibo7x"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_63m1u"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_ibo7x")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_5dxqg"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7akxc"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_5dxqg")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_4il84"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tr1ln"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_4il84")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qll8l"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_gwwkn"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_qll8l")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_j5iop"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_dvlmk"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_j5iop")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_h6m4l"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ml54k"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_h6m4l")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_c2m78"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_aua6o"]
+script = ExtResource("4_msecj")
+type = 16
+component_state = SubResource("Resource_c2m78")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_x2t1g"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_4wv5t"]
+script = ExtResource("4_msecj")
+type = 17
+component_state = SubResource("Resource_x2t1g")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vp1ob"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ffttg"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_vp1ob")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xilsv"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_du68b"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_xilsv")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_2ncol"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_se7xk"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_2ncol")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ehtx8"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_lgi0c"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_ehtx8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xy3fp"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8oavb"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_xy3fp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_pv3v6"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_nhmy8"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_pv3v6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_untih"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_25ud3"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_untih")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_76yc8"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_56j11"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_76yc8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_1toxb"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_o6n32"]
+script = ExtResource("4_msecj")
+type = 16
+component_state = SubResource("Resource_1toxb")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_uwroe"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_nkvdg"]
+script = ExtResource("4_msecj")
+type = 17
+component_state = SubResource("Resource_uwroe")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qn3s8"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 8"
+complaint = "My PC is so dirty and I need my drivers to be updated"
+explaination = "Clean the PC and update the drivers"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_151uh"), SubResource("Resource_2srdd"), SubResource("Resource_63m1u"), SubResource("Resource_7akxc"), SubResource("Resource_tr1ln"), SubResource("Resource_gwwkn"), SubResource("Resource_dvlmk"), SubResource("Resource_ml54k"), SubResource("Resource_aua6o"), SubResource("Resource_4wv5t")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_ffttg"), SubResource("Resource_du68b"), SubResource("Resource_se7xk"), SubResource("Resource_lgi0c"), SubResource("Resource_8oavb"), SubResource("Resource_nhmy8"), SubResource("Resource_25ud3"), SubResource("Resource_56j11"), SubResource("Resource_o6n32"), SubResource("Resource_nkvdg")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_fexk2"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_luf7j"]
+script = ExtResource("4_msecj")
+type = 1
+component_state = SubResource("Resource_fexk2")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_do7rf"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_pq31h"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_do7rf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_q16jp"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_r821q"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_q16jp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jmqc8"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ppdja"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_jmqc8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_3kc4c"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n48lj"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_3kc4c")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ye4i8"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_a2v1l"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_ye4i8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_g66uh"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_3wcgr"]
+script = ExtResource("4_msecj")
+type = 1
+component_state = SubResource("Resource_g66uh")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_it7sc"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_uu3tk"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_it7sc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_kh0r8"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vomwo"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_kh0r8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_c5k6y"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8mfgv"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_c5k6y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_n0uy8"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8uh2s"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_n0uy8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_t2mm0"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_arq4s"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_t2mm0")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qd4od"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 9"
+complaint = "My CPU and RAM seems loose, the display is black, and I can't turn it on"
+explaination = "Check the CPU, RAM, GPU, and PSU"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_luf7j"), SubResource("Resource_pq31h"), SubResource("Resource_r821q"), SubResource("Resource_ppdja"), SubResource("Resource_n48lj"), SubResource("Resource_a2v1l")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_3wcgr"), SubResource("Resource_uu3tk"), SubResource("Resource_vomwo"), SubResource("Resource_8mfgv"), SubResource("Resource_8uh2s"), SubResource("Resource_arq4s")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
+
+[sub_resource type="Resource" id="Resource_fbvt6"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_2kxt8"]
+script = ExtResource("4_msecj")
+type = 1
+component_state = SubResource("Resource_fbvt6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_mhl4w"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_yyefd"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_mhl4w")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_nyf4d"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_0yx20"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_nyf4d")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jvh82"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_nwfqp"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_jvh82")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_7vxl1"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_tis6p"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_7vxl1")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_p4bfs"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ex2ol"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_p4bfs")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_mv3ae"]
+script = ExtResource("5_fensf")
+state = 1
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vo7tr"]
+script = ExtResource("4_msecj")
+type = 7
+component_state = SubResource("Resource_mv3ae")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_jlkmq"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_xl8oy"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_jlkmq")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_a55vb"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_3y8m8"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_a55vb")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0f2km"]
+script = ExtResource("5_fensf")
+state = 4
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_r4tix"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_0f2km")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_6ptqb"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_wnv10"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_6ptqb")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xb8ph"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n0lja"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_xb8ph")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_y48fc"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8xxdc"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_y48fc")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_28k7y"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_b4yyq"]
+script = ExtResource("4_msecj")
+type = 16
+component_state = SubResource("Resource_28k7y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_nedo8"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c2bbt"]
+script = ExtResource("4_msecj")
+type = 17
+component_state = SubResource("Resource_nedo8")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_8xg0a"]
+script = ExtResource("5_fensf")
+state = 3
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_74wbt"]
+script = ExtResource("4_msecj")
+type = 18
+component_state = SubResource("Resource_8xg0a")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_k8v7y"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_02req"]
+script = ExtResource("4_msecj")
+type = 19
+component_state = SubResource("Resource_k8v7y")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_qpl8i"]
+script = ExtResource("5_fensf")
+state = 5
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c13uk"]
+script = ExtResource("4_msecj")
+type = 20
+component_state = SubResource("Resource_qpl8i")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_r1x0p"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_aq5ny"]
+script = ExtResource("4_msecj")
+type = 1
+component_state = SubResource("Resource_r1x0p")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_or2uy"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ly83k"]
+script = ExtResource("4_msecj")
+type = 2
+component_state = SubResource("Resource_or2uy")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_phl1m"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c6103"]
+script = ExtResource("4_msecj")
+type = 3
+component_state = SubResource("Resource_phl1m")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_dp1mu"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_llvx4"]
+script = ExtResource("4_msecj")
+type = 4
+component_state = SubResource("Resource_dp1mu")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_68t2r"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_g13gb"]
+script = ExtResource("4_msecj")
+type = 5
+component_state = SubResource("Resource_68t2r")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_r6rur"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_7n2aw"]
+script = ExtResource("4_msecj")
+type = 6
+component_state = SubResource("Resource_r6rur")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xobwp"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c1faa"]
+script = ExtResource("4_msecj")
+type = 7
+component_state = SubResource("Resource_xobwp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_vqu23"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_w7n4p"]
+script = ExtResource("4_msecj")
+type = 8
+component_state = SubResource("Resource_vqu23")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_3ecdr"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_ujjlp"]
+script = ExtResource("4_msecj")
+type = 9
+component_state = SubResource("Resource_3ecdr")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_do3s3"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_eqo1f"]
+script = ExtResource("4_msecj")
+type = 10
+component_state = SubResource("Resource_do3s3")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_fu7b7"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vo8i5"]
+script = ExtResource("4_msecj")
+type = 11
+component_state = SubResource("Resource_fu7b7")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_xqny6"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_8osfa"]
+script = ExtResource("4_msecj")
+type = 12
+component_state = SubResource("Resource_xqny6")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ojs1u"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_n466b"]
+script = ExtResource("4_msecj")
+type = 14
+component_state = SubResource("Resource_ojs1u")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_8qjma"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_vn3j3"]
+script = ExtResource("4_msecj")
+type = 16
+component_state = SubResource("Resource_8qjma")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_ucplp"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_t10te"]
+script = ExtResource("4_msecj")
+type = 17
+component_state = SubResource("Resource_ucplp")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_sflb5"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_c4gh0"]
+script = ExtResource("4_msecj")
+type = 18
+component_state = SubResource("Resource_sflb5")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_e6w2o"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_623yc"]
+script = ExtResource("4_msecj")
+type = 19
+component_state = SubResource("Resource_e6w2o")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_0i5lf"]
+script = ExtResource("5_fensf")
+metadata/_custom_type_script = "uid://dl17x06gixwkn"
+
+[sub_resource type="Resource" id="Resource_g8wio"]
+script = ExtResource("4_msecj")
+type = 20
+component_state = SubResource("Resource_0i5lf")
+metadata/_custom_type_script = "uid://b6asgc2ojnuvg"
+
+[sub_resource type="Resource" id="Resource_r1beb"]
+script = ExtResource("3_0mn5w")
+quest_id = "LEVEL 10"
+complaint = "My PC doesn't work, I don't know what's the problem"
+explaination = "Check the whole system"
+initial_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_2kxt8"), SubResource("Resource_yyefd"), SubResource("Resource_0yx20"), SubResource("Resource_nwfqp"), SubResource("Resource_tis6p"), SubResource("Resource_ex2ol"), SubResource("Resource_vo7tr"), SubResource("Resource_xl8oy"), SubResource("Resource_3y8m8"), SubResource("Resource_r4tix"), SubResource("Resource_wnv10"), SubResource("Resource_n0lja"), SubResource("Resource_8xxdc"), SubResource("Resource_b4yyq"), SubResource("Resource_c2bbt"), SubResource("Resource_74wbt"), SubResource("Resource_02req"), SubResource("Resource_c13uk")])
+winning_conditions = Array[ExtResource("4_msecj")]([SubResource("Resource_aq5ny"), SubResource("Resource_ly83k"), SubResource("Resource_c6103"), SubResource("Resource_llvx4"), SubResource("Resource_g13gb"), SubResource("Resource_7n2aw"), SubResource("Resource_c1faa"), SubResource("Resource_w7n4p"), SubResource("Resource_ujjlp"), SubResource("Resource_eqo1f"), SubResource("Resource_vo8i5"), SubResource("Resource_8osfa"), SubResource("Resource_n466b"), SubResource("Resource_vn3j3"), SubResource("Resource_t10te"), SubResource("Resource_c4gh0"), SubResource("Resource_623yc"), SubResource("Resource_g8wio")])
+time = 420.0
+metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Environment" id="Environment_cpduc"]
 background_mode = 1
@@ -161,31 +2081,39 @@ emission_energy_multiplier = 0.57
 [sub_resource type="BoxShape3D" id="BoxShape3D_ij4l3"]
 size = Vector3(4.496521, 3.2940674, 1.8084717)
 
-[node name="Office" type="Node3D"]
+[node name="Office" type="Node3D" unique_id=424094819]
 script = ExtResource("1_giavn")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="QuestList" type="Node" parent="." unique_id=827449929]
+unique_name_in_owner = true
+script = ExtResource("2_hqkft")
+easy_quest = Array[ExtResource("3_0mn5w")]([SubResource("Resource_ggagi"), SubResource("Resource_1eqlh"), SubResource("Resource_b5pvb"), SubResource("Resource_lu74m"), SubResource("Resource_t6se8"), SubResource("Resource_jbih1"), SubResource("Resource_ke8a6"), SubResource("Resource_hdjmv"), SubResource("Resource_7x4fo"), SubResource("Resource_kqni3")])
+moderate_quest = Array[ExtResource("3_0mn5w")]([SubResource("Resource_iqgt0"), SubResource("Resource_srhxv"), SubResource("Resource_3wy2t"), SubResource("Resource_dq2gx"), SubResource("Resource_rhd0q"), SubResource("Resource_pwu24"), SubResource("Resource_g11at"), SubResource("Resource_cy8du"), SubResource("Resource_2jjnj"), SubResource("Resource_tditm")])
+hard_quest = Array[ExtResource("3_0mn5w")]([SubResource("Resource_po84r"), SubResource("Resource_tuqwp"), SubResource("Resource_iijhg"), SubResource("Resource_fps04"), SubResource("Resource_2q2wm"), SubResource("Resource_2vij6"), SubResource("Resource_qhbk4"), SubResource("Resource_qn3s8"), SubResource("Resource_qd4od"), SubResource("Resource_r1beb")])
+metadata/_custom_type_script = "uid://jhjk5n6vofyn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1155934005]
 environment = SubResource("Environment_cpduc")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1035755381]
 transform = Transform3D(0.81324494, -0.40021902, 0.4224421, -0.13667423, 0.57427275, 0.8071746, -0.56564367, -0.7141676, 0.41232488, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Ceiling" type="MeshInstance3D" parent="."]
+[node name="Ceiling" type="MeshInstance3D" parent="." unique_id=853355346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.218159, 0)
 mesh = SubResource("BoxMesh_xq0x4")
 skeleton = NodePath("../Floor")
 
-[node name="Ceiling Light" parent="Ceiling" instance=ExtResource("12_cpduc")]
+[node name="Ceiling Light" parent="Ceiling" unique_id=587080554 instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.33905077, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light" unique_id=544442473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
 mesh = SubResource("SphereMesh_cpduc")
 skeleton = NodePath("../../../WorldEnvironment")
 surface_material_override/0 = SubResource("StandardMaterial3D_na377")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light" unique_id=1038504960]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
@@ -193,16 +2121,16 @@ shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = -0.1
 
-[node name="Ceiling Light2" parent="Ceiling" instance=ExtResource("12_cpduc")]
+[node name="Ceiling Light2" parent="Ceiling" unique_id=1381210647 instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -4.2888813, 0.33905077, -4.189139)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light2" unique_id=1087158421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
 mesh = SubResource("SphereMesh_cpduc")
 skeleton = NodePath("../../../WorldEnvironment")
 surface_material_override/0 = SubResource("StandardMaterial3D_na377")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light2"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light2" unique_id=1034451352]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
@@ -210,16 +2138,16 @@ shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = -0.1
 
-[node name="Ceiling Light3" parent="Ceiling" instance=ExtResource("12_cpduc")]
+[node name="Ceiling Light3" parent="Ceiling" unique_id=1748729556 instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.2888794, 0.33905077, -4.189139)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light3" unique_id=579874405]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
 mesh = SubResource("SphereMesh_cpduc")
 skeleton = NodePath("../../../WorldEnvironment")
 surface_material_override/0 = SubResource("StandardMaterial3D_na377")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light3"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light3" unique_id=1615205833]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
@@ -227,16 +2155,16 @@ shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = -0.1
 
-[node name="Ceiling Light4" parent="Ceiling" instance=ExtResource("12_cpduc")]
+[node name="Ceiling Light4" parent="Ceiling" unique_id=870865404 instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.2888794, 0.33905077, 4.189138)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light4" unique_id=550902789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
 mesh = SubResource("SphereMesh_cpduc")
 skeleton = NodePath("../../../WorldEnvironment")
 surface_material_override/0 = SubResource("StandardMaterial3D_na377")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light4"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light4" unique_id=1589862520]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -3.6201715, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
@@ -244,16 +2172,16 @@ shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = -0.1
 
-[node name="Ceiling Light5" parent="Ceiling" instance=ExtResource("12_cpduc")]
+[node name="Ceiling Light5" parent="Ceiling" unique_id=1953102173 instance=ExtResource("12_cpduc")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -4.139268, 0.33905077, 4.189138)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling/Ceiling Light5" unique_id=570304321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1282625, 0)
 mesh = SubResource("SphereMesh_cpduc")
 skeleton = NodePath("../../../WorldEnvironment")
 surface_material_override/0 = SubResource("StandardMaterial3D_na377")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light5"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Ceiling/Ceiling Light5" unique_id=1295779412]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -2.853733, 0)
 light_color = Color(0.999999, 0.9980182, 0.80148154, 1)
 light_energy = 0.4
@@ -261,189 +2189,190 @@ shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = -0.1
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1014309825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 collision_layer = 2
 collision_mask = 3
 
-[node name="FloorMesh" type="MeshInstance3D" parent="Floor"]
+[node name="FloorMesh" type="MeshInstance3D" parent="Floor" unique_id=197863298]
 transform = Transform3D(1.56, 0, 0, 0, 1, 0, 0, 0, 1.765, 0, 0, 0)
 mesh = SubResource("BoxMesh_xq0x4")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=400693130]
 shape = SubResource("BoxShape3D_in14v")
 
-[node name="Walls" type="Node3D" parent="."]
+[node name="Walls" type="Node3D" parent="." unique_id=614392022]
 
-[node name="WallCorner2" type="MeshInstance3D" parent="Walls"]
+[node name="WallCorner2" type="MeshInstance3D" parent="Walls" unique_id=1909778638]
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 2.5, 0, 3, 0, -1.3113416e-07, 5, 0, -3.3504589)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../WallCorner")
 surface_material_override/3 = SubResource("ShaderMaterial_b5xl6")
 
-[node name="WallCorner" type="MeshInstance3D" parent="Walls"]
+[node name="WallCorner" type="MeshInstance3D" parent="Walls" unique_id=1539197518]
 transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, -3.35, 0, -5)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../..")
 surface_material_override/3 = SubResource("ShaderMaterial_msecj")
 
-[node name="WallWindow" type="MeshInstance3D" parent="Walls"]
+[node name="WallWindow" type="MeshInstance3D" parent="Walls" unique_id=613952820]
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 2.5, 0, 3, 0, -1.3113416e-07, 5, 0, 1.495)
 mesh = ExtResource("4_in14v")
 skeleton = NodePath("../..")
 surface_material_override/4 = SubResource("ShaderMaterial_oqou2")
 surface_material_override/6 = SubResource("StandardMaterial3D_soob8")
 
-[node name="WallDoorway" type="MeshInstance3D" parent="Walls"]
+[node name="WallDoorway" type="MeshInstance3D" parent="Walls" unique_id=815791669]
 transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, -0.36, 0, -5)
 mesh = ExtResource("5_soob8")
 skeleton = NodePath("../..")
 surface_material_override/5 = SubResource("ShaderMaterial_fensf")
 
-[node name="Wall" type="MeshInstance3D" parent="Walls"]
+[node name="Wall" type="MeshInstance3D" parent="Walls" unique_id=1587299076]
 transform = Transform3D(4.8535357, 0, 0, 0, 2.5, 0, 0, 0, 3, 4.484, 0, -5)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
 surface_material_override/5 = SubResource("ShaderMaterial_yhu0g")
 
-[node name="Wall2" type="MeshInstance3D" parent="Walls"]
+[node name="Wall2" type="MeshInstance3D" parent="Walls" unique_id=597458209]
 transform = Transform3D(-9.0282285e-08, 0, -3, 0, 2.5, 0, 2.0654182, 0, -1.3113416e-07, 5, 0, -1.3113413)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
 surface_material_override/5 = SubResource("ShaderMaterial_hqkft")
 
-[node name="WallCorner3" type="MeshInstance3D" parent="Walls"]
+[node name="WallCorner3" type="MeshInstance3D" parent="Walls" unique_id=454681127]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 2.5, 0, -3, 0, -1.3113416e-07, -5, 0, 3.35)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../..")
 surface_material_override/3 = SubResource("ShaderMaterial_j5uxx")
 
-[node name="Wall3" type="MeshInstance3D" parent="Walls"]
+[node name="Wall3" type="MeshInstance3D" parent="Walls" unique_id=37589684]
 transform = Transform3D(-2.9687672e-07, 0, 3, 0, 2.5, 0, -6.791748, 0, -1.3113416e-07, -5, 0, -3.381)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
 surface_material_override/5 = SubResource("ShaderMaterial_rj6m6")
 
-[node name="WallCorner4" type="MeshInstance3D" parent="Walls"]
+[node name="WallCorner4" type="MeshInstance3D" parent="Walls" unique_id=1099806870]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 2.5, 0, 2.6226832e-07, 0, -3, 3.35, 0, 5)
 mesh = ExtResource("3_xq0x4")
 skeleton = NodePath("../..")
 surface_material_override/3 = SubResource("ShaderMaterial_d1sem")
 
-[node name="Wall4" type="MeshInstance3D" parent="Walls"]
+[node name="Wall4" type="MeshInstance3D" parent="Walls" unique_id=1871407303]
 transform = Transform3D(-6.832058, 0, -2.6226834e-07, 0, 2.5, 0, 5.9727745e-07, 0, -3.0000005, -3.404648, 0, 5)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
 surface_material_override/5 = SubResource("ShaderMaterial_6iqiv")
 
-[node name="Wall5" type="MeshInstance3D" parent="Walls"]
+[node name="Wall5" type="MeshInstance3D" parent="Walls" unique_id=518156642]
 transform = Transform3D(-8.162385e-08, 0, -3, 0, 2.5, 0, 1.867336, 0, -1.3113416e-07, 5, 0, 3.3433013)
 mesh = ExtResource("6_mdna1")
 skeleton = NodePath("../..")
 surface_material_override/5 = SubResource("ShaderMaterial_0mn5w")
 
-[node name="Doorway" type="MeshInstance3D" parent="Walls"]
+[node name="Doorway" type="MeshInstance3D" parent="Walls" unique_id=2134279371]
 transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, -1.1761898, 1.899898e-07, -5.0698156)
 mesh = ExtResource("7_mdna1")
 skeleton = NodePath("../..")
 
-[node name="WallCollision" type="StaticBody3D" parent="Walls"]
+[node name="WallCollision" type="StaticBody3D" parent="Walls" unique_id=461053628]
 collision_layer = 2
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallCollision" unique_id=1183103150]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -4.914551, 1.5942383, 0)
 shape = SubResource("BoxShape3D_mdna1")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls/WallCollision"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls/WallCollision" unique_id=1447616805]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 4.9392586, 1.563, 0)
 shape = SubResource("BoxShape3D_mdna1")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls/WallCollision"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls/WallCollision" unique_id=1894642405]
 transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 0.036, 1.594, -4.939257)
 shape = SubResource("BoxShape3D_mdna1")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls/WallCollision"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls/WallCollision" unique_id=119414265]
 transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, 0.036, 1.594, 4.9010587)
 shape = SubResource("BoxShape3D_mdna1")
 
-[node name="coatRack" parent="Walls" instance=ExtResource("8_myewj")]
+[node name="coatRack" parent="Walls" unique_id=1590176273 instance=ExtResource("8_myewj")]
 transform = Transform3D(-2, 0, -1.509958e-07, 0, 1, 0, 3.019916e-07, 0, -1, 0.00967592, 1.9850317, -4.7155457)
 
-[node name="WorkTable" type="StaticBody3D" parent="."]
+[node name="WorkTable" type="StaticBody3D" parent="." unique_id=1552896597]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.929205, 0.14694285, 2.4306684)
 collision_layer = 2
 
-[node name="Table A" parent="WorkTable" instance=ExtResource("2_vh6io")]
+[node name="Table A" parent="WorkTable" unique_id=1121691921 instance=ExtResource("2_vh6io")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.09510827, 0, 0.001270771)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorkTable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorkTable" unique_id=1007889221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0061035156, -0.09958649, 0.007965088)
 shape = SubResource("BoxShape3D_el43v")
 
-[node name="Desk" type="StaticBody3D" parent="."]
+[node name="Desk" type="StaticBody3D" parent="." unique_id=1997598724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.430516, 0.6477535, 3.4067674)
 collision_layer = 2
 
-[node name="Desk" parent="Desk" instance=ExtResource("8_el43v")]
+[node name="Desk" parent="Desk" unique_id=1202548977 instance=ExtResource("8_el43v")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.3, 0, 4.371139e-08, 0, -0.5, 0, -0.1327362, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk" unique_id=1142142305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86456025, -0.15438986, 0.42515755)
 shape = SubResource("BoxShape3D_3dh5i")
 
-[node name="Shelf" type="StaticBody3D" parent="."]
+[node name="Shelf" type="StaticBody3D" parent="." unique_id=2015660415]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5009809, 1.0678, -4.290098)
 collision_layer = 2
 
-[node name="Shelf E" parent="Shelf" instance=ExtResource("9_3dh5i")]
+[node name="Shelf E" parent="Shelf" unique_id=1445697705 instance=ExtResource("9_3dh5i")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0, -0.06267977)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf" unique_id=358807759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003753662, 0.0022888184, -0.03466797)
 shape = SubResource("BoxShape3D_pbwrw")
 
-[node name="Shelf2" type="StaticBody3D" parent="."]
+[node name="Shelf2" type="StaticBody3D" parent="." unique_id=1846090790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0567646, 1.0678, -4.3443394)
 collision_layer = 2
 
-[node name="Shelf E" parent="Shelf2" instance=ExtResource("9_3dh5i")]
+[node name="Shelf E" parent="Shelf2" unique_id=545602160 instance=ExtResource("9_3dh5i")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf2" unique_id=435544524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003753662, 0.0022888184, -0.03466797)
 shape = SubResource("BoxShape3D_pbwrw")
 
-[node name="Carpet B" parent="." instance=ExtResource("10_pbwrw")]
+[node name="Carpet B" parent="." unique_id=132070867 instance=ExtResource("10_pbwrw")]
 transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="Cabinet" type="StaticBody3D" parent="."]
+[node name="Cabinet" type="StaticBody3D" parent="." unique_id=407350834]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, -4.4161453, 1.2727644, -0.73537636)
 collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabinet"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabinet" unique_id=1357570618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01675415, 0.14671326, -0.64785767)
 shape = SubResource("BoxShape3D_cpduc")
 
-[node name="Shelf B" parent="Cabinet" instance=ExtResource("11_3aaeu")]
+[node name="Shelf B" parent="Cabinet" unique_id=1780895623 instance=ExtResource("11_3aaeu")]
 
-[node name="Player" parent="." instance=ExtResource("1_30ga2")]
+[node name="Player" parent="." unique_id=1269691535 node_paths=PackedStringArray("target") instance=ExtResource("1_30ga2")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7332401, 1.899898e-07, 1.5945703)
+target = NodePath("../Target")
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=564102975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6974182, 1.5529671, 0.007621765)
 size = Vector3(13.27301, 5.834648, 12.342941)
 interior = true
 enable_shadows = true
 
-[node name="Wall" type="MeshInstance3D" parent="."]
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=2010637968]
 transform = Transform3D(-7.371926e-07, 0, -1, 0, 2, 0, 16.865, 0, -4.371139e-08, 6.88902, 0, 8.596893)
 gi_mode = 0
 mesh = ExtResource("6_mdna1")
 
-[node name="ReflectionProbe2" type="ReflectionProbe" parent="."]
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="." unique_id=1908965555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3014908, 1.0994806, -4.411682)
 intensity = 0.6
 size = Vector3(4.942032, 3.785797, 3.0726318)
@@ -453,60 +2382,63 @@ enable_shadows = true
 ambient_mode = 2
 ambient_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
 
-[node name="Monitor" parent="." instance=ExtResource("13_r8s40")]
+[node name="Monitor" parent="." unique_id=424213947 instance=ExtResource("13_r8s40")]
 transform = Transform3D(-0.39, 0, -4.5298744e-08, 0, 0.325, 0, 5.888836e-08, 0, -0.3, 2.8735883, 1.3592322, 3.6316762)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor" unique_id=98530045]
 transform = Transform3D(1, 2.842171e-14, 0, 0, -4.371139e-08, -1, -2.842171e-14, 1, -4.371139e-08, 0, 1.0744157, 0.13451862)
 mesh = SubResource("PlaneMesh_r8s40")
 surface_material_override/0 = SubResource("StandardMaterial3D_ij4l3")
 
-[node name="DetectorCollision" type="StaticBody3D" parent="Monitor"]
+[node name="DetectorCollision" type="StaticBody3D" parent="Monitor" unique_id=1228752525]
 collision_layer = 16
 collision_mask = 9
 script = ExtResource("14_7wi02")
 ui_scene = ExtResource("15_opvmx")
 has_ui = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/DetectorCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/DetectorCollision" unique_id=717269486]
 transform = Transform3D(1, 0, 4.973799e-14, 0, 1, 0, -2.842171e-14, 0, 1, -0.035491943, 1.1470337, 0.40423584)
 shape = SubResource("BoxShape3D_ij4l3")
 
-[node name="Pc" parent="." instance=ExtResource("14_ij4l3")]
+[node name="Pc" parent="." unique_id=775722252 instance=ExtResource("14_ij4l3")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.9470329, 1.6448047, 3.8515968)
 
-[node name="Keyboard" parent="." instance=ExtResource("15_ij4l3")]
+[node name="Keyboard" parent="." unique_id=856200888 instance=ExtResource("15_ij4l3")]
 transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 2.7685122, 1.0081749, 3.183483)
 
-[node name="Keyboard2" parent="." instance=ExtResource("15_ij4l3")]
+[node name="Keyboard2" parent="." unique_id=1307660218 instance=ExtResource("15_ij4l3")]
 transform = Transform3D(-0.10249289, 0, 0.28194892, 0, 0.29999995, 0, -0.28194892, 0, -0.10249289, -3.4594843, 1.102768, 2.4626856)
 
-[node name="TestMonitor" type="Node3D" parent="."]
+[node name="TestMonitor" type="Node3D" parent="." unique_id=1320173237]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.7947493, 1.029587, 1.2958252)
 
-[node name="Monitor2" parent="." instance=ExtResource("13_r8s40")]
+[node name="Monitor2" parent="." unique_id=2026831328 instance=ExtResource("13_r8s40")]
 transform = Transform3D(-0.097799785, 0, 0.29041407, 0, 0.3249999, 0, -0.37753826, 0, -0.0752306, -3.8488479, 1.4592197, 2.7406669)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor2" unique_id=1605316834]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.0744157, 0.06790924)
 mesh = SubResource("PlaneMesh_r8s40")
 surface_material_override/0 = SubResource("StandardMaterial3D_ij4l3")
 
-[node name="Computer" parent="." instance=ExtResource("18_oyjoi")]
+[node name="Computer" parent="." unique_id=1597215128 instance=ExtResource("18_oyjoi")]
 transform = Transform3D(0.63019294, 0, 1.1370386, 0, 1.3, 0, -1.1370386, 0, 0.63019294, -3.7708237, 1.055638, 1.2184405)
 
-[node name="ComputerEnabledPosition" type="Node3D" parent="."]
+[node name="ComputerEnabledPosition" type="Node3D" parent="." unique_id=218342693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7328534, 1.0428454, 1.1619775)
 
-[node name="ComputerDisabledPosition" type="Node3D" parent="."]
+[node name="ComputerDisabledPosition" type="Node3D" parent="." unique_id=107326598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3281736, 0.92725587, 1.1619775)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2102124469]
 
-[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=94226134]
 stream = ExtResource("22_d1sem")
 volume_db = -0.365
 autoplay = true
+
+[node name="Target" type="Node3D" parent="." unique_id=842453099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.597595, 1.4165541, 1.2359374)
 
 [connection signal="post_quest_finished" from="Player" to="." method="_on_player_post_quest_finished"]
 [connection signal="post_selected_quest" from="Player" to="." method="_on_player_post_selected_quest"]

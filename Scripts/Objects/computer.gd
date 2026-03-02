@@ -38,6 +38,8 @@ signal winning_condition_achieved()
 @onready var animation_timer: Timer = %AnimationTimer
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var fan_sf_x: AudioStreamPlayer = $FanSfX
+@onready var arrow: Node3D = $Arrow
+@onready var floating_label_spawner: Node3D = %FloatingLabelSpawner
 
 @export var quest_data: Quest
 
@@ -71,6 +73,7 @@ var doing_reinstall_animation: bool = false
 @export var mic_state: ComponentState.STATE
 @export var disk_state: ComponentState.STATE
 @export var os_state: ComponentState.STATE
+@export var floating_label: PackedScene
 
 func _ready() -> void:
 	init_components()
@@ -366,9 +369,11 @@ func toggle_case() -> void:
 	if side_panel_installed:
 		animation_player.play_backwards("side_panel_install")
 		side_panel_installed = false
+		arrow.hide()
 	else:
 		animation_player.play("side_panel_install")
 		side_panel_installed = true
+		arrow.show()
 
 func _on_ray_cast_detector_interact_signal_recieved(player: Player) -> void:
 	toggle_case()
@@ -723,3 +728,12 @@ func is_neccessary(com: ComponentType.TYPE) -> void:
 	
 	if !list.has(com):
 		not_neccessary.emit()
+		var instance: FloatingLabel = floating_label.instantiate()
+		instance.type = instance.TYPE.BAD
+		floating_label_spawner.add_child(instance)
+		instance.text = "TIME: -10"
+	else:
+		var instance: FloatingLabel = floating_label.instantiate()
+		instance.type = instance.TYPE.GOOD
+		floating_label_spawner.add_child(instance)
+		instance.text = "SCORE: +100"

@@ -8,12 +8,20 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="PCRepairSimulator"
 run/main_scene="uid://bb84yh2vgre8h"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="uid://b4lek06kqsxil"
+
+[autoload]
+
+SavedData="*uid://dju3jta8y532p"
 
 [display]
 
@@ -22,6 +30,10 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
+
+[gui]
+
+theme/custom="uid://2nuei3rxhon2"
 
 [input]
 

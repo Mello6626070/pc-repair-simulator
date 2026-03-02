@@ -55,4 +55,5 @@ func _on_work_screen_quest_accepted(quest: Quest) -> void:
 	player.current_state = 1
 	if player.quest_selected:
 		player.start_timer()
+	player.quest_working = false
 	queue_free()

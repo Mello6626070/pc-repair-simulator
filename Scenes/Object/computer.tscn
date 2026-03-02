@@ -1,10 +1,11 @@
-[gd_scene load_steps=48 format=3 uid="uid://udq5n3c656wl"]
+[gd_scene format=3 uid="uid://udq5n3c656wl"]
 
 [ext_resource type="PackedScene" uid="uid://btxfa6tqmcjpk" path="res://Assets/Resources/3d Models/PC Components/Case/case.tscn" id="1_c830r"]
 [ext_resource type="Script" uid="uid://c51gmm3jvm2cj" path="res://Scripts/Objects/computer.gd" id="1_p73vt"]
 [ext_resource type="PackedScene" uid="uid://bm3o4x3ku2760" path="res://Assets/Resources/3d Models/PC Components/Motherboard/Motherboard.blend" id="2_hfnwu"]
 [ext_resource type="Script" uid="uid://cgo8o2gtgi8re" path="res://Scripts/Quests/quest.gd" id="3_q17hr"]
 [ext_resource type="PackedScene" uid="uid://mu1sbqv0ag7j" path="res://Assets/Resources/3d Models/PC Components/CPU/CartoonCPU.blend" id="3_yua5f"]
+[ext_resource type="PackedScene" uid="uid://blxs5kbxt2b2f" path="res://Scenes/UI/floating_label.tscn" id="4_3y36k"]
 [ext_resource type="Script" uid="uid://b6asgc2ojnuvg" path="res://Scripts/Quests/component_type.gd" id="4_5itcf"]
 [ext_resource type="PackedScene" uid="uid://c7lww7bdaaae1" path="res://Assets/Resources/3d Models/PC Components/RAM/CartoonRAM.blend" id="4_caqkj"]
 [ext_resource type="PackedScene" uid="uid://d2u5afuaoatvg" path="res://Assets/Resources/3d Models/PC Components/GPU/GPU.blend" id="5_37nt6"]
@@ -1025,237 +1026,294 @@ top_radius = 0.005
 bottom_radius = 0.005
 height = 1.0
 
-[node name="Computer" type="Node3D"]
+[sub_resource type="Animation" id="Animation_b6wpq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.5860976]
+}
+
+[sub_resource type="Animation" id="Animation_qvi1a"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.5860976, 1.8, 1.5860976]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0s64x"]
+_data = {
+&"RESET": SubResource("Animation_b6wpq"),
+&"new_animation": SubResource("Animation_qvi1a")
+}
+
+[node name="Computer" type="Node3D" unique_id=305073192]
 script = ExtResource("1_p73vt")
 quest_data = SubResource("Resource_g3oml")
 psu_state = 5
+floating_label = ExtResource("4_3y36k")
 
-[node name="CaseContainer" type="Node3D" parent="."]
+[node name="CaseContainer" type="Node3D" parent="." unique_id=477658256]
 
-[node name="Case" parent="CaseContainer" instance=ExtResource("1_c830r")]
+[node name="Case" parent="CaseContainer" unique_id=1786873441 instance=ExtResource("1_c830r")]
 
-[node name="MotherboardContainer" type="Node3D" parent="CaseContainer"]
+[node name="MotherboardContainer" type="Node3D" parent="CaseContainer" unique_id=1080799831]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.06553376, 0.4711965, -0.11012089)
 
-[node name="Motherboard" parent="CaseContainer/MotherboardContainer" instance=ExtResource("2_hfnwu")]
+[node name="Motherboard" parent="CaseContainer/MotherboardContainer" unique_id=350966794 instance=ExtResource("2_hfnwu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007992387, 0, 0)
 
-[node name="CPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+[node name="CPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer" unique_id=213742209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007610321, 0.007070981, -0.15084788)
 
-[node name="CartoonCPU" parent="CaseContainer/MotherboardContainer/CPUContainer" instance=ExtResource("3_yua5f")]
+[node name="CartoonCPU" parent="CaseContainer/MotherboardContainer/CPUContainer" unique_id=1615780271 instance=ExtResource("3_yua5f")]
 unique_name_in_owner = true
 
-[node name="CPUSelectedIndicator" parent="CaseContainer/MotherboardContainer/CPUContainer" instance=ExtResource("13_q17hr")]
+[node name="CPUSelectedIndicator" parent="CaseContainer/MotherboardContainer/CPUContainer" unique_id=1583626091 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.085, 0, 0, 0, 0.03, 0, 0, 0, 0.1, 0, 0.004023552, 0)
 
-[node name="RAMContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+[node name="RAMContainer" type="Node3D" parent="CaseContainer/MotherboardContainer" unique_id=572070293]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10576182, -7.450581e-09, -0.1443002)
 
-[node name="RAM1" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer"]
+[node name="RAM1" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer" unique_id=1749676278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013688505, 0, 0)
 
-[node name="CartoonRAM1" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM1" instance=ExtResource("4_caqkj")]
+[node name="CartoonRAM1" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM1" unique_id=512396693 instance=ExtResource("4_caqkj")]
 unique_name_in_owner = true
 
-[node name="RAM2" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer"]
+[node name="RAM2" type="Node3D" parent="CaseContainer/MotherboardContainer/RAMContainer" unique_id=1449131012]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013202667, 0, 0)
 
-[node name="CartoonRAM2" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM2" instance=ExtResource("4_caqkj")]
+[node name="CartoonRAM2" parent="CaseContainer/MotherboardContainer/RAMContainer/RAM2" unique_id=832197342 instance=ExtResource("4_caqkj")]
 unique_name_in_owner = true
 
-[node name="RAMSelectedIndicator" parent="CaseContainer/MotherboardContainer/RAMContainer" instance=ExtResource("13_q17hr")]
+[node name="RAMSelectedIndicator" parent="CaseContainer/MotherboardContainer/RAMContainer" unique_id=727863171 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.06, 0, 0, 0, 0.055, 0, 0, 0, 0.295, 0, 0.058248762, 0)
 
-[node name="GPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+[node name="GPUContainer" type="Node3D" parent="CaseContainer/MotherboardContainer" unique_id=1567621896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08794519, 0.004909344, 0.088480234)
 
-[node name="GPU" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("5_37nt6")]
+[node name="GPU" parent="CaseContainer/MotherboardContainer/GPUContainer" unique_id=2122881701 instance=ExtResource("5_37nt6")]
 unique_name_in_owner = true
 
-[node name="GPUParticleEmitter" parent="CaseContainer/MotherboardContainer/GPUContainer/GPU" instance=ExtResource("11_tc54y")]
+[node name="GPUParticleEmitter" parent="CaseContainer/MotherboardContainer/GPUContainer/GPU" unique_id=778397042 instance=ExtResource("11_tc54y")]
 unique_name_in_owner = true
 transform = Transform3D(-0.99186337, -0.12730686, 0, -5.5647598e-09, 4.3355726e-08, 1, -0.12730686, 0.99186337, -4.371139e-08, 0.25046325, 0.11003479, 0.035934895)
 emitting = false
 local_coords = true
 
-[node name="GPUSelectedIndicator" parent="CaseContainer/MotherboardContainer/GPUContainer" instance=ExtResource("13_q17hr")]
+[node name="GPUSelectedIndicator" parent="CaseContainer/MotherboardContainer/GPUContainer" unique_id=1307441795 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.535, 0, 0, 0, 0.245, 0, 0, 0, 0.115, 0.097802274, 0.11272934, 0.033854663)
 
-[node name="SSDContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+[node name="SSDContainer" type="Node3D" parent="CaseContainer/MotherboardContainer" unique_id=1277265903]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.038874477, 0.011314519, 0)
 
-[node name="CartoonNVMESSD" parent="CaseContainer/MotherboardContainer/SSDContainer" instance=ExtResource("6_n7d1v")]
+[node name="CartoonNVMESSD" parent="CaseContainer/MotherboardContainer/SSDContainer" unique_id=855035004 instance=ExtResource("6_n7d1v")]
 unique_name_in_owner = true
 
-[node name="SSDSelectedIndicator" parent="CaseContainer/MotherboardContainer/SSDContainer" instance=ExtResource("13_q17hr")]
+[node name="SSDSelectedIndicator" parent="CaseContainer/MotherboardContainer/SSDContainer" unique_id=242628989 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.065, 0, 1.6703743e-23, 0, 0.04, 0, -5.4287163e-24, 0, 0.2, 0, 0, 0.069687955)
 
-[node name="CPUCoolerContainer" type="Node3D" parent="CaseContainer/MotherboardContainer"]
+[node name="CPUCoolerContainer" type="Node3D" parent="CaseContainer/MotherboardContainer" unique_id=94569950]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006053686, 0.0135458335, -0.15436432)
 
-[node name="CPUCooler" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" instance=ExtResource("7_cko6k")]
+[node name="CPUCooler" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" unique_id=424408101 instance=ExtResource("7_cko6k")]
 unique_name_in_owner = true
 
-[node name="CPUFanContainer" type="Node3D" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler"]
+[node name="CPUFanContainer" type="Node3D" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler" unique_id=549115856]
 transform = Transform3D(-1.9670126e-09, 0.045, -7.516685e-24, -0.045, -1.9670126e-09, 0, 0, -8.598086e-17, 0.045, -0.04077947, 0.131673, -5.9604645e-08)
 
-[node name="CPUCoolerFan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler/CPUFanContainer" instance=ExtResource("8_ue6n6")]
+[node name="CPUCoolerFan" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler/CPUFanContainer" unique_id=9507943 instance=ExtResource("8_ue6n6")]
 unique_name_in_owner = true
 
-[node name="CPUCoolerParticleEmitter" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler" instance=ExtResource("11_tc54y")]
+[node name="CPUCoolerParticleEmitter" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer/CPUCooler" unique_id=1747757420 instance=ExtResource("11_tc54y")]
 unique_name_in_owner = true
 transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, -0.012392834, 0.14650556, -0.020102859)
 emitting = false
 local_coords = true
 
-[node name="CPUCoolerSelectedIndicator" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" instance=ExtResource("13_q17hr")]
+[node name="CPUCoolerSelectedIndicator" parent="CaseContainer/MotherboardContainer/CPUCoolerContainer" unique_id=680846395 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.155, -1.0587912e-22, -3.5077858e-23, 0, 0.235, 0, -2.5890801e-23, 0, 0.21, 0, 0.11276293, 0)
 
-[node name="PowerCable" type="Node3D" parent="CaseContainer"]
+[node name="PowerCable" type="Node3D" parent="CaseContainer" unique_id=56698036]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3457755, 0.116212755, -0.040855303)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseContainer/PowerCable"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseContainer/PowerCable" unique_id=1350945673]
 mesh = SubResource("BoxMesh_5itcf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseContainer/PowerCable/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseContainer/PowerCable/MeshInstance3D" unique_id=1784497747]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.023271292, 0, -0.49321347)
 mesh = SubResource("CylinderMesh_8lyjr")
 surface_material_override/0 = SubResource("StandardMaterial3D_8lyjr")
 
-[node name="PSUContainer" type="Node3D" parent="CaseContainer"]
+[node name="PSUContainer" type="Node3D" parent="CaseContainer" unique_id=363883718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21967931, 0.08551064, 0.033254147)
 
-[node name="PSU" parent="CaseContainer/PSUContainer" instance=ExtResource("6_37nt6")]
+[node name="PSU" parent="CaseContainer/PSUContainer" unique_id=641973196 instance=ExtResource("6_37nt6")]
 unique_name_in_owner = true
 
-[node name="PSUParticleEmitter" parent="CaseContainer/PSUContainer/PSU" instance=ExtResource("11_tc54y")]
+[node name="PSUParticleEmitter" parent="CaseContainer/PSUContainer/PSU" unique_id=724566046 instance=ExtResource("11_tc54y")]
 unique_name_in_owner = true
 transform = Transform3D(8.08162, 0, 0, 0, 15.560574, 0, 0, 0, 8.839305, 0.03618765, 1.0805501, 0.34345594)
 emitting = false
 local_coords = true
 
-[node name="PSUSelectedIndicator" parent="CaseContainer/PSUContainer" instance=ExtResource("13_q17hr")]
+[node name="PSUSelectedIndicator" parent="CaseContainer/PSUContainer" unique_id=2025013965 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.26, 0, 0, 0, 0.155, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="CaseFanContainer" type="Node3D" parent="CaseContainer"]
+[node name="CaseFanContainer" type="Node3D" parent="CaseContainer" unique_id=1995555811]
 
-[node name="ExhaustFanContainer" type="Node3D" parent="CaseContainer/CaseFanContainer"]
+[node name="ExhaustFanContainer" type="Node3D" parent="CaseContainer/CaseFanContainer" unique_id=1744418187]
 transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, -0.31407994, 0.68262243, 0.07260555)
 
-[node name="ExhaustFanSelectedIndicator" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" instance=ExtResource("13_q17hr")]
+[node name="ExhaustFanSelectedIndicator" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" unique_id=2020020198 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.19, 0, 0, 0, 0.04, 0, 0, 0, 0.19, 0, 0, 0)
 
-[node name="ExhaustFan" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" instance=ExtResource("8_ue6n6")]
+[node name="ExhaustFan" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer" unique_id=1400667829 instance=ExtResource("8_ue6n6")]
 unique_name_in_owner = true
 transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
 
-[node name="ExhaustFanParticleEmitter" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer/ExhaustFan" instance=ExtResource("11_tc54y")]
+[node name="ExhaustFanParticleEmitter" parent="CaseContainer/CaseFanContainer/ExhaustFanContainer/ExhaustFan" unique_id=1813074160 instance=ExtResource("11_tc54y")]
 unique_name_in_owner = true
 transform = Transform3D(-9.713642e-07, 22.222223, 0, -22.222223, -9.713642e-07, 0, 0, 0, 22.222221, -0.081376076, -0.9748521, -0.01101923)
 emitting = false
 local_coords = true
 
-[node name="IntakeFan1" type="Node3D" parent="CaseContainer/CaseFanContainer"]
+[node name="IntakeFan1" type="Node3D" parent="CaseContainer/CaseFanContainer" unique_id=725990469]
 transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.68262243, 0.035289466)
 
-[node name="IntakeFan1" parent="CaseContainer/CaseFanContainer/IntakeFan1" instance=ExtResource("8_ue6n6")]
+[node name="IntakeFan1" parent="CaseContainer/CaseFanContainer/IntakeFan1" unique_id=271664765 instance=ExtResource("8_ue6n6")]
 unique_name_in_owner = true
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
-[node name="IntakeFan1ParticleEmitter" parent="CaseContainer/CaseFanContainer/IntakeFan1/IntakeFan1" instance=ExtResource("11_tc54y")]
+[node name="IntakeFan1ParticleEmitter" parent="CaseContainer/CaseFanContainer/IntakeFan1/IntakeFan1" unique_id=626547101 instance=ExtResource("11_tc54y")]
 unique_name_in_owner = true
 transform = Transform3D(8.742278e-07, 20, -7.6427424e-14, 20, -8.742278e-07, -1.7484556e-06, -1.7484554e-06, 6.6174453e-21, -19.999998, -3.7919722, -1.0435629, -0.02447778)
 emitting = false
 local_coords = true
 
-[node name="IntakeFanSelectedIndicator" parent="CaseContainer/CaseFanContainer/IntakeFan1" instance=ExtResource("13_q17hr")]
+[node name="IntakeFanSelectedIndicator" parent="CaseContainer/CaseFanContainer/IntakeFan1" unique_id=1475473278 instance=ExtResource("13_q17hr")]
 unique_name_in_owner = true
 transform = Transform3D(0.44, -1.6703742e-23, -6.7377626e-23, 1.4699292e-22, 0.05, -1.8651748e-15, 1.4117216e-22, 4.4408926e-16, 0.21, -0.09580499, 0, 0)
 
-[node name="IntakeFan2" type="Node3D" parent="CaseContainer/CaseFanContainer"]
+[node name="IntakeFan2" type="Node3D" parent="CaseContainer/CaseFanContainer" unique_id=973442248]
 transform = Transform3D(4.3711385e-08, 0.99999994, -8.742278e-08, 0.99999994, -4.3711385e-08, 0, -3.8213705e-15, -8.742277e-08, -1, 0.31290567, 0.4761976, 0.035289466)
 
-[node name="IntakeFan2" parent="CaseContainer/CaseFanContainer/IntakeFan2" instance=ExtResource("8_ue6n6")]
+[node name="IntakeFan2" parent="CaseContainer/CaseFanContainer/IntakeFan2" unique_id=601641591 instance=ExtResource("8_ue6n6")]
 unique_name_in_owner = true
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
-[node name="IntakeFan2ParticleEmitter2" parent="CaseContainer/CaseFanContainer/IntakeFan2/IntakeFan2" instance=ExtResource("11_tc54y")]
+[node name="IntakeFan2ParticleEmitter2" parent="CaseContainer/CaseFanContainer/IntakeFan2/IntakeFan2" unique_id=587411734 instance=ExtResource("11_tc54y")]
 unique_name_in_owner = true
 transform = Transform3D(8.742278e-07, 20, -7.6427424e-14, 20, -8.742278e-07, -1.7484556e-06, -1.7484554e-06, 6.6174453e-21, -19.999998, 4.0372667, -0.769732, -0.02447778)
 emitting = false
 local_coords = true
 
-[node name="SidePanelContainer" type="Node3D" parent="."]
+[node name="SidePanelContainer" type="Node3D" parent="." unique_id=2015837398]
 
-[node name="FrontPanel" parent="SidePanelContainer" instance=ExtResource("11_tyvka")]
+[node name="FrontPanel" parent="SidePanelContainer" unique_id=1855768536 instance=ExtResource("11_tyvka")]
 transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0, 0.41102928, 0.1773068)
 
-[node name="BackPanel" parent="SidePanelContainer" instance=ExtResource("11_tyvka")]
+[node name="BackPanel" parent="SidePanelContainer" unique_id=99916158 instance=ExtResource("11_tyvka")]
 transform = Transform3D(0.3346138, 0, 0, 0, 0.40523618, 0, 0, 0, 0.007429578, 0, 0.41102928, -0.17462012)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=852961337]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_30qfc")
-}
+libraries/ = SubResource("AnimationLibrary_30qfc")
 
-[node name="ParticleEmitters" type="Node3D" parent="."]
+[node name="ParticleEmitters" type="Node3D" parent="." unique_id=761109873]
 
-[node name="RayCastDetector" type="StaticBody3D" parent="."]
+[node name="RayCastDetector" type="StaticBody3D" parent="." unique_id=423108648]
 collision_layer = 16
 collision_mask = 9
 script = ExtResource("16_g3oml")
 ui_scene = ExtResource("17_5itcf")
 has_ui = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RayCastDetector"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RayCastDetector" unique_id=206396898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019195557, 0.4626541, 0.17324829)
 shape = SubResource("BoxShape3D_q17hr")
 
-[node name="DisplayCable" type="Node3D" parent="."]
+[node name="DisplayCable" type="Node3D" parent="." unique_id=408870903]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31853855, 0.3680521, 0.028820753)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable" unique_id=798892115]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015553862, 0, 0)
 mesh = SubResource("BoxMesh_8lyjr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D" unique_id=1858688415]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.03778869, 0, 0)
 mesh = SubResource("CapsuleMesh_pu67r")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D" unique_id=2006966155]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.15172498, -0.009423673, 0)
 mesh = SubResource("CylinderMesh_3y36k")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D/MeshInstance3D" unique_id=1200381031]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.15033242, -0.04513582)
 mesh = SubResource("CapsuleMesh_b8jlm")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DisplayCable/MeshInstance3D/MeshInstance3D/MeshInstance3D/MeshInstance3D" unique_id=1183126735]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5414224, 2.2351742e-08)
 mesh = SubResource("CylinderMesh_skcs0")
 
-[node name="AnimationTimer" type="Timer" parent="."]
+[node name="AnimationTimer" type="Timer" parent="." unique_id=344556229]
 unique_name_in_owner = true
 one_shot = true
 
-[node name="FanSfX" type="AudioStreamPlayer" parent="."]
+[node name="FanSfX" type="AudioStreamPlayer" parent="." unique_id=26459164]
 stream = ExtResource("18_8lyjr")
 
-[node name="SidePanelFx" type="AudioStreamPlayer" parent="."]
+[node name="SidePanelFx" type="AudioStreamPlayer" parent="." unique_id=1526366760]
 
-[node name="DirtyFanFx" type="AudioStreamPlayer" parent="."]
+[node name="DirtyFanFx" type="AudioStreamPlayer" parent="." unique_id=917787243]
 stream = ExtResource("19_pu67r")
+
+[node name="Arrow" type="Node3D" parent="." unique_id=403235761]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.00498271, 1.5860976, -0.03238213)
+
+[node name="Label3D" type="Label3D" parent="Arrow" unique_id=1482197265]
+transform = Transform3D(0.99999976, 0, -3.5527133e-15, 0, 1, 0, 3.5527133e-15, 0, 0.99999976, 0, -0.35798407, 0)
+modulate = Color(1, 1, 0, 1)
+text = "HERE "
+
+[node name="Label3D2" type="Label3D" parent="Arrow" unique_id=708377279]
+transform = Transform3D(-4.3711374e-08, 0.99999964, 0, -0.9999999, -4.371138e-08, 0, 0, 0, 0.99999964, 0, -0.64203954, 0)
+modulate = Color(1, 1, 0, 1)
+text = ">>>"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow" unique_id=55047672]
+libraries/ = SubResource("AnimationLibrary_0s64x")
+autoplay = &"new_animation"
+
+[node name="FloatingLabelSpawner" type="Node3D" parent="." unique_id=692973415]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40263933, 0.31107706)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="interact_signal_recieved" from="RayCastDetector" to="." method="_on_ray_cast_detector_interact_signal_recieved"]

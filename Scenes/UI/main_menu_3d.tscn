@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bb84yh2vgre8h"]
+[gd_scene format=3 uid="uid://bb84yh2vgre8h"]
 
 [ext_resource type="Script" uid="uid://c1f6rhlt4gjpi" path="res://Scripts/UI/main_menu_3d.gd" id="1_hadd6"]
 [ext_resource type="PackedScene" uid="uid://udq5n3c656wl" path="res://Scenes/Object/computer.tscn" id="2_y1i53"]
@@ -31,17 +31,19 @@ size = Vector2(2, 2)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wuapd"]
 render_priority = 0
 shader = ExtResource("3_i6cbg")
-shader_parameter/light_direction = Vector3(0.5, 0, 0)
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/mid1_color = Color(0.8, 0.8, 0.8, 1)
-shader_parameter/mid2_color = Color(0.5, 0.5, 0.5, 1)
-shader_parameter/shadow_color = Color(0.3, 0.3, 0.3, 1)
-shader_parameter/highlight_threshold = 0.85
-shader_parameter/mid1_threshold = 0.6
-shader_parameter/mid2_threshold = 0.35
-shader_parameter/smoothness = 0.1
-shader_parameter/roughness = 1.0
-shader_parameter/roughness_channel = 0
+shader_parameter/light_noise_scale = Vector2(1, 1)
+shader_parameter/light_noise_strength = 0.0
+shader_parameter/light_steps = 5
+shader_parameter/light_step_power = 2.0
+shader_parameter/light_offset = 0.0
+shader_parameter/light_multiplier = 1.0
+shader_parameter/albedo_noise_strength = Vector2(0, 0)
+shader_parameter/albedo_noise_scale = Vector2(1, 1)
+shader_parameter/saturation_multiplier = 1.0
+shader_parameter/desaturation_power = 10.0
+shader_parameter/enable_depth_scaling = true
+shader_parameter/depth_strength = 2.0
+shader_parameter/edge_strength = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bll8"]
 bg_color = Color(0.37008938, 0.8011732, 0.99999994, 1)
@@ -59,31 +61,31 @@ shader_parameter/strength = 0.186000008835
 shader_parameter/speed = 0.1010000047975
 shader_parameter/screen_resolution = Vector2(1280, 720)
 
-[node name="MainMenu3d" type="Node3D"]
+[node name="MainMenu3d" type="Node3D" unique_id=212910500]
 script = ExtResource("1_hadd6")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1957528951]
 environment = SubResource("Environment_ae0ig")
 
-[node name="Computer" parent="." instance=ExtResource("2_y1i53")]
+[node name="Computer" parent="." unique_id=446653157 instance=ExtResource("2_y1i53")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=633568982]
 transform = Transform3D(0.9552061, 0, 0.29594144, 0, 1, 0, -0.29594144, 0, 0.9552061, -0.14909413, 0.43684256, 1.0275258)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1029999210]
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_i6cbg")
 surface_material_override/0 = SubResource("ShaderMaterial_wuapd")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=99529002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2416729, 1.3177195)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1735776320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6377826, 1.2416729, -1.5063372)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1755930577]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=805241919]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,7 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1712246132]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -100,50 +102,50 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/HBoxContainer" unique_id=913443600]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer/CenterContainer" unique_id=441529476]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer/CenterContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer/CenterContainer/VBoxContainer" unique_id=963660367]
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 texture = ExtResource("3_y1i53")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="StartButton" type="Button" parent="CanvasLayer/Control/HBoxContainer/CenterContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CanvasLayer/Control/HBoxContainer/CenterContainer/VBoxContainer" unique_id=50368603]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_7bll8")
 text = "START"
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/Control/HBoxContainer/CenterContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="CanvasLayer/Control/HBoxContainer/CenterContainer/VBoxContainer" unique_id=1432840060]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_i6cbg")
 text = "EXIT"
 
-[node name="Control" type="Control" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/Control/HBoxContainer" unique_id=1617577481]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Ambient" type="AudioStreamPlayer" parent="."]
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=1304893959]
 stream = ExtResource("4_ae0ig")
 autoplay = true
 
-[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=982716299]
 stream = ExtResource("5_swvoq")
 
-[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=1192115786]
 stream = ExtResource("6_vwvrj")
 autoplay = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=556788455]
 transform = Transform3D(-9.529211, 0, -3.0321815, 0, 10, 0, 3.0321815, 0, -9.529211, -0.828573, 0, -1.1579797)
 mesh = SubResource("QuadMesh_vwvrj")
 surface_material_override/0 = SubResource("ShaderMaterial_i6cbg")

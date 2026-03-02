@@ -7,6 +7,7 @@ func _ready() -> void:
 	computer.toggle_case()
 	computer.toggle_psu_power()
 	computer.boot()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.

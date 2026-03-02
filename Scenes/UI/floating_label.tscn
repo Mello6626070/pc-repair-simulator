@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://blxs5kbxt2b2f"]
+
+[ext_resource type="Script" uid="uid://b0apdeab6y0c5" path="res://Scripts/UI/floatinglabel.gd" id="1_litoj"]
+
+[node name="FloatingLabel" type="Label3D" unique_id=866980813]
+pixel_size = 0.001
+text = "YAHALLO"
+script = ExtResource("1_litoj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1601979541]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

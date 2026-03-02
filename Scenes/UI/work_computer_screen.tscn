@@ -1,4 +1,4 @@
-[gd_scene load_steps=361 format=3 uid="uid://dsika842cj85v"]
+[gd_scene format=3 uid="uid://dsika842cj85v"]
 
 [ext_resource type="Theme" uid="uid://2nuei3rxhon2" path="res://Assets/Resources/theme.tres" id="1_vi77b"]
 [ext_resource type="Script" uid="uid://4ymry88c3ni2" path="res://Scripts/UI/work_computer_screen.gd" id="1_yfn37"]
@@ -467,6 +467,7 @@ explaination = "Check PSU cable and test power outlet."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_tu7cl")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_mibjm")])
 time = 300.0
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_52wx6"]
@@ -498,6 +499,7 @@ explaination = "Check GPU connection."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_v23f2")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_cvsii")])
 time = 300.0
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_ahvye"]
@@ -529,6 +531,7 @@ explaination = "Configure input device settings."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_ba0nn")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_6p2y8")])
 time = 300.0
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_qxuls"]
@@ -560,6 +563,7 @@ explaination = "Run CHKDSK."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_pulmi")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_oh510")])
 time = 300.0
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_nf6kh"]
@@ -676,6 +680,7 @@ explaination = "Clean fans and other dirty components."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_rnktj"), SubResource("Resource_xvrxj"), SubResource("Resource_ckich"), SubResource("Resource_11gag"), SubResource("Resource_3h63o")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_ogo78"), SubResource("Resource_1g2t4"), SubResource("Resource_2kvlg"), SubResource("Resource_ufb6k"), SubResource("Resource_dvf38")])
 time = 300.0
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_8up7j"]
@@ -707,6 +712,7 @@ explaination = "Install USB drivers"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_wuwdx")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_6fn2j")])
 time = 300.0
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_icnjn"]
@@ -759,6 +765,7 @@ explaination = "Clean the power supply and reseat the cpu"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_vljjm"), SubResource("Resource_6fcrh")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_7ntjc"), SubResource("Resource_brr6i")])
 time = 120.0
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_brnai"]
@@ -810,6 +817,7 @@ complaint = "My GPU is dirty, and my display is black"
 explaination = "Clean the GPU and connect the display cable"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_4ktd5"), SubResource("Resource_5lebv")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_yavma"), SubResource("Resource_w06jr")])
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_l72hy"]
@@ -840,6 +848,7 @@ complaint = "My mic, isn't detected by my computer"
 explaination = "Check the microphone connection and if the microphone is enabled by the computer"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_8m13i")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_m4o8o")])
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_0y0vw"]
@@ -870,6 +879,7 @@ quest_id = "LEVEL 10"
 complaint = "I can't use my keyboard and mouse"
 explaination = "Check it's connection or update the drivers"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_5qogh"), SubResource("Resource_4cg1r")])
+difficulty = 1
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_6r58q"]
@@ -901,6 +911,7 @@ explaination = "Update audio driver."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_l4rn3")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_ls1j5")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_jlmmc"]
@@ -932,6 +943,7 @@ explaination = "Run disk defragment."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_b86fc")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_7mpog")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_tcnkg"]
@@ -963,6 +975,7 @@ explaination = "Install GPU drivers."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_8ahnq")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_egv8s")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_5r7k6"]
@@ -994,6 +1007,7 @@ explaination = "Check RAM seating."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_np1nu")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_e5ugf")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_n3eok"]
@@ -1088,6 +1102,7 @@ explaination = "Update drivers."
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_tfyay"), SubResource("Resource_ky2la"), SubResource("Resource_7tmea"), SubResource("Resource_o3b34")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_mge1o"), SubResource("Resource_5w4hr"), SubResource("Resource_n2h2t"), SubResource("Resource_6jx3e")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_jp80h"]
@@ -1141,6 +1156,7 @@ complaint = "My audio devices doesn't work"
 explaination = "Check the audio devices"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_gwydb"), SubResource("Resource_x2fal"), SubResource("Resource_xjb58"), SubResource("Resource_yqt1o")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_6cdic"]
@@ -1193,6 +1209,7 @@ explaination = "Try running some checks on the computer and reseat the RAM"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_tr0nt"), SubResource("Resource_vb8dd")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_ccna6"), SubResource("Resource_1mq5w")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_1vsy2"]
@@ -1413,6 +1430,7 @@ explaination = "Clean the PC and update the drivers"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_151uh"), SubResource("Resource_2srdd"), SubResource("Resource_63m1u"), SubResource("Resource_7akxc"), SubResource("Resource_tr1ln"), SubResource("Resource_gwwkn"), SubResource("Resource_dvlmk"), SubResource("Resource_ml54k"), SubResource("Resource_aua6o"), SubResource("Resource_4wv5t")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_ffttg"), SubResource("Resource_du68b"), SubResource("Resource_se7xk"), SubResource("Resource_lgi0c"), SubResource("Resource_8oavb"), SubResource("Resource_nhmy8"), SubResource("Resource_25ud3"), SubResource("Resource_56j11"), SubResource("Resource_o6n32"), SubResource("Resource_nkvdg")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_fexk2"]
@@ -1549,6 +1567,7 @@ explaination = "Check the CPU, RAM, GPU, and PSU"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_luf7j"), SubResource("Resource_pq31h"), SubResource("Resource_r821q"), SubResource("Resource_ppdja"), SubResource("Resource_n48lj"), SubResource("Resource_a2v1l")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_3wcgr"), SubResource("Resource_uu3tk"), SubResource("Resource_vomwo"), SubResource("Resource_8mfgv"), SubResource("Resource_8uh2s"), SubResource("Resource_arq4s")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="Resource" id="Resource_fbvt6"]
@@ -1937,22 +1956,32 @@ explaination = "Check the whole system"
 initial_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_2kxt8"), SubResource("Resource_yyefd"), SubResource("Resource_0yx20"), SubResource("Resource_nwfqp"), SubResource("Resource_tis6p"), SubResource("Resource_ex2ol"), SubResource("Resource_vo7tr"), SubResource("Resource_xl8oy"), SubResource("Resource_3y8m8"), SubResource("Resource_r4tix"), SubResource("Resource_wnv10"), SubResource("Resource_n0lja"), SubResource("Resource_8xxdc"), SubResource("Resource_b4yyq"), SubResource("Resource_c2bbt"), SubResource("Resource_74wbt"), SubResource("Resource_02req"), SubResource("Resource_c13uk")])
 winning_conditions = Array[ExtResource("7_wr0o4")]([SubResource("Resource_aq5ny"), SubResource("Resource_ly83k"), SubResource("Resource_c6103"), SubResource("Resource_llvx4"), SubResource("Resource_g13gb"), SubResource("Resource_7n2aw"), SubResource("Resource_c1faa"), SubResource("Resource_w7n4p"), SubResource("Resource_ujjlp"), SubResource("Resource_eqo1f"), SubResource("Resource_vo8i5"), SubResource("Resource_8osfa"), SubResource("Resource_n466b"), SubResource("Resource_vn3j3"), SubResource("Resource_t10te"), SubResource("Resource_c4gh0"), SubResource("Resource_623yc"), SubResource("Resource_g8wio")])
 time = 420.0
+difficulty = 2
 metadata/_custom_type_script = "uid://cgo8o2gtgi8re"
 
 [sub_resource type="FontFile" id="FontFile_d7v3h"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-cache/0/32/0/ascent = 0.0
-cache/0/32/0/descent = 0.0
-cache/0/32/0/underline_position = 0.0
-cache/0/32/0/underline_thickness = 0.0
-cache/0/32/0/scale = 1.0
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
 cache/0/72/0/ascent = 0.0
 cache/0/72/0/descent = 0.0
 cache/0/72/0/underline_position = 0.0
@@ -2001,7 +2030,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="WorkComputerScreen" type="Control"]
+[node name="WorkComputerScreen" type="Control" unique_id=540871348]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2010,7 +2039,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yfn37")
 
-[node name="MonitorPanel" type="PanelContainer" parent="."]
+[node name="MonitorPanel" type="PanelContainer" parent="." unique_id=1279639423]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2020,26 +2049,26 @@ grow_vertical = 2
 theme = ExtResource("1_vi77b")
 theme_type_variation = &"DefaultPanel"
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel" unique_id=165700710]
 layout_mode = 2
 theme_override_constants/margin_left = 72
 theme_override_constants/margin_top = 72
 theme_override_constants/margin_right = 72
 theme_override_constants/margin_bottom = 72
 
-[node name="HomeScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer"]
+[node name="HomeScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer" unique_id=868169678]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_83ua0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen" unique_id=363484601]
 layout_mode = 2
 
-[node name="MainView" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer"]
+[node name="MainView" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer" unique_id=331739828]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView" unique_id=798574204]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2051,32 +2080,31 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Control" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer"]
+[node name="Control" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer" unique_id=198879269]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control"]
+[node name="Sprite2D" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control" unique_id=1610271979]
 position = Vector2(67, 186)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_g0mym")
 
-[node name="Sprite2D2" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control"]
+[node name="Sprite2D2" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control" unique_id=647064217]
 position = Vector2(67, 66)
 scale = Vector2(0.19999999, 0.19999999)
 texture = ExtResource("5_xxf6b")
 
-[node name="Sprite2D3" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control"]
+[node name="Sprite2D3" type="Sprite2D" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/Control" unique_id=1396798387]
 position = Vector2(67, 309)
 scale = Vector2(0.19999999, 0.19999999)
 texture = ExtResource("6_8v5mw")
 
-[node name="WorkScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer"]
+[node name="WorkScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer" unique_id=1873604452]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_swodi")
 script = ExtResource("4_8uiv3")
 
-[node name="QuestList" type="Node" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen"]
+[node name="QuestList" type="Node" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" unique_id=1489982165]
 unique_name_in_owner = true
 script = ExtResource("5_ggagi")
 easy_quest = Array[ExtResource("6_sl5fi")]([SubResource("Resource_ggagi"), SubResource("Resource_1eqlh"), SubResource("Resource_b5pvb"), SubResource("Resource_lu74m"), SubResource("Resource_t6se8"), SubResource("Resource_jbih1"), SubResource("Resource_ke8a6"), SubResource("Resource_hdjmv"), SubResource("Resource_7x4fo"), SubResource("Resource_kqni3")])
@@ -2084,28 +2112,28 @@ moderate_quest = Array[ExtResource("6_sl5fi")]([SubResource("Resource_iqgt0"), S
 hard_quest = Array[ExtResource("6_sl5fi")]([SubResource("Resource_po84r"), SubResource("Resource_tuqwp"), SubResource("Resource_iijhg"), SubResource("Resource_fps04"), SubResource("Resource_2q2wm"), SubResource("Resource_2vij6"), SubResource("Resource_qhbk4"), SubResource("Resource_qn3s8"), SubResource("Resource_qd4od"), SubResource("Resource_r1beb")])
 metadata/_custom_type_script = "uid://jhjk5n6vofyn"
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" unique_id=400415319]
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer" unique_id=487954131]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer" unique_id=122837298]
 layout_mode = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1687862507]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.27022192, 0.27022192, 0.2702219, 1)
 theme_override_font_sizes/font_size = 72
 text = "WORK"
 
-[node name="WorkExitButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="WorkExitButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=621687689]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -2118,49 +2146,59 @@ text = "X"
 icon_alignment = 1
 expand_icon = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer" unique_id=1435477563]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
 
-[node name="ClientList" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="HBoxContainer2" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1185341306]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ClientList" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=765970000]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_wr0o4")
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/ClientList"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/ClientList" unique_id=1156817465]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/ClientList/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/ClientList/MarginContainer" unique_id=678919602]
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="ClientGridList" type="GridContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/ClientList/MarginContainer/ScrollContainer"]
+[node name="ClientGridList" type="GridContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/ClientList/MarginContainer/ScrollContainer" unique_id=1722863120]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=701091674]
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_vi77b")
+theme_type_variation = &"EasyPanel"
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer" unique_id=1656049352]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer" unique_id=1221181719]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=774321463]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 72
@@ -2168,33 +2206,37 @@ text = "EASY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=580691069]
 layout_mode = 2
 size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+vertical_scroll_mode = 0
 
-[node name="EasyList" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="EasyList" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=119489113]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer2" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PanelContainer2" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=1638788880]
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_vi77b")
+theme_type_variation = &"MediumPanel"
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2" unique_id=1671390390]
 layout_mode = 2
+theme = ExtResource("1_vi77b")
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer" unique_id=906966830]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1236101689]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 72
@@ -2202,33 +2244,48 @@ text = "MEDIUM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1565897850]
 layout_mode = 2
 size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+vertical_scroll_mode = 0
 
-[node name="MediumList" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="MediumList" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1696497344]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer3" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="LockPanelMedium" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2" unique_id=1907802454]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/LockPanelMedium" unique_id=136760784]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer2/LockPanelMedium/CenterContainer" unique_id=1536097185]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "This stage is not available"
+
+[node name="PanelContainer3" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2" unique_id=2129979891]
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_vi77b")
+theme_type_variation = &"HardPanel"
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3" unique_id=436857602]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer3/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer" unique_id=630382724]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer" unique_id=367305548]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 72
@@ -2236,87 +2293,98 @@ text = "HARD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer" unique_id=1393247641]
 layout_mode = 2
 size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+vertical_scroll_mode = 0
 
-[node name="HardList" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="HardList" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=311615489]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ButtonSFX" type="AudioStreamPlayer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen"]
+[node name="LockPanelHard" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3" unique_id=1192091932]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/LockPanelHard" unique_id=2068354326]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer2/PanelContainer3/LockPanelHard/CenterContainer" unique_id=1532217962]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "This stage is not available"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" unique_id=160015848]
 stream = ExtResource("9_dnytd")
 
-[node name="ShutDownPrompt" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer"]
+[node name="ShutDownPrompt" type="CenterContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer" unique_id=1687119146]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt"]
+[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt" unique_id=1275492543]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8uiv3")
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer" unique_id=872476780]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer" unique_id=914294150]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer" unique_id=768651509]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3180198, 0.31801978, 0.31801975, 1)
 theme_override_font_sizes/font_size = 48
 text = "SHUT DOWN?"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer" unique_id=1237141259]
 layout_mode = 2
 
-[node name="YesShutDownButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="YesShutDownButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=345582315]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "YES"
 
-[node name="NoShutDownButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="NoShutDownButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/ShutDownPrompt/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1131503186]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "NO"
 
-[node name="TaskBar" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer"]
+[node name="TaskBar" type="PanelContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer" unique_id=1158264317]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 theme_override_styles/panel = SubResource("StyleBoxFlat_d7v3h")
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar" unique_id=211025231]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer" unique_id=701989176]
 layout_mode = 2
 
-[node name="PowerButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer"]
+[node name="PowerButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=489733427]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "POWER "
 
-[node name="Control" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=1915184060]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="WorkButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer"]
+[node name="WorkButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=2092855418]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
@@ -2325,11 +2393,11 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_83ua0")
 text = " WORK "
 
-[node name="Control2" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer"]
+[node name="Control2" type="Control" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=508572553]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="ShopButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer"]
+[node name="ShopButton" type="Button" parent="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/TaskBar/MarginContainer/HBoxContainer" unique_id=920415621]
 visible = false
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
@@ -2339,47 +2407,47 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_83ua0")
 text = "SHOP"
 
-[node name="LoginScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer"]
+[node name="LoginScreen" type="PanelContainer" parent="MonitorPanel/MarginContainer" unique_id=856322592]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vi77b")
 
-[node name="CenterContainer" type="CenterContainer" parent="MonitorPanel/MarginContainer/LoginScreen"]
+[node name="CenterContainer" type="CenterContainer" parent="MonitorPanel/MarginContainer/LoginScreen" unique_id=196628061]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer" unique_id=846960160]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yfn37")
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer" unique_id=1379073385]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer" unique_id=447489697]
 layout_mode = 2
 
-[node name="PlayerNameLabel" type="Label" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PlayerNameLabel" type="Label" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=81386841]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LoginButton" type="Button" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="LoginButton" type="Button" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1563533089]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "LOGIN"
 
-[node name="ShutdownButton" type="Button" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ShutdownButton" type="Button" parent="MonitorPanel/MarginContainer/LoginScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=822321020]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "SHUTDOWN"
 
-[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="." unique_id=1718536560]
 stream = ExtResource("9_dnytd")
 
 [connection signal="quest_accepted" from="MonitorPanel/MarginContainer/HomeScreen/VBoxContainer/MainView/MarginContainer/WorkScreen" to="." method="_on_work_screen_quest_accepted"]

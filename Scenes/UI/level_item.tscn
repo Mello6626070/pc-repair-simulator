@@ -1,27 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://deb5nhc5xgogi"]
+[gd_scene format=3 uid="uid://deb5nhc5xgogi"]
 
 [ext_resource type="Script" uid="uid://byd2gow5yrlao" path="res://Scripts/UI/level_item.gd" id="1_gruog"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnytd"]
 bg_color = Color(0.9529412, 0.9529412, 0.9529412, 1)
 
-[node name="LevelItem" type="PanelContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="LevelItem" type="PanelContainer" unique_id=1876693745]
+custom_minimum_size = Vector2(400, 0)
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_dnytd")
 script = ExtResource("1_gruog")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=288735255]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1377814599]
 layout_mode = 2
 
-[node name="ClientNumber" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="ClientNumber" type="Label" parent="MarginContainer/VBoxContainer" unique_id=947287028]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
@@ -29,7 +29,7 @@ theme_override_font_sizes/font_size = 32
 text = "CLIENT 1"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=695037955]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
@@ -37,18 +37,19 @@ theme_override_font_sizes/font_size = 24
 text = "COMPLAINT:"
 autowrap_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1134614027]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1049954226]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ComplaintLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="ComplaintLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=2078081661]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -56,7 +57,7 @@ theme_override_font_sizes/font_size = 24
 text = "\"My PC WON'T TURN ON\""
 autowrap_mode = 2
 
-[node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=174519642]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(20, 20)
@@ -65,10 +66,40 @@ theme_override_colors/font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
 theme_override_font_sizes/font_size = 24
 autowrap_mode = 2
 
-[node name="AcceptButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="TimesPlayedLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=19379986]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
+theme_override_font_sizes/font_size = 24
+text = "Attempts: 0"
+autowrap_mode = 2
+
+[node name="HighScoreLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1929298118]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
+theme_override_font_sizes/font_size = 24
+text = "Highscore: 0"
+autowrap_mode = 2
+
+[node name="AcceptButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1456063290]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "ACCEPT"
+
+[node name="LockedPanel" type="PanelContainer" parent="." unique_id=1768456713]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="LockedPanel" unique_id=1455415864]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LockedPanel/CenterContainer" unique_id=957389345]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "LOCKED"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AcceptButton" to="." method="_on_accept_button_pressed"]
